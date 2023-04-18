@@ -1,0 +1,22 @@
+{
+    "name": "New Controls",
+    "maps": [
+        {
+            "name": "gamePlay",
+            "id": "426d665b-a866-4ae9-a600-1c0e428cb2a4",
+            "actions": [
+                {
+                    "name": "move",
+                    "type": "Button",
+                    "id": "ff47682c-30ea-4dec-98e3-5bae17527306",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": []
+        }
+    ],
+    "controlSchemes": []
+}
