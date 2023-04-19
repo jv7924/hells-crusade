@@ -15,7 +15,7 @@ public class Spear : MonoBehaviour
     }
 
     // kill whatever u hit
-    private void OnTriggerEnter(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         
     }
