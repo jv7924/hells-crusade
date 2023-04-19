@@ -5,22 +5,22 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private float playerSpeed = 2;
     private Rigidbody2D playerRB;
-    [SerializeField] private float playerSpeed = 0;
-    private float horizontalInput;
-    private float verticalInput;
+    private PlayerInputActions playerInputActions;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         playerRB = GetComponent<Rigidbody2D>();   
+
+        playerInputActions = new PlayerInputActions();
+        playerInputActions.Player.Enable();
     }
 
-    public void Move()
+    private void FixedUpdate()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
-
-        Debug.Log("Move");
+        Vector2 inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
+        playerRB.velocity = inputVector * playerSpeed;
     }
 }
