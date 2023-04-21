@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float playerSpeed = 2;
+    [SerializeField] private float playerSpeed = 0;
     private Rigidbody2D playerRB;
     private PlayerInputActions playerInputActions;
 
@@ -16,11 +16,27 @@ public class PlayerMovement : MonoBehaviour
 
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
+        
     }
 
-    private void FixedUpdate()
+    public void Move(InputAction.CallbackContext context)
     {
-        Vector2 inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
-        playerRB.velocity = inputVector * playerSpeed;
+        if (context.performed)
+        {
+            // Debug.Log(context.ReadValue<Vector2>());    
+            Vector2 inputVector = context.ReadValue<Vector2>();
+            playerRB.velocity = inputVector * playerSpeed;
+        }
+        else 
+        {
+            playerRB.velocity = Vector2.zero;
+        }
+
     }
+
+    // private void FixedUpdate()
+    // {
+    //     Vector2 inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
+    //     playerRB.velocity = inputVector * playerSpeed;
+    // }
 }
