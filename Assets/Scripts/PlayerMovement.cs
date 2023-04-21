@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
+        Debug.Log(playerInputActions.Player.Move.activeControl);
         
     }
 
