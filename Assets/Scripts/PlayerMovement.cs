@@ -15,9 +15,7 @@ public class PlayerMovement : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();   
 
         playerInputActions = new PlayerInputActions();
-        playerInputActions.Player.Enable();
-        Debug.Log(playerInputActions.Player.Move.activeControl);
-        
+        Debug.Log(playerInputActions.Player.Move.activeControl);        
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -32,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         {
             playerRB.velocity = Vector2.zero;
         }
-
+        Debug.Log(context.control);
     }
 
     // private void FixedUpdate()
