@@ -10,10 +10,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     Animator playerAnimator;
 
+    [SerializeField]
+    int PlayerNumber;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // someone figure out how to initialize player number correctly lol
     }
 
     // Update is called once per frame
@@ -24,20 +27,17 @@ public class PlayerController : MonoBehaviour
 
     public void takeDamage()
     {
-        // if the other player is already downed, just die - we will need a gamemanager that keeps track of player life
-        if (false)
-        {
-            Die();
-        }
-        else
-        {
-            // down the player for revival
-        }
+        Down();
     }
 
-    private void Die()
+    public void Die()
     {
         // playerAnimator death animation, then
         Destroy(gameObject);
+    }
+
+    private void Down()
+    {
+        GameManager.Instance.downPlayer(PlayerNumber);
     }
 }
