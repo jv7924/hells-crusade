@@ -17,6 +17,15 @@ public class Spear : MonoBehaviour
     // kill whatever u hit
     private void OnTriggerEnter(Collider other)
     {
-        
+        if(other.gameObject.tag == "Player")
+        {
+            PlayerController homie = other.GetComponent<PlayerController>();
+            homie.takeDamage();
+
+        }
+        else if(other.gameObject.tag == "Enemy")
+        {
+            // call the damage function of the enemy
+        }
     }
 }

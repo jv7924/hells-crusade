@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SpearThrow : MonoBehaviour
 {
-    [SerializeField]
-    GameObject Player;
     
     // Start is called before the first frame update
     void Start()
