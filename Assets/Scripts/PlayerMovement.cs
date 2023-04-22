@@ -1,41 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float playerSpeed = 0;
     private Rigidbody2D playerRB;
-    private PlayerInputActions playerInputActions;
+    private Vector2 inputVector;
+    private float horizontalInput;
+    private float verticalInput;
 
     // Start is called before the first frame update
     void Awake()
     {
-        playerRB = GetComponent<Rigidbody2D>();   
-
-        playerInputActions = new PlayerInputActions();
-        Debug.Log(playerInputActions.Player.Move.activeControl);        
+        playerRB = GetComponent<Rigidbody2D>();
     }
 
-    public void Move(InputAction.CallbackContext context)
+    private void FixedUpdate()
     {
-        if (context.performed)
-        {
-            // Debug.Log(context.ReadValue<Vector2>());    
-            Vector2 inputVector = context.ReadValue<Vector2>();
-            playerRB.velocity = inputVector * playerSpeed;
-        }
-        else 
-        {
-            playerRB.velocity = Vector2.zero;
-        }
-        Debug.Log(context.control);
+        Move();
     }
 
-    // private void FixedUpdate()
-    // {
-    //     Vector2 inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
-    //     playerRB.velocity = inputVector * playerSpeed;
-    // }
+    private void SetUpInputVector(float x, float y)
+    {
+        inputVector = new Vector2(x, y);
+    }
+
+    private void Move() 
+    {
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
+
+        SetUpInputVector(horizontalInput, verticalInput);
+
+        playerRB.velocity = inputVector * playerSpeed;
+    }
 }
