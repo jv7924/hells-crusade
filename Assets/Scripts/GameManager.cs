@@ -44,13 +44,15 @@ public class GameManager : MonoBehaviour
             p1.GetComponent<PlayerController>().Die();
             p2.GetComponent<PlayerController>().Die();
             // yield the amount of time it takes for both animations to complete
+
+            endGame();
         }
 
-        endGame();
     }
 
     private void endGame()
     {
+        // might want to switch this to changing the scene to a loss screen
         Application.Quit();
     }
 }
