@@ -10,12 +10,13 @@ public class InputManager : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
 
+    // Temp
     enum GameMode
     {
         SINGLE,
         COOP
     }
-
+    // Temp
     private GameMode mode;
 
     private void Start()
@@ -24,9 +25,6 @@ public class InputManager : MonoBehaviour
         mode = GameMode.SINGLE;
     }
 
-    /// <summary>
-    /// Update is called every frame, if the MonoBehaviour is enabled.
-    /// </summary>
     private void Update()
     {
         SetUpInputVector(SetUpAxis());
@@ -37,7 +35,7 @@ public class InputManager : MonoBehaviour
         inputVector = direction;
     }
 
-    public Vector2 GetVec()
+    public Vector2 GetInputVector()
     {
         return inputVector;
     }
@@ -50,11 +48,12 @@ public class InputManager : MonoBehaviour
             horizontalInput = Input.GetAxisRaw("Horizontal");
             verticalInput = Input.GetAxisRaw("Vertical");
         }
-        // else if (mode == GameMode.COOP)
-        // {
-        //     horizontalInput = Input.GetAxisRaw("Horizontal Local " + );
-        //     verticalInput = Input.GetAxisRaw("Vertical Local " + );
-        // }
+        else if (mode == GameMode.COOP)
+        {
+            // Get the players number so that the controls can be set up easy
+            // horizontalInput = Input.GetAxisRaw("Horizontal Local " +);
+            // verticalInput = Input.GetAxisRaw("Vertical Local " +);
+        }
 
         return new Vector2(horizontalInput, verticalInput);
     }

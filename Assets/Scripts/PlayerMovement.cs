@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float playerSpeed = 0;
     private Rigidbody2D playerRB;
     private Vector2 inputVector;
-    // [SerializeField] private int playerNum = 1;
+    public int playerNum = 1;
     InputManager manager;
 
     // Temp
@@ -19,20 +19,12 @@ public class PlayerMovement : MonoBehaviour
         manager = FindObjectOfType<InputManager>();
     }
 
-    /// <summary>
-    /// Start is called on the frame when a script is enabled just before
-    /// any of the Update methods is called the first time.
-    /// </summary>
-    
-
     private void FixedUpdate()
     {
-        inputVector = manager.GetVec();
+        inputVector = manager.GetInputVector();
 
         Move();
     }
-
-    
 
     private void Move() 
     {
