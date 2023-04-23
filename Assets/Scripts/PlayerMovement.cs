@@ -8,20 +8,15 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D playerRB;
     private Vector2 inputVector;
     public int playerNum = 1;
-    InputManager manager;
-
-    // Temp
-    
 
     void Awake()
     {
         playerRB = GetComponent<Rigidbody2D>();
-        manager = FindObjectOfType<InputManager>();
     }
 
     private void FixedUpdate()
     {
-        inputVector = manager.GetInputVector();
+        inputVector = InputManager.Instance.GetInputVector();
 
         Move();
     }

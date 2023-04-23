@@ -5,6 +5,8 @@ using System;
 
 public class InputManager : MonoBehaviour
 {
+    public static InputManager Instance;
+
     [SerializeField] private GameObject[] playerPrefabs;
     private Vector2 inputVector;
     private float horizontalInput;
@@ -19,10 +21,24 @@ public class InputManager : MonoBehaviour
     // Temp
     private GameMode mode;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(Instance);
+        }
+        else 
+        {
+            Destroy(this);
+        }
+    }
+
     private void Start()
     {
         // Temp
-        mode = GameMode.SINGLE;
+        mode = GameMode.COOP;
+
     }
 
     private void Update()
@@ -41,7 +57,7 @@ public class InputManager : MonoBehaviour
     }
 
     // Temp
-    public Vector2 SetUpAxis()
+    private Vector2 SetUpAxis()
     {
         if (mode == GameMode.SINGLE)
         {
@@ -51,8 +67,8 @@ public class InputManager : MonoBehaviour
         else if (mode == GameMode.COOP)
         {
             // Get the players number so that the controls can be set up easy
-            // horizontalInput = Input.GetAxisRaw("Horizontal Local " +);
-            // verticalInput = Input.GetAxisRaw("Vertical Local " +);
+            // horizontalInput = Input.GetAxisRaw("Horizontal Local " + );
+            // verticalInput = Input.GetAxisRaw("Vertical Local " + );
         }
 
         return new Vector2(horizontalInput, verticalInput);
