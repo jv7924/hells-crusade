@@ -37,7 +37,7 @@ public class InputManager : MonoBehaviour
     private void Start()
     {
         // Temp
-        mode = GameMode.COOP;
+        mode = GameMode.SINGLE;
 
     }
 
