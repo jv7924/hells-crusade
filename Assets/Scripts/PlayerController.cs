@@ -39,5 +39,7 @@ public class PlayerController : MonoBehaviour
     private void Down()
     {
         GameManager.Instance.downPlayer(PlayerNumber);
+        // play down animation
+        // restrict movement
     }
 }

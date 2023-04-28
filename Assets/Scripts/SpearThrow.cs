@@ -29,7 +29,7 @@ public class SpearThrow : MonoBehaviour
     void Start()
     {
         chargeSpeed = (maxLaunchForce - minLaunchForce) / maxChargeTime;
-        throwButton = "Throw" + playerNumber;
+        throwButton = "Fire" + playerNumber;
     }
 
     // Update is called once per frame
@@ -63,7 +63,7 @@ public class SpearThrow : MonoBehaviour
 
         Rigidbody2D spearInstance = Instantiate(spear, throwPos.position, throwPos.rotation);
         spearInstance.velocity = launchForce * throwPos.forward;
-
+        Debug.Log(spearInstance.velocity);
         launchForce = minLaunchForce;
     }
 }

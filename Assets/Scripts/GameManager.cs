@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
     public void downPlayer(int playerNumber)
     {
         playerStatuses[playerNumber] = PlayerStatus.DOWN;
+        Debug.Log(playerNumber);
+        Debug.Log("Down");
 
         if (playerStatuses[2/playerNumber] == PlayerStatus.DOWN)
         {
