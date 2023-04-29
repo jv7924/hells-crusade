@@ -7,16 +7,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float playerSpeed = 0;
     private Rigidbody2D playerRB;
     private Vector2 inputVector;
-    public int playerNum = 1;
+    private InputManager input;
 
     void Awake()
     {
         playerRB = GetComponent<Rigidbody2D>();
+        input = GetComponent<InputManager>();
     }
 
     private void FixedUpdate()
     {
-        inputVector = InputManager.Instance.GetInputVector();
+        inputVector = input.GetInputVector();
 
         Move();
     }

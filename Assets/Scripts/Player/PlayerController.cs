@@ -42,4 +42,9 @@ public class PlayerController : MonoBehaviour
         // play down animation
         // restrict movement
     }
+
+    public int GetPlayerNumber()
+    {
+        return PlayerNumber;
+    }
 }
