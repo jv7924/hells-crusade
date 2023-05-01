@@ -23,7 +23,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // mousePos = GameManager.Instance.cursorPos();
+        if (view.IsMine)
+        {
+            mousePos = GameManager.Instance.cursorPos();
+        }
         inputVector = input.GetInputVector();
     }
 
