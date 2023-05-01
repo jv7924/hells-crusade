@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject p2;
 
+    [SerializeField]
+    Camera mainCam;
+
     // things to keep track of
     public enum PlayerStatus {ALIVE, DOWN, DEAD};
 
@@ -50,6 +53,12 @@ public class GameManager : MonoBehaviour
             endGame();
         }
 
+    }
+
+    public Vector3 cursorPos()
+    {
+        // will later change which input pos to return based on player number
+        return mainCam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void endGame()

@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1: {fileID: 2057631491}
   p2: {fileID: 4627524080010712934, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
+  mainCam: {fileID: 519420031}
 --- !u!4 &188575415
 Transform:
   m_ObjectHideFlags: 0
@@ -255,7 +256,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -537,63 +538,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4627524080010712938, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4627524080010712939, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
       propertyPath: playerSpeed
       value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
---- !u!1 &1974381081
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4627524080010712934, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1974381084}
-  - component: {fileID: 1974381083}
-  m_Layer: 0
-  m_Name: Spear Throw
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1974381083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1974381081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26aa9f6f568154120a180557b3fbf357, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerNumber: 0
-  throwPos: {fileID: 0}
-  spear: {fileID: 0}
-  minLaunchForce: 15
-  maxLaunchForce: 30
-  maxChargeTime: 0.75
-  throwUI: {fileID: 0}
---- !u!4 &1974381084
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1974381081}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2057631490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -602,9 +556,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2057631493, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: spear
+      value: 
+      objectReference: {fileID: 7772507828351131551, guid: c6c6523d578153e40aa525c2bc22e65d, type: 3}
     - target: {fileID: 4627524080010712932, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -653,8 +607,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
 --- !u!1 &2057631491 stripped
 GameObject:

@@ -8,9 +8,9 @@ public class SpearThrow : MonoBehaviour
     [SerializeField]
     private int playerNumber;
     [SerializeField] 
-    private Transform throwPos;
-    [SerializeField] 
-    private Rigidbody2D spear;
+    private GameObject spear;
+    [SerializeField]
+    private Transform throwTransform;
     [SerializeField]
     private float minLaunchForce = 15f;
     [SerializeField]
@@ -24,6 +24,8 @@ public class SpearThrow : MonoBehaviour
     private float launchForce;
     private string throwButton;
     private bool thrown = false;
+    private bool canThrow;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -60,10 +62,12 @@ public class SpearThrow : MonoBehaviour
     void Throw()
     {
         thrown = true;
-
-        Rigidbody2D spearInstance = Instantiate(spear, throwPos.position, throwPos.rotation);
-        spearInstance.velocity = launchForce * throwPos.forward;
-        Debug.Log(spearInstance.velocity);
+        
+        GameObject spearInstance = Instantiate(spear, throwTransform.position, throwTransform.rotation);
+        Rigidbody2D spearRB = spearInstance.GetComponent<Rigidbody2D>();
+        spearRB.AddForce(throwTransform.up * launchForce, ForceMode2D.Impulse);
+        
         launchForce = minLaunchForce;
+        //canThrow = false;
     }
 }

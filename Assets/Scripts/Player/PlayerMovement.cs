@@ -9,21 +9,36 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 inputVector;
     private InputManager input;
 
+    private Vector2 mousePos;
+
     void Awake()
     {
         playerRB = GetComponent<Rigidbody2D>();
         input = GetComponent<InputManager>();
     }
 
-    private void FixedUpdate()
+    void Update()
     {
+        mousePos = GameManager.Instance.cursorPos();
         inputVector = input.GetInputVector();
+    }
 
+
+    void FixedUpdate()
+    {
         Move();
+        Rotate();
     }
 
     private void Move() 
     {
-        playerRB.velocity = inputVector * playerSpeed;
+        playerRB.MovePosition(playerRB.position + inputVector * playerSpeed * Time.fixedDeltaTime);
+    }
+
+    private void Rotate()
+    {
+        Vector2 aimDirection = mousePos - playerRB.position;
+        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+        playerRB.rotation = angle;
     }
 }
