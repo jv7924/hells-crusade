@@ -21,7 +21,7 @@ public class InputManager : MonoBehaviour
 
     private void Start()
     {
-        mode = GameMode.ONLINE;  // Temp
+        mode = GameMode.LOCAL;  // Temp
         playerNum = GetComponent<PlayerController>().GetPlayerNumber();
     }
 
