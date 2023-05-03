@@ -15,11 +15,11 @@ public class Spear : MonoBehaviour
     }
 
     // kill whatever u hit
-    private void OnCollision(Collider other)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        if(other.gameObject.tag == "Player")
+        if(col.gameObject.tag == "Player")
         {
-            PlayerController homie = other.GetComponent<PlayerController>();
+            PlayerController homie = col.gameObject.GetComponent<PlayerController>();
             if(homie != null){
                 homie.takeDamage();
             }
@@ -28,9 +28,16 @@ public class Spear : MonoBehaviour
             } 
 
         }
-        else if(other.gameObject.tag == "Enemy")
+        else if(col.gameObject.tag == "Enemy")
         {
             // call the damage function of the enemy
+            // destroy the spear
+            // give the player that threw the spear the ability to throw again
+        }
+        else if(col.gameObject.tag == "Wall"){
+            // destroy the spear
+            // create collectible spear in its place, 
+            // with apropriate offset from the wall
         }
     }
 }
