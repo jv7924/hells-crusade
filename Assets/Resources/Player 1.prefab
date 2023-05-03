@@ -205,9 +205,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247f3d4b8b7014b2e9a210a24059cdc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canShoot: 1
   playerAnimator: {fileID: 0}
   PlayerNumber: 1
+  movement: {fileID: 0}
 --- !u!114 &1819737069240037
 MonoBehaviour:
   m_ObjectHideFlags: 0
