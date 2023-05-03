@@ -6,12 +6,13 @@ using UnityEngine.Android;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    bool canShoot;
-    [SerializeField]
     Animator playerAnimator;
 
     [SerializeField]
     int PlayerNumber;
+
+    [SerializeField]
+    PlayerMovement movement;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
         GameManager.Instance.downPlayer(PlayerNumber);
         // play down animation
         // restrict movement
+        Debug.Log("Hit");
     }
 
     public int GetPlayerNumber()
