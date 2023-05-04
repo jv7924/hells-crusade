@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+/**********************************************************
+NOTES:
+    - Controller right joystick works with 3rd axis and
+     4th axis for the axis type.
+
+    -
+    
+**********************************************************/
+
 public class InputManager : MonoBehaviour
 {
     private Vector2 inputVector;
@@ -10,18 +19,8 @@ public class InputManager : MonoBehaviour
     private float verticalInput;
     private int playerNum;
 
-    // Temp
-    enum GameMode
-    {
-        ONLINE,
-        LOCAL
-    }
-    // Temp
-    private GameMode mode;
-
     private void Start()
     {
-        mode = GameMode.LOCAL;  // Temp
         playerNum = GetComponent<PlayerController>().GetPlayerNumber();
     }
 
@@ -43,12 +42,12 @@ public class InputManager : MonoBehaviour
     // Temp
     private Vector2 SetUpAxis(int player)
     {
-        if (mode == GameMode.ONLINE)
+        if (GameModeManager.gameMode == GameModeManager.GameMode.ONLINE)
         {
             horizontalInput = Input.GetAxisRaw("Horizontal");
             verticalInput = Input.GetAxisRaw("Vertical");
         }
-        else if (mode == GameMode.LOCAL)
+        else if (GameModeManager.gameMode == GameModeManager.GameMode.LOCAL)
         {
             // Get the players number so that the controls can be set up easy
             horizontalInput = Input.GetAxisRaw("Horizontal Local " + player);
