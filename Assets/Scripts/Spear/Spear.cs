@@ -30,9 +30,8 @@ public class Spear : MonoBehaviour
         }
         else if(col.gameObject.tag == "Enemy")
         {
-            // call the damage function of the enemy
-            // destroy the spear
-            // give the player that threw the spear the ability to throw again
+            Destroy(col.gameObject);
+            Destroy(this.gameObject);
         }
         else if(col.gameObject.tag == "Wall"){
             // destroy the spear

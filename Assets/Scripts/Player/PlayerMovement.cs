@@ -57,6 +57,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 aimDirection = mousePos - playerRB.position;
         float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
-        // playerRB.rotation = angle;
+        playerRB.rotation = angle;
     }
 }
