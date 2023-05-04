@@ -7,12 +7,14 @@ public class EnemyFollow : MonoBehaviour
     public float speed;
     private GameObject followedPlayer;
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
     private Vector2 movement;
     private float dist;
 
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        sr = this.GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -39,7 +41,13 @@ public class EnemyFollow : MonoBehaviour
 
         Vector3 direction = followedPlayer.transform.position - this.transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
+        if (angle > 90 || angle < -90)
+        {
+            sr.flipX = true;
+        } else 
+        {
+            sr.flipX = false;
+        }
         direction.Normalize();
         movement = direction;
         moveEnemy(movement);
