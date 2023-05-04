@@ -18,7 +18,9 @@ public class SpearThrow : MonoBehaviour
     [SerializeField]
     private float maxChargeTime = .75f;
     [SerializeField]
-    private Slider throwUI;
+    private GameObject throwUI;
+    [SerializeField]
+    private Sprite throwUISprite;
 
     private float chargeSpeed;
     private float launchForce;
@@ -51,7 +53,7 @@ public class SpearThrow : MonoBehaviour
         else if(Input.GetButton(throwButton) && !thrown)
         {
             launchForce += Time.deltaTime * chargeSpeed;
-            // slider update
+            // add ui?
         }
         else if (Input.GetButtonUp(throwButton) && !thrown)
         {
@@ -68,6 +70,11 @@ public class SpearThrow : MonoBehaviour
         spearRB.AddForce(throwTransform.up * launchForce, ForceMode2D.Impulse);
         
         launchForce = minLaunchForce;
+
+        // changes spear UI image from yellow (has spear) to white (doesn't have spear)
+        Image throwImage = throwUI.GetComponent<Image>();
+        throwImage.sprite = throwUISprite;
+        
         //canThrow = false;
     }
 }
