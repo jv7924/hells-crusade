@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     PlayerMovement movement;
+    [SerializeField]
+    SpearThrow spearThrow;
 
     // Start is called before the first frame update
     void Start()
@@ -49,4 +51,14 @@ public class PlayerController : MonoBehaviour
     {
         return PlayerNumber;
     }
+
+    void OnCollisionEnter2D(Collision2D col){
+        if(col.gameObject.tag == "Pickup"){
+            spearThrow.canThrow = true;
+            Destroy(col.gameObject);
+        }
+        if(col.gameObject.tag == "Enemy"){
+            takeDamage();
+        }
+    }   
 }

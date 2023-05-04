@@ -6,11 +6,15 @@ public class Spear : MonoBehaviour
 {
     [SerializeField]
     private float maxLifeTime;
+    [SerializeField]
+    private GameObject respawn;
+    
+    private Vector3 lastPos;
     // Start is called before the first frame update
     void Start()
     {
-        // spears will be instantiated by spear throw with a lifetime calculated
-        // based on how long the throw is charged up
+        Vector2 velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
+        float lifetime = velocity.magnitude/ maxLifeTime;
         Destroy(gameObject, maxLifeTime);
     }
 
@@ -30,13 +34,24 @@ public class Spear : MonoBehaviour
         }
         else if(col.gameObject.tag == "Enemy")
         {
+            lastPos = col.gameObject.transform.position;
             Destroy(col.gameObject);
             Destroy(this.gameObject);
         }
         else if(col.gameObject.tag == "Wall"){
             // destroy the spear
             // create collectible spear in its place, 
-            // with apropriate offset from the wall
+            // with apropriate offset from the wall 
+            lastPos = lastPos = col.gameObject.transform.position;
+            Destroy(this.gameObject);
         }
+    }
+
+    void OnDestroy(){
+        Debug.Log("called");
+        if(lastPos == null){
+            lastPos = gameObject.transform.position;
+        }
+        Instantiate(respawn, lastPos, Quaternion.identity);
     }
 }

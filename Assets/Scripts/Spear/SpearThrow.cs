@@ -24,7 +24,7 @@ public class SpearThrow : MonoBehaviour
     private float launchForce;
     private string throwButton;
     private bool thrown = false;
-    private bool canThrow;
+    public bool canThrow;
     
     
     // Start is called before the first frame update
@@ -37,26 +37,29 @@ public class SpearThrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // needs UI update to be added still
-        if(launchForce >= maxLaunchForce && !thrown)
-        {
-            launchForce = maxLaunchForce;
-            Throw();
+        if(canThrow){
+            // needs UI update to be added still
+            if(launchForce >= maxLaunchForce && !thrown)
+            {
+                launchForce = maxLaunchForce;
+                Throw();
+            }
+            else if(Input.GetButtonDown(throwButton))
+            {
+                thrown = false;
+                launchForce = minLaunchForce;
+            }
+            else if(Input.GetButton(throwButton) && !thrown)
+            {
+                launchForce += Time.deltaTime * chargeSpeed;
+                // slider update
+            }
+            else if (Input.GetButtonUp(throwButton) && !thrown)
+            {
+                Throw();
+            }
         }
-        else if(Input.GetButtonDown(throwButton))
-        {
-            thrown = false;
-            launchForce = minLaunchForce;
-        }
-        else if(Input.GetButton(throwButton) && !thrown)
-        {
-            launchForce += Time.deltaTime * chargeSpeed;
-            // slider update
-        }
-        else if (Input.GetButtonUp(throwButton) && !thrown)
-        {
-            Throw();
-        }
+        
     }
 
     void Throw()
@@ -68,6 +71,6 @@ public class SpearThrow : MonoBehaviour
         spearRB.AddForce(throwTransform.up * launchForce, ForceMode2D.Impulse);
         
         launchForce = minLaunchForce;
-        //canThrow = false;
+        canThrow = false;
     }
 }
