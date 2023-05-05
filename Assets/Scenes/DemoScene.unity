@@ -2012,7 +2012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8697349173390123520, guid: 384f9583f55fe1b438654bc7962f9df9, type: 3}
-  wait: 5
+  wait: 6
 --- !u!4 &1086998434
 Transform:
   m_ObjectHideFlags: 0
@@ -2068,7 +2068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2057631493, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
       propertyPath: maxLaunchForce
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2057631493, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
       propertyPath: minLaunchForce
