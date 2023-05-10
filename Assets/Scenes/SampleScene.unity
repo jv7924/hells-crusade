@@ -588,8 +588,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827931692}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -608,11 +608,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0455da9b07d4b5f4aac123263549d4d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 827931695}
-  gameObj: {fileID: 827931692}
+  crosshair: {fileID: 827931692}
   mainCam: {fileID: 519420031}
-  con: {fileID: 896049824}
-  center: {fileID: 896049832}
+  playerCon: {fileID: 896049824}
+  playerCenter: {fileID: 896049832}
+  playerTwoSens: 0
 --- !u!50 &827931695
 Rigidbody2D:
   serializedVersion: 4
@@ -845,7 +845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4627524080010712938, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
       propertyPath: m_Constraints
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4627524080010712939, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
       propertyPath: playerSpeed
@@ -889,11 +889,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0455da9b07d4b5f4aac123263549d4d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 1512232725}
-  gameObj: {fileID: 1512232723}
+  crosshair: {fileID: 1512232723}
   mainCam: {fileID: 519420031}
-  con: {fileID: 632426332}
-  center: {fileID: 1029442265}
+  playerCon: {fileID: 632426332}
+  playerCenter: {fileID: 1029442265}
+  playerTwoSens: 50
 --- !u!50 &1512232725
 Rigidbody2D:
   serializedVersion: 4

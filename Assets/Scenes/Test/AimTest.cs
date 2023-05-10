@@ -4,52 +4,53 @@ using UnityEngine;
 
 public class AimTest : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject crosshair;
+    [SerializeField]
+    private Camera mainCam;
+    [SerializeField]
+    private PlayerController playerCon;
+    [SerializeField]
+    private Transform playerCenter;
+    [SerializeField]
+    private float playerTwoSens = 0;
+    private int playerNum;
     private float horizontalInput;
     private float verticalInput;
-    public Rigidbody2D obj;
-    public GameObject gameObj;
-    public Camera mainCam;
-    public PlayerController con;
-    private bool outOfBounds = false;
-    public Transform center;
-    int num;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        obj = GetComponent<Rigidbody2D>();
-        num = con.GetPlayerNumber();
+        playerNum = playerCon.GetPlayerNumber();
     }
 
     // Update is called once per frame
     void Update()
     {
+        Aim();
         CheckBounds();
-
-        if (!outOfBounds)
-            Aim();
     }
-    
 
     private void CheckBounds()
     {
-        Vector2 offset = obj.position - (Vector2)center.transform.position;
-        transform.position = (Vector2)center.transform.position + Vector2.ClampMagnitude(offset, 4);
+        Vector2 offset = (Vector2)crosshair.transform.position - (Vector2)playerCenter.transform.position;
+        transform.position = (Vector2)playerCenter.transform.position + Vector2.ClampMagnitude(offset, 4);
     }
 
     private void Aim()
     {
-        if (num == 2)
+        if (playerNum == 2)
         {
             horizontalInput = Input.GetAxisRaw("Aim Horizontal");
             verticalInput = Input.GetAxisRaw("Aim Vertical");
 
             Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
 
-            obj.velocity = inputVector * 50;
+            crosshair.transform.position += (Vector3)inputVector * Time.deltaTime * playerTwoSens;
         }
 
-        else if (num == 1)
-            obj.position = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        else if (playerNum == 1)
+            crosshair.transform.position = mainCam.ScreenToWorldPoint(Input.mousePosition);
     }
 }

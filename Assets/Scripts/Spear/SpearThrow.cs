@@ -39,7 +39,7 @@ public class SpearThrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canThrow){
+        // if(canThrow){
             // needs UI update to be added still
             if(launchForce >= maxLaunchForce && !thrown)
             {
@@ -60,7 +60,7 @@ public class SpearThrow : MonoBehaviour
             {
                 Throw();
             }
-        }
+        // }
         
     }
 
@@ -79,5 +79,10 @@ public class SpearThrow : MonoBehaviour
         throwImage.sprite = throwUISprite;
         
         //canThrow = false;
+    }
+
+    private void JoseThrow()
+    {
+        
     }
 }
