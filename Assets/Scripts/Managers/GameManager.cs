@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
 
     private void endGame()
     {
-        // might want to switch this to changing the scene to a loss screen
+        // will eventually change this to switching to game loss screen
         Application.Quit();
     }
 }
