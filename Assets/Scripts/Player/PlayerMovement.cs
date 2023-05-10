@@ -21,14 +21,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (GameModeManager.gameMode == GameModeManager.GameMode.ONLINE && view.IsMine)
-        {
-            mousePos = GameManager.Instance.cursorPos();
-        }
-        else if (GameModeManager.gameMode == GameModeManager.GameMode.LOCAL)
-        {
-            mousePos = GameManager.Instance.cursorPos();
-        }
+        // if (GameModeManager.gameMode == GameModeManager.GameMode.ONLINE && view.IsMine)
+        // {
+        //     mousePos = GameManager.Instance.cursorPos();
+        // }
+        // else if (GameModeManager.gameMode == GameModeManager.GameMode.LOCAL)
+        // {
+        //     mousePos = GameManager.Instance.cursorPos();
+        // }
         inputVector = input.GetInputVector();
     }
 
@@ -38,12 +38,12 @@ public class PlayerMovement : MonoBehaviour
         if (GameModeManager.gameMode == GameModeManager.GameMode.ONLINE && view.IsMine)
         {
             Move();
-            Rotate();
+            // Rotate();
         }
         else if (GameModeManager.gameMode == GameModeManager.GameMode.LOCAL)
         {
             Move();
-            Rotate();
+            // Rotate();
         }
     }
 
@@ -53,10 +53,10 @@ public class PlayerMovement : MonoBehaviour
         playerRB.velocity = inputVector * playerSpeed;
     }
 
-    private void Rotate()
-    {
-        Vector2 aimDirection = mousePos - playerRB.position;
-        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
-        playerRB.rotation = angle;
-    }
+    // private void Rotate()
+    // {
+    //     Vector2 aimDirection = mousePos - playerRB.position;
+    //     float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+    //     playerRB.rotation = angle;
+    // }
 }
