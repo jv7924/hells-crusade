@@ -9,6 +9,7 @@ public class AimTest : MonoBehaviour
     public Rigidbody2D obj;
     public GameObject gameObj;
     public Camera mainCam;
+    public PlayerController con;
 
     // Start is called before the first frame update
     void Start()
@@ -19,13 +20,17 @@ public class AimTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // horizontalInput = Input.GetAxisRaw("Aim Horizontal");
-        // verticalInput = Input.GetAxisRaw("Aim Vertical");
+        if (con.GetPlayerNumber() == 2)
+        {
+            horizontalInput = Input.GetAxisRaw("Aim Horizontal");
+            verticalInput = Input.GetAxisRaw("Aim Vertical");
 
-        // Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
+            Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
 
-        // obj.velocity = inputVector * 3;
+            obj.velocity = inputVector * 10;
+        }
 
-        obj.position = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        else if (con.GetPlayerNumber() == 1)
+            obj.position = mainCam.ScreenToWorldPoint(Input.mousePosition);
     }
 }
