@@ -29,6 +29,7 @@ public class AimTest : MonoBehaviour
     void Update()
     {
         Aim();
+        Rotate();
         CheckBounds();
     }
 
@@ -52,5 +53,13 @@ public class AimTest : MonoBehaviour
 
         else if (playerNum == 1)
             crosshair.transform.position = mainCam.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    public Quaternion Rotate()
+    {
+        Vector2 aimDirection = crosshair.transform.position - playerCenter.transform.position;
+        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+        
+        return Quaternion.Euler(0, 0, angle);
     }
 }

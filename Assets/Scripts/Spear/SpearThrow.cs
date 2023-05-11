@@ -27,6 +27,9 @@ public class SpearThrow : MonoBehaviour
     private string throwButton;
     private bool thrown = false;
     public bool canThrow;
+
+
+    public AimTest aim;
     
     
     // Start is called before the first frame update
@@ -68,7 +71,7 @@ public class SpearThrow : MonoBehaviour
     {
         thrown = true;
         
-        GameObject spearInstance = Instantiate(spear, throwTransform.position, throwTransform.rotation);
+        GameObject spearInstance = Instantiate(spear, throwTransform.position, aim.Rotate());
         Rigidbody2D spearRB = spearInstance.GetComponent<Rigidbody2D>();
         spearRB.AddForce(throwTransform.up * launchForce, ForceMode2D.Impulse);
         

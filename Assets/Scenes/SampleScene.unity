@@ -572,7 +572,6 @@ GameObject:
   m_Component:
   - component: {fileID: 827931693}
   - component: {fileID: 827931696}
-  - component: {fileID: 827931695}
   - component: {fileID: 827931694}
   m_Layer: 0
   m_Name: Aim 1
@@ -589,8 +588,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827931692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.25, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 896049832}
@@ -613,27 +612,6 @@ MonoBehaviour:
   playerCon: {fileID: 896049824}
   playerCenter: {fileID: 896049832}
   playerTwoSens: 0
---- !u!50 &827931695
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827931692}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!212 &827931696
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -693,6 +671,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2057631493, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
+      propertyPath: aim
+      value: 
+      objectReference: {fileID: 827931694}
     - target: {fileID: 2057631493, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
       propertyPath: throwUI
       value: 
@@ -868,7 +850,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1512232727}
   - component: {fileID: 1512232726}
-  - component: {fileID: 1512232725}
   - component: {fileID: 1512232724}
   m_Layer: 0
   m_Name: Aim 2
@@ -894,27 +875,6 @@ MonoBehaviour:
   playerCon: {fileID: 632426332}
   playerCenter: {fileID: 1029442265}
   playerTwoSens: 50
---- !u!50 &1512232725
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1512232723}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!212 &1512232726
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -976,7 +936,7 @@ Transform:
   m_GameObject: {fileID: 1512232723}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.049999952, y: 0.029999971, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1029442265}
