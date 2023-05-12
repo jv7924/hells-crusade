@@ -55,11 +55,11 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public Vector3 cursorPos()
-    {
-        // will later change which input pos to return based on player number
-        return mainCam.ScreenToWorldPoint(Input.mousePosition);
-    }
+    // public Vector3 cursorPos()
+    // {
+    //     // will later change which input pos to return based on player number
+    //     return mainCam.ScreenToWorldPoint(Input.mousePosition);
+    // }
 
     private void endGame()
     {

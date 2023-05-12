@@ -38,12 +38,10 @@ public class PlayerMovement : MonoBehaviour
         if (GameModeManager.gameMode == GameModeManager.GameMode.ONLINE && view.IsMine)
         {
             Move();
-            // Rotate();
         }
         else if (GameModeManager.gameMode == GameModeManager.GameMode.LOCAL)
         {
             Move();
-            // Rotate();
         }
     }
 
@@ -52,11 +50,4 @@ public class PlayerMovement : MonoBehaviour
         // playerRB.MovePosition(playerRB.position + inputVector * playerSpeed * Time.fixedDeltaTime);
         playerRB.velocity = inputVector * playerSpeed;
     }
-
-    // private void Rotate()
-    // {
-    //     Vector2 aimDirection = mousePos - playerRB.position;
-    //     float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
-    //     playerRB.rotation = angle;
-    // }
 }

@@ -42,6 +42,7 @@ public class SpearThrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Rotate();
         // if(canThrow){
             // needs UI update to be added still
             if(launchForce >= maxLaunchForce && !thrown)
@@ -71,9 +72,9 @@ public class SpearThrow : MonoBehaviour
     {
         thrown = true;
         
-        GameObject spearInstance = Instantiate(spear, throwTransform.position, aim.Rotate());
+        GameObject spearInstance = Instantiate(spear, throwTransform.position, throwTransform.rotation);
         Rigidbody2D spearRB = spearInstance.GetComponent<Rigidbody2D>();
-        spearRB.AddForce(aim.crosshair.transform.position.normalized * launchForce, ForceMode2D.Impulse);
+        spearRB.AddForce(throwTransform.up * launchForce, ForceMode2D.Impulse);
         
         launchForce = minLaunchForce;
 
@@ -84,8 +85,10 @@ public class SpearThrow : MonoBehaviour
         //canThrow = false;
     }
 
-    private void JoseThrow()
+    private void Rotate()
     {
-        
+        Vector2 aimDirection = aim.MousePos() - throwTransform.transform.position;
+        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+        throwTransform.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 }
