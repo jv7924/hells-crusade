@@ -27,6 +27,9 @@ public class SpearThrow : MonoBehaviour
     private string throwButton;
     private bool thrown = false;
     public bool canThrow;
+
+
+    public AimTest aim;
     
     
     // Start is called before the first frame update
@@ -39,7 +42,8 @@ public class SpearThrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canThrow){
+        Rotate();
+        // if(canThrow){
             // needs UI update to be added still
             if(launchForce >= maxLaunchForce && !thrown)
             {
@@ -60,7 +64,7 @@ public class SpearThrow : MonoBehaviour
             {
                 Throw();
             }
-        }
+        // }
         
     }
 
@@ -79,5 +83,12 @@ public class SpearThrow : MonoBehaviour
         throwImage.sprite = throwUISprite;
         
         //canThrow = false;
+    }
+
+    private void Rotate()
+    {
+        Vector2 aimDirection = aim.MousePos() - throwTransform.transform.position;
+        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+        throwTransform.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 }
