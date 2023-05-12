@@ -5,7 +5,7 @@ using UnityEngine;
 public class AimTest : MonoBehaviour
 {
     [SerializeField]
-    private GameObject crosshair;
+    public GameObject crosshair;
     [SerializeField]
     private Camera mainCam;
     [SerializeField]
@@ -59,6 +59,8 @@ public class AimTest : MonoBehaviour
     {
         Vector2 aimDirection = crosshair.transform.position - playerCenter.transform.position;
         float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+
+        Debug.Log(Quaternion.Euler(0, 0, angle));
         
         return Quaternion.Euler(0, 0, angle);
     }

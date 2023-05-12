@@ -73,7 +73,7 @@ public class SpearThrow : MonoBehaviour
         
         GameObject spearInstance = Instantiate(spear, throwTransform.position, aim.Rotate());
         Rigidbody2D spearRB = spearInstance.GetComponent<Rigidbody2D>();
-        spearRB.AddForce(throwTransform.up * launchForce, ForceMode2D.Impulse);
+        spearRB.AddForce(aim.crosshair.transform.position.normalized * launchForce, ForceMode2D.Impulse);
         
         launchForce = minLaunchForce;
 
