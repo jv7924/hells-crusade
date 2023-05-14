@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class SpearThrow : MonoBehaviour
 {
-    [SerializeField]
-    private int playerNumber;
     [SerializeField] 
     private GameObject spear;
     [SerializeField]
@@ -24,24 +22,28 @@ public class SpearThrow : MonoBehaviour
 
     private float chargeSpeed;
     private float launchForce;
-    private string throwButton;
+    private string shootButton;
     private bool thrown = false;
     public bool canThrow;
 
-
-    public AimTest aim;
+    private InputManager input;
+    private AimTest aim;
     
     
     // Start is called before the first frame update
     void Start()
     {
         chargeSpeed = (maxLaunchForce - minLaunchForce) / maxChargeTime;
-        throwButton = "Fire" + playerNumber;
+        // throwButton = "Fire" + playerNumber;
+        input = GetComponent<InputManager>();
+        aim = GetComponentInChildren<AimTest>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        shootButton = input.GetShootButton();
+
         Rotate();
         // if(canThrow){
             // needs UI update to be added still
@@ -50,17 +52,18 @@ public class SpearThrow : MonoBehaviour
                 launchForce = maxLaunchForce;
                 Throw();
             }
-            else if(Input.GetButtonDown(throwButton))
+            else if(Input.GetButtonDown(shootButton))
             {
                 thrown = false;
                 launchForce = minLaunchForce;
+                Debug.Log(shootButton);
             }
-            else if(Input.GetButton(throwButton) && !thrown)
+            else if(Input.GetButton(shootButton) && !thrown)
             {
                 launchForce += Time.deltaTime * chargeSpeed;
                 // slider update
             }
-            else if (Input.GetButtonUp(throwButton) && !thrown)
+            else if (Input.GetButtonUp(shootButton) && !thrown)
             {
                 Throw();
             }

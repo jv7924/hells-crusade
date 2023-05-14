@@ -17,21 +17,18 @@ public class InputManager : MonoBehaviour
     private Vector2 inputVector;
     private float horizontalInput;
     private float verticalInput;
+    private string shootButton;
     private int playerNum;
 
-    private void Start()
+    private void Awake()
     {
         playerNum = GetComponent<PlayerController>().GetPlayerNumber();
     }
 
     private void Update()
     {
-        SetUpInputVector(SetUpAxis(playerNum));
-    }
-
-    private void SetUpInputVector(Vector2 direction)
-    {
-        inputVector = direction;
+        SetUpAxis();
+        SetUpShooting();
     }
 
     public Vector2 GetInputVector()
@@ -39,8 +36,12 @@ public class InputManager : MonoBehaviour
         return inputVector;
     }
 
-    // Temp
-    private Vector2 SetUpAxis(int player)
+    public string GetShootButton()
+    {
+        return shootButton;
+    }
+
+    private void SetUpAxis()
     {
         if (GameModeManager.gameMode == GameModeManager.GameMode.ONLINE)
         {
@@ -50,10 +51,15 @@ public class InputManager : MonoBehaviour
         else if (GameModeManager.gameMode == GameModeManager.GameMode.LOCAL)
         {
             // Get the players number so that the controls can be set up easy
-            horizontalInput = Input.GetAxisRaw("Horizontal Local " + player);
-            verticalInput = Input.GetAxisRaw("Vertical Local " + player);
+            horizontalInput = Input.GetAxisRaw("Horizontal Local " + playerNum);
+            verticalInput = Input.GetAxisRaw("Vertical Local " + playerNum);
         }
 
-        return new Vector2(horizontalInput, verticalInput);
+        inputVector = new Vector2(horizontalInput, verticalInput);
+    }
+
+    private void SetUpShooting()
+    {
+        shootButton = "Fire" + playerNum;
     }
 }
