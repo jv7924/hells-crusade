@@ -10,7 +10,7 @@ public class GameModeManager : MonoBehaviour
     [SerializeField]
     private string localScene;
     [SerializeField]
-    private string onlineScene;  // Should be the loading screen scene
+    private string test;  // Should be the loading screen scene
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -39,12 +39,12 @@ public class GameModeManager : MonoBehaviour
     public void LocalGame()
     {
         gameMode = GameMode.LOCAL;
-        SceneManager.LoadScene(localScene);
+        SceneManager.LoadScene(test);
     }
 
-    public void OnlineGame()
-    {
-        gameMode = GameMode.ONLINE;
-        SceneManager.LoadScene(onlineScene);
-    }
+    // public void OnlineGame()
+    // {
+    //     gameMode = GameMode.ONLINE;
+    //     SceneManager.LoadScene(onlineScene);
+    // }
 }

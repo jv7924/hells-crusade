@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Loading.unity
     guid: bd32f531555f17b44bc7ff31aedec570
   - enabled: 1
+    path: Assets/Scenes/FloorOne.unity
+    guid: f469562034e8b43e7a805b49fd02ab86
+  - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: 6f691ae0cdeed5343b47dea85906a928
   - enabled: 1

@@ -23,6 +23,7 @@ public class AimTest : MonoBehaviour
     void Start()
     {
         playerNum = playerCon.GetPlayerNumber();
+        mainCam = Camera.main;
     }
 
     // Update is called once per frame
