@@ -213,7 +213,7 @@ MonoBehaviour:
   - {fileID: 1156093884}
   - {fileID: 1741864711}
   floorCam: {fileID: 814705597}
-  spawnOffset: 0
+  spawnOffset: 1
 --- !u!1 &590324486
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 689907260}
   m_Layer: 0
   m_Name: FloorOneGrid
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 734575712}
   m_Layer: 0
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -28,7 +28,7 @@ public class FloorManager : MonoBehaviour
     [SerializeField]
     private Camera floorCam;
     [SerializeField]
-    private int spawnOffset = 2;
+    private int spawnOffset;
 
     private int currentRoom;
     

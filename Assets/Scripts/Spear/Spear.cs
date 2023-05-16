@@ -10,48 +10,59 @@ public class Spear : MonoBehaviour
     private GameObject respawn;
     
     private Vector3 lastPos;
+    private bool enemyHit;
     // Start is called before the first frame update
     void Start()
     {
+        // need better formula for max lifetime
         Vector2 velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
         float lifetime = velocity.magnitude/ maxLifeTime;
+        enemyHit = false;
         Destroy(gameObject, maxLifeTime);
     }
 
-    // kill whatever u hit
-    void OnCollisionEnter2D(Collision2D col)
+    private void FixedUpdate()
     {
+        lastPos = transform.position;
+    }
+
+    // detect hitting something
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log("Hit");
         if(col.gameObject.tag == "Player")
         {
-            PlayerController homie = col.gameObject.GetComponent<PlayerController>();
-            if(homie != null){
-                homie.takeDamage();
-            }
-            else{
-                Debug.Log(homie);
-            } 
-
+            Debug.Log("Freindly Fire");
+            // lastPos = findOffset(col.transform.position);
         }
         else if(col.gameObject.tag == "Enemy")
         {
-            lastPos = col.gameObject.transform.position;
+            // lastPos = col.gameObject.transform.position;
+            Debug.Log("Enemy Hit");
+            enemyHit =true;
             Destroy(col.gameObject);
             Destroy(this.gameObject);
         }
         else if(col.gameObject.tag == "Wall"){
-            // destroy the spear
-            // create collectible spear in its place, 
-            // with apropriate offset from the wall 
-            lastPos = lastPos = col.gameObject.transform.position;
+            Debug.Log("Wall Hit");
+            // lastPos = col.gameObject.transform.position;
             Destroy(this.gameObject);
         }
     }
 
     void OnDestroy(){
-        Debug.Log("called");
-        if(lastPos == null){
-            lastPos = gameObject.transform.position;
+        if (enemyHit)
+        {
+            // have gamemanager refresh the player's ability to throw
         }
-        Instantiate(respawn, lastPos, Quaternion.identity);
+        else
+        {
+            Instantiate(respawn, lastPos, Quaternion.identity);
+        }
+    }
+
+    private Vector3 findOffset(Vector3 colPos)
+    {
+        return transform.position;
     }
 }

@@ -82,8 +82,12 @@ public class SpearThrow : MonoBehaviour
         launchForce = minLaunchForce;
 
         // changes spear UI image from yellow (has spear) to white (doesn't have spear)
-        Image throwImage = throwUI.GetComponent<Image>();
-        throwImage.sprite = throwUISprite;
+        if(throwUI != null)
+        {
+            Image throwImage = throwUI.GetComponent<Image>();
+            throwImage.sprite = throwUISprite;
+        }
+            
         
         //canThrow = false;
     }

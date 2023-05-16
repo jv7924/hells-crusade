@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 6893686909855979265}
   m_Layer: 0
   m_Name: Player 2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -284,7 +284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26aa9f6f568154120a180557b3fbf357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 2
   spear: {fileID: 7772507828351131551, guid: c6c6523d578153e40aa525c2bc22e65d, type: 3}
   throwTransform: {fileID: 3505797638717641731}
   minLaunchForce: 15
@@ -293,7 +292,6 @@ MonoBehaviour:
   throwUI: {fileID: 0}
   throwUISprite: {fileID: 0}
   canThrow: 0
-  aim: {fileID: 1512232724}
 --- !u!1 &5171811989259471454
 GameObject:
   m_ObjectHideFlags: 0
