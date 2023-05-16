@@ -289,7 +289,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26aa9f6f568154120a180557b3fbf357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 1
   spear: {fileID: 7772507828351131551, guid: c6c6523d578153e40aa525c2bc22e65d, type: 3}
   throwTransform: {fileID: 1512591289}
   minLaunchForce: 15
@@ -298,7 +297,6 @@ MonoBehaviour:
   throwUI: {fileID: 0}
   throwUISprite: {fileID: 21300000, guid: 27345730314e6624d8b23fcda5d3d724, type: 3}
   canThrow: 0
-  aim: {fileID: 827931694}
 --- !u!114 &2057631498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,8 +311,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 0}
   PlayerNumber: 1
-  movement: {fileID: 0}
-  spearThrow: {fileID: 0}
+  movement: {fileID: 4627524080010712939}
+  spearThrow: {fileID: 2057631493}
 --- !u!114 &1819737069240037
 MonoBehaviour:
   m_ObjectHideFlags: 0
