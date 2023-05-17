@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Android;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,10 +21,11 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         // someone figure out how to initialize player number correctly lol
+        GameManager.Instance.RefreshPlayers.AddListener(Refresh);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
     }
@@ -39,11 +41,16 @@ public class PlayerController : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void Refresh(){
+        movement.enabled = true;
+    }
+
     private void Down()
     {
         GameManager.Instance.downPlayer(PlayerNumber);
         // play down animation
         // restrict movement
+        movement.enabled = false;
         Debug.Log("Hit");
     }
 
