@@ -427,6 +427,9 @@ MonoBehaviour:
   - {fileID: 4627524080010712934, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
   mainCam: {fileID: 814705597}
   nextFloor: 0
+  EnemyHit:
+    m_PersistentCalls:
+      m_Calls: []
   RefreshPlayers:
     m_PersistentCalls:
       m_Calls: []
@@ -6916,8 +6919,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemies:
-  - {fileID: 1209618409}
   - {fileID: 2080554534}
+  - {fileID: 1209618409}
   playerSpawn: {fileID: 1597958716}
   cameraLocation: {fileID: 1465285658}
 --- !u!1 &2040121439

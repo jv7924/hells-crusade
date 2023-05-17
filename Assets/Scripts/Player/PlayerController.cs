@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
     public void Refresh(){
         movement.enabled = true;
-        spearThrow.enabled = true;
+        spearThrow.canThrow = true;
     }
 
 

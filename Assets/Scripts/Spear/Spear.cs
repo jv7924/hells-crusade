@@ -31,33 +31,29 @@ public class Spear : MonoBehaviour
     // detect hitting something
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("Hit");
         if(col.gameObject.tag == "Player")
         {
             Debug.Log("Freindly Fire");
-            // lastPos = findOffset(col.transform.position);
+            
         }
         else if(col.gameObject.tag == "Enemy")
         {
-            // lastPos = col.gameObject.transform.position;
             Debug.Log("Enemy Hit");
-            enemyHit =true;
+            enemyHit = true;
+            GameManager.Instance.EnemyHit.Invoke(playerNumber);
             Destroy(col.gameObject);
-            Destroy(this.gameObject);
+            Destroy(gameObject);
+            
         }
         else if(col.gameObject.tag == "Wall"){
             Debug.Log("Wall Hit");
-            // lastPos = col.gameObject.transform.position;
+            
             Destroy(this.gameObject);
         }
     }
 
     void OnDestroy(){
-        if (enemyHit)
-        {
-            GameManager.Instance.refreshThrow(playerNumber);
-        }
-        else
+        if (!enemyHit)
         {
             Instantiate(respawn, lastPos, Quaternion.identity);
         }

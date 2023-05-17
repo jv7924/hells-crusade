@@ -40,20 +40,20 @@ public class FloorManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // test
-        if(Input.GetKeyDown(KeyCode.Space)) {
-            advanceRooms();
-        }
+
     }
 
     public void advanceRooms()
     {
         GameManager.Instance.RefreshPlayers.Invoke();
+        Debug.Log("players refreshed");
         roomControllers[currentRoom].gameObject.SetActive(false);
+        Debug.Log("room deactivated");
         currentRoom++;
 
         if(currentRoom < roomControllers.Length){
             setupRoom();
+            Debug.Log("room loaded");
         }
         else {
             GameManager.Instance.AdvanceFloors();
@@ -64,7 +64,9 @@ public class FloorManager : MonoBehaviour
     private void setupRoom(){
             roomControllers[currentRoom].gameObject.SetActive(true);
             floorCam.transform.position = roomControllers[currentRoom].cameraLocation.position;
+            Debug.Log("camera moved");
             Vector2 spawnT = roomControllers[currentRoom].playerSpawn.position;
+            
             spawnT.y += spawnOffset;
 
             if(currentRoom == 0){
@@ -74,10 +76,13 @@ public class FloorManager : MonoBehaviour
             }
             else{
                 GameManager.Instance.MovePlayer(1, spawnT);
+                Debug.Log("moved player1");
                 spawnT.y -= 2 * spawnOffset;
                 GameManager.Instance.MovePlayer(2, spawnT);
-            }
+                Debug.Log("moved player2");
+        }
 
             roomControllers[currentRoom].populateRoom();
+            Debug.Log("room populated");
     }
 }

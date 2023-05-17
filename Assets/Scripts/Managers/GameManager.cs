@@ -56,17 +56,12 @@ public class GameManager : MonoBehaviour
     // Player Management Functions
     public void SpawnPlayer(int playerNumber, Vector2 location)
     {
-        Instantiate(Players[playerNumber - 1], location, Quaternion.identity);
+        Players[playerNumber - 1] = Instantiate(Players[playerNumber - 1], location, Quaternion.identity);
     }
 
     public void MovePlayer(int playerNumber, Vector2 location)
     {
         Players[playerNumber - 1].transform.position = location;
-    }
-
-    public void refreshThrow(int playerNumber)
-    {
-        EnemyHit.Invoke(playerNumber);
     }
 
     public void downPlayer(int playerNumber)
