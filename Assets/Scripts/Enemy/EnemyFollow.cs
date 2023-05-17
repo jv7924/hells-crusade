@@ -10,6 +10,8 @@ public class EnemyFollow : MonoBehaviour
     private SpriteRenderer sr;
     private Vector2 movement;
     private float dist;
+    [SerializeField]
+    private Animator animator;
 
     void Start()
     {
@@ -38,7 +40,7 @@ public class EnemyFollow : MonoBehaviour
                 followedPlayer = player;
             }
         }
-
+        animator.SetFloat("Distance To Player", dist);
         Vector3 direction = followedPlayer.transform.position - this.transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         if (angle > 90 || angle < -90)
