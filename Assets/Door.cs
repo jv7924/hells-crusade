@@ -6,8 +6,8 @@ public class Door : MonoBehaviour
 {
     [SerializeField]
     private Animator animator;
-    //[SerializeField]
-    //private BoxCollider2D collider;
+    [SerializeField]
+    private BoxCollider2D boxCollider;
 
     private void Start()
     {
@@ -28,6 +28,6 @@ public class Door : MonoBehaviour
     {
         Debug.Log("Opening Door");
         animator.SetBool("Room Cleared", true);
-        //collider.enabled = false;
+        boxCollider.enabled = false;
     }
 }
