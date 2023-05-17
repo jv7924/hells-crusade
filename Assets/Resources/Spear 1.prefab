@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -2656291545328612238}
   - component: {fileID: -8366407354673067352}
   m_Layer: 0
-  m_Name: Spear
+  m_Name: Spear 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLifeTime: 5
   respawn: {fileID: 4476092657956036006, guid: 03af9a51f626a4dac991eed7e216e773, type: 3}
+  playerNumber: 1
 --- !u!70 &1583657568488857709
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

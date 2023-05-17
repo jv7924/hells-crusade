@@ -32,11 +32,15 @@ public class GameManager : MonoBehaviour
     int nextFloor;
 
     // things to keep track of
+    
     public enum PlayerStatus {ALIVE, DOWN, DEAD};
 
+    // events
+    public UnityEvent<int> EnemyHit = new UnityEvent<int>();
     public UnityEvent RefreshPlayers = new UnityEvent();
 
     private PlayerStatus[] playerStatuses = { PlayerStatus.ALIVE, PlayerStatus.ALIVE };
+
 
     private void Start(){
         RefreshPlayers.AddListener(onRefresh);
@@ -49,6 +53,7 @@ public class GameManager : MonoBehaviour
         
     }
 
+    // Player Management Functions
     public void SpawnPlayer(int playerNumber, Vector2 location)
     {
         Instantiate(Players[playerNumber - 1], location, Quaternion.identity);
@@ -59,13 +64,18 @@ public class GameManager : MonoBehaviour
         Players[playerNumber - 1].transform.position = location;
     }
 
+    public void refreshThrow(int playerNumber)
+    {
+        EnemyHit.Invoke(playerNumber);
+    }
+
     public void downPlayer(int playerNumber)
     {
         playerStatuses[playerNumber - 1] = PlayerStatus.DOWN;
         Debug.Log(playerNumber);
         Debug.Log("Down");
 
-        if (playerStatuses[2/playerNumber] == PlayerStatus.DOWN)
+        if (playerStatuses[2/playerNumber - 1] == PlayerStatus.DOWN)
         {
             Players[0].GetComponent<PlayerController>().Die();
             Players[1].GetComponent<PlayerController>().Die();
@@ -76,6 +86,7 @@ public class GameManager : MonoBehaviour
 
     }
 
+    // game state Management Functions
     public void AdvanceFloors(){
         SceneManager.LoadScene(nextFloor);
     }

@@ -20,7 +20,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // someone figure out how to initialize player number correctly lol
+
+        GameManager.Instance.EnemyHit.AddListener(checkRefresh);
         GameManager.Instance.RefreshPlayers.AddListener(Refresh);
     }
 
@@ -37,13 +38,15 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        // playerAnimator death animation, then
-        Destroy(gameObject);
+        // playerAnimator death animation
+        gameObject.SetActive(false);
     }
 
     public void Refresh(){
         movement.enabled = true;
+        spearThrow.enabled = true;
     }
+
 
     private void Down()
     {
@@ -68,4 +71,12 @@ public class PlayerController : MonoBehaviour
             takeDamage();
         }
     }   
+
+    private void checkRefresh(int playerNumber)
+    {
+        if(playerNumber == PlayerNumber)
+        {
+            Refresh();
+        }
+    }
 }

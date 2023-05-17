@@ -29,10 +29,11 @@ public class FloorManager : MonoBehaviour
 
     private int currentRoom;
     
-    public UnityEvent OnEnemyDeath = new UnityEvent();
+    public UnityEvent OnEnemyDeath;
     // Start is called before the first frame update
     void Start()
     {
+        OnEnemyDeath = new UnityEvent();
         currentRoom = 0;
         setupRoom();
     }
