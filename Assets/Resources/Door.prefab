@@ -146,3 +146,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 9139788603303649345}
+  boxCollider: {fileID: 9139788603303649374}

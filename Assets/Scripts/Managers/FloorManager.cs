@@ -28,6 +28,8 @@ public class FloorManager : MonoBehaviour
     private int spawnOffset;
 
     private int currentRoom;
+
+    public static Action OnRoomClear;
     
     public UnityEvent OnEnemyDeath = new UnityEvent();
     // Start is called before the first frame update
@@ -42,6 +44,7 @@ public class FloorManager : MonoBehaviour
         // test
         if(Input.GetKeyDown(KeyCode.Space)) {
             advanceRooms();
+            OnRoomClear?.Invoke();
         }
     }
 
