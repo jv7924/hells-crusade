@@ -1191,8 +1191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704e1d316e8fecd4f8187697ed6d3e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localScene: SampleScene
-  test: FloorOne
+  localScene: FloorOne
 --- !u!4 &2088325192
 Transform:
   m_ObjectHideFlags: 0

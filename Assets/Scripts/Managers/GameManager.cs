@@ -39,14 +39,14 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void SpawnPlayer(int playerNumber, Vector2 location)
+    public void SpawnPlayer(int playerNumber)
     {
-        Instantiate(Players[playerNumber - 1], location, Quaternion.identity);
+        Instantiate(Players[playerNumber - 1], transform.position, Quaternion.identity);
     }
 
     public void MovePlayer(int playerNumber, Vector2 location)
     {
-        Players[playerNumber].transform.position = location;
+        Players[playerNumber - 1].transform.position = location;
     }
 
     public void downPlayer(int playerNumber)

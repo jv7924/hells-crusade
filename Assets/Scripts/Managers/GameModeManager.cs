@@ -7,10 +7,10 @@ public class GameModeManager : MonoBehaviour
 {
     public static GameModeManager Instance;
 
-    [SerializeField]
+    [SerializeField, Tooltip("Choose the first level")]
     private string localScene;
-    [SerializeField]
-    private string test;  // Should be the loading screen scene
+    // [SerializeField]
+    // private string test;  // Should be the loading screen scene
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -39,7 +39,7 @@ public class GameModeManager : MonoBehaviour
     public void LocalGame()
     {
         gameMode = GameMode.LOCAL;
-        SceneManager.LoadScene(test);
+        SceneManager.LoadScene(localScene);
     }
 
     // public void OnlineGame()
