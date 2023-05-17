@@ -11,7 +11,6 @@ public class Door : MonoBehaviour
 
     private void OnEnable()
     {
-        // boxCollider = GetComponent<BoxCollider2D>();
         // Subscribe to event here.
         FloorManager.OnRoomClear += OpenDoor;
     }
@@ -24,10 +23,10 @@ public class Door : MonoBehaviour
     void Update()
     {
         //// For testing
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    OpenDoor();
-        //}
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            OpenDoor();
+        }
     }
 
     // Event that triggers when all enemies in a room are defeated.
@@ -35,6 +34,12 @@ public class Door : MonoBehaviour
     {
         Debug.Log("Opening Door");
         animator.SetBool("Room Cleared", true);
+        StartCoroutine(DisableCollider());
+    }
+    
+    private IEnumerator DisableCollider()
+    {
+        yield return new WaitForSeconds(1f);
         boxCollider.enabled = false;
     }
 }
