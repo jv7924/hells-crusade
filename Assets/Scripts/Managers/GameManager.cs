@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,12 +27,20 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     Camera mainCam;
+    
+    [SerializeField]
+    int nextFloor;
 
     // things to keep track of
     public enum PlayerStatus {ALIVE, DOWN, DEAD};
 
+    public UnityEvent RefreshPlayers = new UnityEvent();
+
     private PlayerStatus[] playerStatuses = { PlayerStatus.ALIVE, PlayerStatus.ALIVE };
 
+    private void Start(){
+        RefreshPlayers.AddListener(onRefresh);
+    }
 
 
     // Update is called once per frame
@@ -39,9 +49,9 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void SpawnPlayer(int playerNumber)
+    public void SpawnPlayer(int playerNumber, Vector2 location)
     {
-        Instantiate(Players[playerNumber - 1], transform.position, Quaternion.identity);
+        Instantiate(Players[playerNumber - 1], location, Quaternion.identity);
     }
 
     public void MovePlayer(int playerNumber, Vector2 location)
@@ -66,9 +76,17 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void endGame()
-    {
+    public void AdvanceFloors(){
+        SceneManager.LoadScene(nextFloor);
+    }
+
+    private void endGame(){
         // will eventually change this to switching to game loss screen
         Application.Quit();
+    }
+
+    private void onRefresh(){
+        playerStatuses[0] = PlayerStatus.ALIVE;
+        playerStatuses[1] = PlayerStatus.ALIVE;
     }
 }

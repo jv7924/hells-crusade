@@ -53,7 +53,7 @@ public class Spear : MonoBehaviour
     void OnDestroy(){
         if (enemyHit)
         {
-            // have gamemanager refresh the player's ability to throw
+            // gm refresh ability to throw
         }
         else
         {

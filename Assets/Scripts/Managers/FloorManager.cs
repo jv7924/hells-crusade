@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class FloorManager : MonoBehaviour
 {
     #region "Singleton"
@@ -29,12 +29,11 @@ public class FloorManager : MonoBehaviour
 
     private int currentRoom;
     
+    public UnityEvent OnEnemyDeath = new UnityEvent();
     // Start is called before the first frame update
     void Start()
     {
         currentRoom = 0;
-        GameManager.Instance.SpawnPlayer(1);
-        GameManager.Instance.SpawnPlayer(2);
         setupRoom();
     }
 
@@ -48,11 +47,15 @@ public class FloorManager : MonoBehaviour
 
     public void advanceRooms()
     {
+        GameManager.Instance.RefreshPlayers.Invoke();
         roomControllers[currentRoom].gameObject.SetActive(false);
         currentRoom++;
 
         if(currentRoom < roomControllers.Length){
             setupRoom();
+        }
+        else {
+            GameManager.Instance.AdvanceFloors();
         }
 
     }
@@ -62,9 +65,17 @@ public class FloorManager : MonoBehaviour
             floorCam.transform.position = roomControllers[currentRoom].cameraLocation.position;
             Vector2 spawnT = roomControllers[currentRoom].playerSpawn.position;
             spawnT.y += spawnOffset;
-            GameManager.Instance.MovePlayer(1, spawnT);
-            spawnT.y -= 2 * spawnOffset;
-            GameManager.Instance.MovePlayer(2, spawnT);
+
+            if(currentRoom == 0){
+                GameManager.Instance.SpawnPlayer(1, spawnT);
+                spawnT.y -= 2 * spawnOffset;
+                GameManager.Instance.SpawnPlayer(2, spawnT);
+            }
+            else{
+                GameManager.Instance.MovePlayer(1, spawnT);
+                spawnT.y -= 2 * spawnOffset;
+                GameManager.Instance.MovePlayer(2, spawnT);
+            }
 
             roomControllers[currentRoom].populateRoom();
     }

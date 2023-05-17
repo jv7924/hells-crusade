@@ -9,18 +9,15 @@ public class RoomController : MonoBehaviour
     [SerializeField] public Transform playerSpawn;
     [SerializeField] public Transform cameraLocation;
 
-    public UnityEvent OnEnemyDeath;
-
     private int deathCount;
 
-    void Start(){
-        OnEnemyDeath.AddListener(CalcEnemies);
+    void OnEnable(){
+        FloorManager.Instance.OnEnemyDeath.AddListener(CalcEnemies);
         deathCount = 0;
     }
 
-    // fills the room with enemies
+    // activates the enemies in the room
     public void populateRoom(){
-        deathCount = 0;
         foreach(GameObject e in Enemies){
             e.SetActive(true);
         }
@@ -31,5 +28,9 @@ public class RoomController : MonoBehaviour
         if(deathCount == Enemies.Length){
             FloorManager.Instance.advanceRooms();
         }
+    }
+
+    void OnDisable(){
+        FloorManager.Instance.OnEnemyDeath.RemoveListener(CalcEnemies);
     }
 }
