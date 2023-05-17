@@ -45,7 +45,7 @@ public class SpearThrow : MonoBehaviour
         shootButton = input.GetShootButton();
 
         Rotate();
-        // if(canThrow){
+        if(canThrow){
             // needs UI update to be added still
             if(launchForce >= maxLaunchForce && !thrown)
             {
@@ -67,7 +67,7 @@ public class SpearThrow : MonoBehaviour
             {
                 Throw();
             }
-        // }
+        }
         
     }
 
@@ -89,7 +89,7 @@ public class SpearThrow : MonoBehaviour
         }
             
         
-        //canThrow = false;
+        canThrow = false;
     }
 
     private void Rotate()
