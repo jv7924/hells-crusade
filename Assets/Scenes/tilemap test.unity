@@ -2656,8 +2656,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4074478226535038468, guid: 384f9583f55fe1b438654bc7962f9df9, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 335006383}
+    - target: {fileID: 4074478226535038468, guid: 384f9583f55fe1b438654bc7962f9df9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6108321011307733773, guid: 384f9583f55fe1b438654bc7962f9df9, type: 3}
       propertyPath: sceneViewId
@@ -2746,8 +2750,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4074478226535038468, guid: 384f9583f55fe1b438654bc7962f9df9, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1630506621}
+    - target: {fileID: 4074478226535038468, guid: 384f9583f55fe1b438654bc7962f9df9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4074478226535038469, guid: 384f9583f55fe1b438654bc7962f9df9, type: 3}
       propertyPath: m_Size.x
