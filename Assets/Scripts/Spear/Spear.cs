@@ -8,6 +8,8 @@ public class Spear : MonoBehaviour
     private float maxLifeTime;
     [SerializeField]
     private GameObject respawn;
+    [SerializeField]
+    private int playerNumber;
     
     private Vector3 lastPos;
     private bool enemyHit;
@@ -53,7 +55,7 @@ public class Spear : MonoBehaviour
     void OnDestroy(){
         if (enemyHit)
         {
-            // gm refresh ability to throw
+            GameManager.Instance.refreshThrow(playerNumber);
         }
         else
         {
