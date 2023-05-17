@@ -21,10 +21,7 @@ public class FloorManager : MonoBehaviour
     }
     #endregion "Singleton"
 
-    [SerializeField]
-    private Transform[] cameraPositions;
-    [SerializeField] 
-    private Transform[] playerSpawns;
+    [SerializeField] RoomController[] roomControllers;
     [SerializeField]
     private Camera floorCam;
     [SerializeField]
@@ -36,15 +33,12 @@ public class FloorManager : MonoBehaviour
     void Start()
     {
         currentRoom = 0;
-        floorCam.transform.position = cameraPositions[currentRoom].position;
-        Vector2 spawnT = playerSpawns[currentRoom].position;
-        spawnT.y += spawnOffset;
-        GameManager.Instance.SpawnPlayer(1, spawnT);
-        spawnT.y -= 2*spawnOffset;
-        GameManager.Instance.SpawnPlayer(2, spawnT);
+        GameManager.Instance.SpawnPlayer(1);
+        GameManager.Instance.SpawnPlayer(2);
+        setupRoom();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // test
         if(Input.GetKeyDown(KeyCode.Space)) {
@@ -54,14 +48,24 @@ public class FloorManager : MonoBehaviour
 
     public void advanceRooms()
     {
+        roomControllers[currentRoom].gameObject.SetActive(false);
         currentRoom++;
-        floorCam.transform.position = cameraPositions[currentRoom].position;
-        Vector2 spawnT = playerSpawns[currentRoom].position;
-        spawnT.y += spawnOffset;
-        GameManager.Instance.MovePlayer(1, spawnT);
-        spawnT.y -= 2 * spawnOffset;
-        GameManager.Instance.MovePlayer(2, spawnT);
+
+        if(currentRoom < roomControllers.Length){
+            setupRoom();
+        }
+
     }
 
+    private void setupRoom(){
+            roomControllers[currentRoom].gameObject.SetActive(true);
+            floorCam.transform.position = roomControllers[currentRoom].cameraLocation.position;
+            Vector2 spawnT = roomControllers[currentRoom].playerSpawn.position;
+            spawnT.y += spawnOffset;
+            GameManager.Instance.MovePlayer(1, spawnT);
+            spawnT.y -= 2 * spawnOffset;
+            GameManager.Instance.MovePlayer(2, spawnT);
 
+            roomControllers[currentRoom].populateRoom();
+    }
 }
