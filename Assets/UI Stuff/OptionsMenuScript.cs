@@ -39,6 +39,7 @@ public class OptionsMenuScript : MonoBehaviour
 
     public void OpenOptions()
     {
+        Time.timeScale = 0f;
         menu.SetActive(true);
         overlay.SetActive(true);
         backButton.SetActive(true);
@@ -53,6 +54,7 @@ public class OptionsMenuScript : MonoBehaviour
         backButton.SetActive(false);
         exitButton.SetActive(false);
         isOpen = false;
+        Time.timeScale = 1f;
     }
     
 }
