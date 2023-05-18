@@ -47,6 +47,7 @@ public class FloorManager : MonoBehaviour
 
     public void advanceRooms()
     {
+        OnRoomClear?.Invoke();
         GameManager.Instance.RefreshPlayers.Invoke();
         Debug.Log("players refreshed");
         roomControllers[currentRoom].gameObject.SetActive(false);
