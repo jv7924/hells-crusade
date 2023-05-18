@@ -12,8 +12,18 @@ public class RoomController : MonoBehaviour
     private int deathCount;
 
     void OnEnable(){
+        
         FloorManager.Instance.OnEnemyDeath.AddListener(CalcEnemies);
         deathCount = 0;
+        Debug.Log("listening");
+    }
+
+    void FixedUpdate()
+    {
+        if (deathCount == Enemies.Length && Enemies.Length > 0)
+        {
+            FloorManager.Instance.advanceRooms();
+        }
     }
 
     // activates the enemies in the room
@@ -25,12 +35,10 @@ public class RoomController : MonoBehaviour
 
     void CalcEnemies(){
         deathCount++;
-        if(deathCount == Enemies.Length){
-            FloorManager.Instance.advanceRooms();
-        }
     }
 
     void OnDisable(){
         FloorManager.Instance.OnEnemyDeath.RemoveListener(CalcEnemies);
+        Debug.Log("no longer listening");
     }
 }
