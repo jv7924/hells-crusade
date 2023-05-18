@@ -28,6 +28,8 @@ public class FloorManager : MonoBehaviour
     private int spawnOffset;
 
     private int currentRoom;
+
+    public static Action OnRoomClear;
     
     public UnityEvent OnEnemyDeath;
     // Start is called before the first frame update
