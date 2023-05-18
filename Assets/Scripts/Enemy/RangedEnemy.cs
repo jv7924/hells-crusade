@@ -9,6 +9,7 @@ public class RangedEnemy : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     private float dist;
+    private Animator animator;
 
     public float distanceToShoot = 5f;
     public float distanceToStop = 3f;
@@ -21,6 +22,7 @@ public class RangedEnemy : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         timeToFire = 0f;
     }
 
