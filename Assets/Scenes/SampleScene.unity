@@ -152,9 +152,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ee3b54ef57ddf4aa2f97cfd6c54a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p1: {fileID: 896049813}
-  p2: {fileID: 4627524080010712934, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
+  Players: []
   mainCam: {fileID: 519420031}
+  nextFloor: 0
+  EnemyHit:
+    m_PersistentCalls:
+      m_Calls: []
+  RefreshPlayers:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &188575415
 Transform:
   m_ObjectHideFlags: 0
@@ -558,6 +564,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1194865600465890288, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
+      propertyPath: m_Size.x
+      value: 0.39913845
+      objectReference: {fileID: 0}
+    - target: {fileID: -1194865600465890288, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3536364
+      objectReference: {fileID: 0}
+    - target: {fileID: -1194865600465890288, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.03851676
+      objectReference: {fileID: 0}
+    - target: {fileID: -1194865600465890288, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.04236847
+      objectReference: {fileID: 0}
     - target: {fileID: 827931694, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
       propertyPath: mainCam
       value: 
@@ -620,11 +642,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
---- !u!1 &896049813 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4627524080010712934, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
-  m_PrefabInstance: {fileID: 896049812}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1029442264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -632,6 +649,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5852666208841861724, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
+      propertyPath: m_Size.x
+      value: 0.4299519
+      objectReference: {fileID: 0}
+    - target: {fileID: -5852666208841861724, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3921531
+      objectReference: {fileID: 0}
+    - target: {fileID: -5852666208841861724, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.015406728
+      objectReference: {fileID: 0}
+    - target: {fileID: -5852666208841861724, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.01925832
+      objectReference: {fileID: 0}
     - target: {fileID: 1512232724, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
       propertyPath: mainCam
       value: 
