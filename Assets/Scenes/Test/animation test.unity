@@ -2164,7 +2164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4627524080010712934, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7804291497916044907, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
       propertyPath: sceneViewId
@@ -2233,7 +2233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4627524080010712934, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4627524080010712938, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
       propertyPath: m_Constraints
