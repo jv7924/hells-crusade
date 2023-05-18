@@ -54,6 +54,8 @@ public class RangedEnemy : MonoBehaviour
         {
             Shoot();
         }
+
+        animator.SetBool("Attack", (timeToFire <= 0.2f));
     }
 
     private void Shoot()
