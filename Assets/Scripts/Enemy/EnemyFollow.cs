@@ -52,6 +52,7 @@ public class EnemyFollow : MonoBehaviour
         }
         direction.Normalize();
         movement = direction;
+        animator.SetFloat("Speed", movement.magnitude * speed);
         moveEnemy(movement);
     }
 
