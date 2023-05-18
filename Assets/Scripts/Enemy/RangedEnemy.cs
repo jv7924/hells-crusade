@@ -2,34 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFollow : MonoBehaviour
+public class RangedEnemy : MonoBehaviour
 {
     public float speed;
     private GameObject followedPlayer;
     private Rigidbody2D rb;
-    private SpriteRenderer sr;
     private Vector2 movement;
     private float dist;
-    [SerializeField]
-    private Animator animator;
+
+    public float distanceToShoot = 5f;
+    public float distanceToStop = 3f;
+    public Transform firingPoint;
+    public GameObject proj;
+    public float fireRate;
+    public float enemyForce;
+    private float timeToFire;
 
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
-        sr = this.GetComponent<SpriteRenderer>();
+        timeToFire = 0f;
     }
 
     private void FixedUpdate()
     {
-        /*
-        Vector3 direction = player.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
-        direction.Normalize();
-        movement = direction;
-        moveEnemy(movement);
-        */
-
         dist = 99999;
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject player in players)
@@ -40,19 +36,36 @@ public class EnemyFollow : MonoBehaviour
                 followedPlayer = player;
             }
         }
-        animator.SetFloat("Distance To Player", dist);
+
         Vector3 direction = followedPlayer.transform.position - this.transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        if (angle > 90 || angle < -90)
-        {
-            sr.flipX = true;
-        } else 
-        {
-            sr.flipX = false;
-        }
+        rb.rotation = angle - 90;
         direction.Normalize();
         movement = direction;
-        moveEnemy(movement);
+
+        if (Vector2.Distance(followedPlayer.transform.position, this.transform.position) >= distanceToStop)
+        {
+            moveEnemy(movement);
+        }
+
+        if (Vector2.Distance(followedPlayer.transform.position, this.transform.position) <= distanceToShoot)
+        {
+            Shoot();
+        }
+    }
+
+    private void Shoot()
+    {
+        if (timeToFire <= 0f)
+        {
+            GameObject enemySpearInstance = Instantiate(proj, firingPoint.position, firingPoint.rotation);
+            Rigidbody2D enemySpearRB = enemySpearInstance.GetComponent<Rigidbody2D>();
+            enemySpearRB.AddForce(firingPoint.up * enemyForce, ForceMode2D.Impulse);
+            timeToFire = fireRate;
+        } else 
+        {
+            timeToFire -= Time.deltaTime;
+        }
     }
 
     void moveEnemy(Vector2 direction)
