@@ -11,12 +11,14 @@ public class PlayerMovement : MonoBehaviour
     private InputManager input;
     private Vector2 mousePos;
     private PhotonView view;
+    private Animator animator;
 
     void Awake()
     {
         playerRB = GetComponent<Rigidbody2D>();
         input = GetComponent<InputManager>();
         view = GetComponent<PhotonView>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -49,5 +51,6 @@ public class PlayerMovement : MonoBehaviour
     {
         // playerRB.MovePosition(playerRB.position + inputVector * playerSpeed * Time.fixedDeltaTime);
         playerRB.velocity = inputVector * playerSpeed;
+        animator.SetFloat("Velocity", playerRB.velocity.magnitude);
     }
 }

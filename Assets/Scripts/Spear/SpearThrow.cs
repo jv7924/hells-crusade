@@ -28,7 +28,7 @@ public class SpearThrow : MonoBehaviour
 
     private InputManager input;
     private AimTest aim;
-    
+    private Animator animator;
     
     // Start is called before the first frame update
     void Start()
@@ -37,6 +37,7 @@ public class SpearThrow : MonoBehaviour
         // throwButton = "Fire" + playerNumber;
         input = GetComponent<InputManager>();
         aim = GetComponentInChildren<AimTest>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -68,7 +69,8 @@ public class SpearThrow : MonoBehaviour
                 Throw();
             }
         }
-        
+
+        animator.SetBool("Has Weapon", canThrow);
     }
 
     void Throw()
