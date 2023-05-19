@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChargeBoss : MonoBehaviour
 {
+    [SerializeField] private int health;
     public float chargeSpeed;
     public float chargeTime;
     private float timeToCharge;
@@ -85,6 +86,12 @@ public class ChargeBoss : MonoBehaviour
             rb.velocity = Vector3.zero;
             sr.color = Color.white;
             charging = false;
+        }
+        if(col.gameObject.tag == "Spear"){
+            health--;
+            if(health == 0){
+                Destroy(gameObject);
+            }
         }
     }
 }

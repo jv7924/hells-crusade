@@ -50,6 +50,11 @@ public class Spear : MonoBehaviour
             
             Destroy(this.gameObject);
         }
+        else if(col.gameObject.tag == "Boss"){
+            Debug.Log("Boss Hit");
+
+            Destroy(this.gameObject);
+        }
     }
 
     void OnDestroy(){
