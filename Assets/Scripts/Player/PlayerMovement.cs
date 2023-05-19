@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 mousePos;
     private PhotonView view;
     private Animator animator;
+    private SpriteRenderer sr;
 
     void Awake()
     {
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
         input = GetComponent<InputManager>();
         view = GetComponent<PhotonView>();
         animator = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -51,6 +53,19 @@ public class PlayerMovement : MonoBehaviour
     {
         // playerRB.MovePosition(playerRB.position + inputVector * playerSpeed * Time.fixedDeltaTime);
         playerRB.velocity = inputVector * playerSpeed;
+        SetAnimation();
+    }
+
+    private void SetAnimation()
+    {
         animator.SetFloat("Velocity", playerRB.velocity.magnitude);
+        if (input.GetInputVector().x < 0)
+        {
+            sr.flipX = true;
+        }
+        else if (input.GetInputVector().x > 0)
+        {
+            sr.flipX = false;
+        }
     }
 }
