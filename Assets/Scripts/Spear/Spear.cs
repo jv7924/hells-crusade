@@ -52,7 +52,8 @@ public class Spear : MonoBehaviour
         }
         else if(col.gameObject.tag == "Boss"){
             Debug.Log("Boss Hit");
-
+            enemyHit = true;
+            GameManager.Instance.EnemyHit.Invoke(playerNumber);
             Destroy(this.gameObject);
         }
     }

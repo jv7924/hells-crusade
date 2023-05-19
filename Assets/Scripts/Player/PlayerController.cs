@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
             spearThrow.canThrow = true;
             Destroy(col.gameObject);
         }
-        if(col.gameObject.tag == "Enemy"){
+        if(col.gameObject.tag == "Enemy" || col.gameObject.tag == "Bullet"){
             takeDamage();
         }
     }   

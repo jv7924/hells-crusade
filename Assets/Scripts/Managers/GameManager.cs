@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
 
     private void endGame(){
         // will eventually change this to switching to game loss screen
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
 
     private void onRefresh(){
