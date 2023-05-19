@@ -4,6 +4,9 @@ using UnityEngine;
 
 public abstract class PowerUp : MonoBehaviour
 {
+    [SerializeField]
+    protected GameObject spear;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +19,8 @@ public abstract class PowerUp : MonoBehaviour
         
     }
 
+    protected abstract void PowerUpAction(GameObject player);
+
     /// <summary>
     /// Sent when another object enters a trigger collider attached to this
     /// object (2D physics only).
@@ -24,5 +29,7 @@ public abstract class PowerUp : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Call the powerup method
+        PowerUpAction(other.gameObject);
+        Destroy(gameObject);
     }
 }

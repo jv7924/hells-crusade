@@ -5,7 +5,7 @@ using Photon.Pun;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float playerSpeed = 0;
+    [SerializeField] public float playerSpeed = 0;
     private Rigidbody2D playerRB;
     private Vector2 inputVector;
     private InputManager input;

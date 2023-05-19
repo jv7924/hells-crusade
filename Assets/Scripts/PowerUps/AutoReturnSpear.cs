@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthIncrease : PowerUp
+public class AutoReturnSpear : PowerUp
 {
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,6 @@ public class HealthIncrease : PowerUp
 
     protected override void PowerUpAction(GameObject player)
     {
-        throw new System.NotImplementedException();
+        player.GetComponent<PlayerMovement>().playerSpeed = 9;
     }
 }
