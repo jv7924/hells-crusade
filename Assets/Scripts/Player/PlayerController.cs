@@ -65,9 +65,20 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col){
         if(col.gameObject.tag == "Pickup"){
             spearThrow.canThrow = true;
+            // quickfix for playtest, del later
+            GameManager.Instance.RefreshPlayers.Invoke();
             Destroy(col.gameObject);
         }
-        if(col.gameObject.tag == "Enemy" || col.gameObject.tag == "Bullet"){
+        if(col.gameObject.tag == "Enemy"){
+            takeDamage();
+        }
+        if(col.gameObject.tag == "Boss"){
+            takeDamage();
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col){
+        if(col.gameObject.tag == "Bullet" || col.gameObject.tag == "Spear"){
             takeDamage();
         }
     }   
