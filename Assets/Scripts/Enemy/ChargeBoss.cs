@@ -75,6 +75,15 @@ public class ChargeBoss : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+
+        if(col.gameObject.tag == "Spear"){
+            health--;
+            if(health == 0){
+                Destroy(gameObject);
+            }
+        }
+    }
+    void OnCollisionEnter2D(Collision2D col){
         if(col.gameObject.tag == "Player")
         {
             Debug.Log("Player Hit");
@@ -86,12 +95,6 @@ public class ChargeBoss : MonoBehaviour
             rb.velocity = Vector3.zero;
             sr.color = Color.white;
             charging = false;
-        }
-        if(col.gameObject.tag == "Spear"){
-            health--;
-            if(health == 0){
-                Destroy(gameObject);
-            }
         }
     }
 }
