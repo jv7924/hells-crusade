@@ -19,7 +19,9 @@ public abstract class PowerUp : MonoBehaviour
         
     }
 
-    protected abstract void PowerUpAction(GameObject player);
+    protected virtual void PowerUpAction() {}
+
+    protected virtual void PowerUpAction(GameObject player) { throw new System.NotImplementedException(""); }
 
     /// <summary>
     /// Sent when another object enters a trigger collider attached to this

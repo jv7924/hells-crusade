@@ -47,7 +47,6 @@ public class Spear : MonoBehaviour
         }
         else if(col.gameObject.tag == "Wall"){
             Debug.Log("Wall Hit");
-            
             Destroy(this.gameObject);
         }
     }
@@ -55,7 +54,7 @@ public class Spear : MonoBehaviour
     void OnDestroy(){
         if (!enemyHit)
         {
-            Instantiate(respawn, lastPos, Quaternion.identity);
+            Instantiate(respawn, lastPos, gameObject.transform.rotation);
         }
     }
 

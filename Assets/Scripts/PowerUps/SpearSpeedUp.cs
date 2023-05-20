@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AutoReturnSpear : PowerUp
+public class SpearSpeedUp : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,10 +14,5 @@ public class AutoReturnSpear : PowerUp
     void Update()
     {
         
-    }
-
-    protected override void PowerUpAction(GameObject player)
-    {
-        // player.GetComponent<SpearThrow>().canThrow = true;
     }
 }
