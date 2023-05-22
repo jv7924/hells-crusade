@@ -14,7 +14,7 @@ public class SpearThrow : MonoBehaviour
     [SerializeField]
     private float maxLaunchForce = 30f;
     [SerializeField]
-    private float maxChargeTime = .75f;
+    public float maxChargeTime = .75f;
     [SerializeField]
     private GameObject throwUI;
     [SerializeField]

@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpearSpeedUp : MonoBehaviour
+public class SpearSpeedUp : PowerUp
 {
-    // Start is called before the first frame update
-    void Start()
+    protected override void PowerUpAction(GameObject player)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        player.GetComponent<SpearThrow>().maxChargeTime -= player.GetComponent<SpearThrow>().maxChargeTime *.50f;
     }
 }

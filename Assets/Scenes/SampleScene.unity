@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 725560273}
   - component: {fileID: 725560272}
   - component: {fileID: 725560271}
-  - component: {fileID: 725560270}
+  - component: {fileID: 725560274}
   m_Layer: 0
   m_Name: PowerUp
   m_TagString: Untagged
@@ -576,19 +576,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &725560270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725560269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62032d5f3b20c024d90c8da1d5769bba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spear: {fileID: 7772507828351131551, guid: 5f03cdf2ac42fbe46865c718f9ba5cbd, type: 3}
 --- !u!70 &725560271
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -672,6 +659,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &725560274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725560269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62032d5f3b20c024d90c8da1d5769bba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spear: {fileID: 0}
 --- !u!1001 &896049812
 PrefabInstance:
   m_ObjectHideFlags: 0

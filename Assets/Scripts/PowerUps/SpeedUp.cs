@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeedUp : MonoBehaviour
+public class SpeedUp : PowerUp
 {
-    // Start is called before the first frame update
-    void Start()
+    protected override void PowerUpAction(GameObject player)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        player.GetComponent<PlayerMovement>().playerSpeed += player.GetComponent<PlayerMovement>().playerSpeed * .15f;
     }
 }

@@ -19,9 +19,9 @@ public abstract class PowerUp : MonoBehaviour
         
     }
 
-    protected virtual void PowerUpAction() {}
+    protected virtual void PowerUpAction() { throw new System.NotImplementedException("Base"); }
 
-    protected virtual void PowerUpAction(GameObject player) { throw new System.NotImplementedException(""); }
+    protected virtual void PowerUpAction(GameObject player) { throw new System.NotImplementedException("Base with param"); }
 
     /// <summary>
     /// Sent when another object enters a trigger collider attached to this
@@ -32,6 +32,11 @@ public abstract class PowerUp : MonoBehaviour
     {
         // Call the powerup method
         PowerUpAction(other.gameObject);
+        PowerUpDestroy();
+    }
+
+    protected virtual void PowerUpDestroy() 
+    { 
         Destroy(gameObject);
     }
 }
