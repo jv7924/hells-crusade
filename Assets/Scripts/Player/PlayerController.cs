@@ -63,22 +63,23 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col){
-        if(col.gameObject.tag == "Pickup"){
-            spearThrow.canThrow = true;
-            // quickfix for playtest, del later
-            GameManager.Instance.RefreshPlayers.Invoke();
-            Destroy(col.gameObject);
+        if(col.gameObject.CompareTag("Pickup")){
+            if (spearThrow.canThrow == false)
+            {
+                spearThrow.canThrow = true;
+                Destroy(col.gameObject);
+            }
         }
-        if(col.gameObject.tag == "Enemy"){
+        if(col.gameObject.CompareTag("Enemy")){
             takeDamage();
         }
-        if(col.gameObject.tag == "Boss"){
+        if(col.gameObject.CompareTag("Boss")){
             takeDamage();
         }
     }
 
     void OnTriggerEnter2D(Collider2D col){
-        if(col.gameObject.tag == "Bullet" || col.gameObject.tag == "Spear"){
+        if(col.gameObject.CompareTag( "Bullet") || col.gameObject.CompareTag("Spear")){
             takeDamage();
         }
     }   

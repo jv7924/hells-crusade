@@ -191,6 +191,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1740198321}
     m_Modifications:
+    - target: {fileID: 3837995997418662912, guid: d3d0d3abb19a4e842aa313ec4c7fd36e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3837995997418662914, guid: d3d0d3abb19a4e842aa313ec4c7fd36e, type: 3}
       propertyPath: m_Name
       value: ChargeBoss
