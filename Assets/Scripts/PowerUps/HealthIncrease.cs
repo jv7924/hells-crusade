@@ -16,8 +16,8 @@ public class HealthIncrease : PowerUp
         
     }
 
-    protected override void PowerUpAction(GameObject player)
+    protected override void PowerUpAction()
     {
-        throw new System.NotImplementedException();
+        base.PowerUpAction();
     }
 }

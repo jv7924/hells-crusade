@@ -5,32 +5,33 @@ using UnityEngine;
 public class AutoReturnSpear : PowerUp
 {
     private bool isAbleToThrow;
+    private bool powerUpCollected = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("In spear return update");
-
-        Debug.Log(isAbleToThrow);
-
-        if (isAbleToThrow == false)
-            isAbleToThrow = true;
+        if (powerUpCollected)
+            PowerUpAction();
     }
 
-    protected override void PowerUpAction(GameObject player)
+    protected override void PowerUpAction()
     {
-        isAbleToThrow = player.GetComponent<SpearThrow>().canThrow;
-        Debug.Log("In overrident powerup spear return");
+        if (player.GetComponent<SpearThrow>().canThrow == false)
+            player.GetComponent<SpearThrow>().canThrow = true;
+
+        powerUpCollected = true;
     }
 
     protected override void PowerUpDestroy()
     {
-        gameObject.GetComponent<SpriteRenderer>().forceRenderingOff = true;
+        gameObject.transform.SetParent(player.transform);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<Collider2D>().enabled = false;
     }
 }

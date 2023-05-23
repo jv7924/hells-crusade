@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class PowerUp : MonoBehaviour
 {
-    [SerializeField]
+    protected GameObject player;
     protected GameObject spear;
 
     // Start is called before the first frame update
@@ -21,8 +21,6 @@ public abstract class PowerUp : MonoBehaviour
 
     protected virtual void PowerUpAction() { throw new System.NotImplementedException("Base"); }
 
-    protected virtual void PowerUpAction(GameObject player) { throw new System.NotImplementedException("Base with param"); }
-
     /// <summary>
     /// Sent when another object enters a trigger collider attached to this
     /// object (2D physics only).
@@ -30,8 +28,10 @@ public abstract class PowerUp : MonoBehaviour
     /// <param name="other">The other Collider2D involved in this collision.</param>
     private void OnTriggerEnter2D(Collider2D other)
     {
+        player = other.gameObject;
+        // spear = player.GetComponent<SpearThrow>().GetSpear();
         // Call the powerup method
-        PowerUpAction(other.gameObject);
+        PowerUpAction();
         PowerUpDestroy();
     }
 

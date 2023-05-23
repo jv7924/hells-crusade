@@ -57,7 +57,7 @@ public class SpearThrow : MonoBehaviour
             {
                 thrown = false;
                 launchForce = minLaunchForce;
-                Debug.Log(shootButton);
+                // Debug.Log(shootButton);
             }
             else if(Input.GetButton(shootButton) && !thrown)
             {
@@ -99,5 +99,10 @@ public class SpearThrow : MonoBehaviour
         Vector2 aimDirection = aim.MousePos() - throwTransform.transform.position;
         float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
         throwTransform.transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
+    public GameObject GetSpear()
+    {
+        return spear;
     }
 }

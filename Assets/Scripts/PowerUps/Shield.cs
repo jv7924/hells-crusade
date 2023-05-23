@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Shield : PowerUp
 {
-    protected override void PowerUpAction(GameObject player)
+    protected override void PowerUpAction()
     {
-        base.PowerUpAction(player);
+        // Damage multiplier that decreases damage taken by player
     }
 }
