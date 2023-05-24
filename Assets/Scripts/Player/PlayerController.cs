@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     SpearThrow spearThrow;
 
+    [SerializeField]
+    private float playerHealth;
+
     // Start is called before the first frame update
     void Start()
     {

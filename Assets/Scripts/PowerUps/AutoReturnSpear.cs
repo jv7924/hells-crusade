@@ -31,7 +31,7 @@ public class AutoReturnSpear : PowerUp
     protected override void PowerUpDestroy()
     {
         gameObject.transform.SetParent(player.transform);
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        gameObject.GetComponent<Collider2D>().enabled = false;
+        Destroy(gameObject.GetComponent<SpriteRenderer>());
+        Destroy(gameObject.GetComponent<Collider2D>());
     }
 }

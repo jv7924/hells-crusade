@@ -13,6 +13,9 @@ public class Spear : MonoBehaviour
     
     private Vector3 lastPos;
     private bool enemyHit;
+
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +37,6 @@ public class Spear : MonoBehaviour
         if(col.gameObject.tag == "Player")
         {
             Debug.Log("Freindly Fire");
-            
         }
         else if(col.gameObject.tag == "Enemy")
         {
