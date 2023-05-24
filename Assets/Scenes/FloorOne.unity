@@ -721,6 +721,7 @@ MonoBehaviour:
   - {fileID: 4627524080010712934, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
   mainCam: {fileID: 814705597}
   nextFloor: 0
+  debugMode: 0
   EnemyHit:
     m_PersistentCalls:
       m_Calls: []
@@ -7685,6 +7686,7 @@ MonoBehaviour:
   - {fileID: 1092424912}
   - {fileID: 783310078}
   - {fileID: 807964149}
+  cameraScale: 5
   playerSpawn: {fileID: 1156093884}
   cameraLocation: {fileID: 1083104301}
 --- !u!4 &1453115374
@@ -8025,6 +8027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemies:
   - {fileID: 248646285}
+  cameraScale: 5
   playerSpawn: {fileID: 1741864711}
   cameraLocation: {fileID: 321760245}
 --- !u!4 &1740198321
@@ -8146,6 +8149,7 @@ MonoBehaviour:
   Enemies:
   - {fileID: 2080554534}
   - {fileID: 1209618409}
+  cameraScale: 5
   playerSpawn: {fileID: 1597958716}
   cameraLocation: {fileID: 1465285658}
 --- !u!1 &1952594123

@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     int nextFloor;
 
+    [SerializeField]
+    public bool debugMode;
+
     // things to keep track of
     
     public enum PlayerStatus {ALIVE, DOWN, DEAD};
@@ -67,11 +70,11 @@ public class GameManager : MonoBehaviour
     public void downPlayer(int playerNumber)
     {
         playerStatuses[playerNumber - 1] = PlayerStatus.DOWN;
-        Debug.Log(playerNumber);
-        Debug.Log("Down");
+        if(debugMode){Debug.Log((playerNumber + " Down"));}
 
         if (playerStatuses[2/playerNumber - 1] == PlayerStatus.DOWN)
         {
+            // this is bad and i need to make it not bad
             Players[0].GetComponent<PlayerController>().Die();
             Players[1].GetComponent<PlayerController>().Die();
             // yield the amount of time it takes for both animations to complete
@@ -82,7 +85,7 @@ public class GameManager : MonoBehaviour
     }
 
     // game state Management Functions
-    public void AdvanceFloors(){
+    public void AdvanceFloors(int prevFloor){
         SceneManager.LoadScene(nextFloor);
     }
 

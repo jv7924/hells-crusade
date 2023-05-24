@@ -13,9 +13,11 @@ public class Spear : MonoBehaviour
     
     private Vector3 lastPos;
     private bool enemyHit;
+    private bool debugging;
     // Start is called before the first frame update
     void Start()
     {
+        debugging = GameManager.Instance.debugMode;
         // need better formula for max lifetime
         Vector2 velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
         float lifetime = velocity.magnitude/ maxLifeTime;
@@ -31,27 +33,18 @@ public class Spear : MonoBehaviour
     // detect hitting something
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "Player")
+        if(col.gameObject.tag == "Enemy")
         {
-            Debug.Log("Freindly Fire");
-            
-        }
-        else if(col.gameObject.tag == "Enemy")
-        {
-            Debug.Log("Enemy Hit");
             enemyHit = true;
             GameManager.Instance.EnemyHit.Invoke(playerNumber);
-            Destroy(col.gameObject);
+            // Destroy(col.gameObject) -> no longer need
             Destroy(gameObject);
             
         }
         else if(col.gameObject.tag == "Wall"){
-            Debug.Log("Wall Hit");
-            
             Destroy(this.gameObject);
         }
         else if(col.gameObject.tag == "Boss"){
-            Debug.Log("Boss Hit");
             enemyHit = true;
             GameManager.Instance.EnemyHit.Invoke(playerNumber);
             Destroy(this.gameObject);
