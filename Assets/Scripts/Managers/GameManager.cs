@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     Camera mainCam;
     
     [SerializeField]
-    int nextFloor;
+    int[] floorSceneIndexes;
 
     [SerializeField]
     public bool debugMode;
@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     private void Start(){
         RefreshPlayers.AddListener(onRefresh);
+
     }
 
 
@@ -86,6 +87,7 @@ public class GameManager : MonoBehaviour
 
     // game state Management Functions
     public void AdvanceFloors(int prevFloor){
+        int nextFloor = (int)Random.Range(0, floorSceneIndexes.Length - 1);
         SceneManager.LoadScene(nextFloor);
     }
 
