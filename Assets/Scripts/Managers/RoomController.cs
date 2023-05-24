@@ -6,16 +6,22 @@ using UnityEngine.Events;
 public class RoomController : MonoBehaviour
 {
     [SerializeField] private GameObject[] Enemies;
+    [SerializeField] public float cameraScale;
     [SerializeField] public Transform playerSpawn;
     [SerializeField] public Transform cameraLocation;
 
+
     private int deathCount;
+    private bool debugging;
+
+    void Start(){
+        debugging = GameManager.Instance.debugMode;
+    }
 
     void OnEnable(){
-        
         FloorManager.Instance.OnEnemyDeath.AddListener(CalcEnemies);
         deathCount = 0;
-        Debug.Log("listening");
+        if(debugging){Debug.Log("listening");}
     }
 
     void FixedUpdate()
@@ -39,6 +45,6 @@ public class RoomController : MonoBehaviour
 
     void OnDisable(){
         FloorManager.Instance.OnEnemyDeath.RemoveListener(CalcEnemies);
-        Debug.Log("no longer listening");
+        if(debugging){Debug.Log("no longer listening");}
     }
 }

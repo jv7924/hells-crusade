@@ -29,7 +29,10 @@ public class GameManager : MonoBehaviour
     Camera mainCam;
     
     [SerializeField]
-    int nextFloor;
+    int[] floorSceneIndexes;
+
+    [SerializeField]
+    public bool debugMode;
 
     // things to keep track of
     
@@ -44,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     private void Start(){
         RefreshPlayers.AddListener(onRefresh);
+
     }
 
 
@@ -67,11 +71,11 @@ public class GameManager : MonoBehaviour
     public void downPlayer(int playerNumber)
     {
         playerStatuses[playerNumber - 1] = PlayerStatus.DOWN;
-        Debug.Log(playerNumber);
-        Debug.Log("Down");
+        if(debugMode){Debug.Log((playerNumber + " Down"));}
 
         if (playerStatuses[2/playerNumber - 1] == PlayerStatus.DOWN)
         {
+            // this is bad and i need to make it not bad
             Players[0].GetComponent<PlayerController>().Die();
             Players[1].GetComponent<PlayerController>().Die();
             // yield the amount of time it takes for both animations to complete
@@ -82,7 +86,8 @@ public class GameManager : MonoBehaviour
     }
 
     // game state Management Functions
-    public void AdvanceFloors(){
+    public void AdvanceFloors(int prevFloor){
+        int nextFloor = (int)Random.Range(0, floorSceneIndexes.Length - 1);
         SceneManager.LoadScene(nextFloor);
     }
 
