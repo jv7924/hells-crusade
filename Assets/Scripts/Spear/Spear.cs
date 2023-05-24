@@ -41,7 +41,8 @@ public class Spear : MonoBehaviour
             Debug.Log("Enemy Hit");
             enemyHit = true;
             GameManager.Instance.EnemyHit.Invoke(playerNumber);
-            Destroy(col.gameObject);
+            col.gameObject.GetComponent<Enemy>().DamageEnemy();
+            //Destroy(col.gameObject);
             Destroy(gameObject);
             
         }

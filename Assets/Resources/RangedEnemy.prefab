@@ -284,6 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  health: 3
   distanceToShoot: 10
   distanceToStop: 5
   firingPoint: {fileID: 5195397541696037535}
