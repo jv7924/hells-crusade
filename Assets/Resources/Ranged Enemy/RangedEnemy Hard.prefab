@@ -81,7 +81,7 @@ GameObject:
   - component: {fileID: 7806458424057190643}
   - component: {fileID: -3022473568511696278}
   m_Layer: 0
-  m_Name: RangedEnemy
+  m_Name: RangedEnemy Hard
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5195397542701156299}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.370002, y: 1.7900009, z: -0.00760065}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -145,7 +145,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 2034762499, guid: 72a52c11631496541be0acccc1afcf5e, type: 3}
+  m_Sprite: {fileID: -1325182743, guid: 5e455edaec6de90409924ff3dbd798f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  health: 2
+  health: 3
   distanceToShoot: 10
   distanceToStop: 5
   firingPoint: {fileID: 5195397541696037535}
@@ -301,7 +301,7 @@ Animator:
   m_GameObject: {fileID: 5195397542701156299}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b3f464de5b74e8349b23babddf58e651, type: 2}
+  m_Controller: {fileID: 9100000, guid: b9d49e273bac37a43b79bc988278ebaf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
