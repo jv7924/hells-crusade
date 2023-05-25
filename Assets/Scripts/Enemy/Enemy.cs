@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         players = GameObject.FindGameObjectsWithTag("Player");
+        animator.SetInteger("Health", health);
     }
 
     public void DamageEnemy()
