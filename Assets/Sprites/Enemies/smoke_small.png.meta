@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: smoke_0
+      name: smoke_small_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de8a7a21a3a596049a118340306f221a
-      internalID: -1968302811
+      spriteID: 50c5672f3b793e4469345c654e7cf1d7
+      internalID: 1210379848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: smoke_1
+      name: smoke_small_1
       rect:
         serializedVersion: 2
         x: 32
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 522d88976b056364c8cb82c335e0d76e
-      internalID: -1572876184
+      spriteID: 016775aaf264c3f458c4326469c2e838
+      internalID: 434160872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: smoke_2
+      name: smoke_small_2
       rect:
         serializedVersion: 2
         x: 64
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7c75d0e5b7674e4f9d4d637b2abb12f
-      internalID: -264943662
+      spriteID: a08138a9a3f8dea43a24935d2d5cedd0
+      internalID: 1260103149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: smoke_3
+      name: smoke_small_3
       rect:
         serializedVersion: 2
         x: 96
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0c0696eaa465a74e8d8da5dd65be502
-      internalID: 359571107
+      spriteID: d7e480027f519fb4c9614be8b864f54e
+      internalID: -1860623671
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: smoke_4
+      name: smoke_small_4
       rect:
         serializedVersion: 2
         x: 128
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2a83013327ffcf4a824eb6d7636fa8c
-      internalID: -1388041896
+      spriteID: 22f6ed4a868c7c949bce36c1d682739b
+      internalID: 94955802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: smoke_5
+      name: smoke_small_5
       rect:
         serializedVersion: 2
         x: 160
@@ -224,29 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c90e57c70e29f94293a2559f34ff406
-      internalID: -639123312
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: smoke_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b809a2c039b67fe45b87a66a3aa45301
-      internalID: 1725565222
+      spriteID: 62793b53d293f684d86057f72533094d
+      internalID: -965302864
       vertices: []
       indices: 
       edges: []
@@ -262,13 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      smoke_1: -1572876184
-      smoke_3: 359571107
-      smoke_2: -264943662
-      smoke_6: 1725565222
-      smoke_0: -1968302811
-      smoke_5: -639123312
-      smoke_4: -1388041896
+      smoke_small_5: -965302864
+      smoke_small_1: 434160872
+      smoke_small_4: 94955802
+      smoke_small_2: 1260103149
+      smoke_small_0: 1210379848
+      smoke_small_3: -1860623671
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
