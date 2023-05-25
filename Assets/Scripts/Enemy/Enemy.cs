@@ -25,10 +25,10 @@ public class Enemy : MonoBehaviour
     public void DamageEnemy()
     {
         health--;
-        Debug.Log("HEALTH = " + health);
+        //Debug.Log("HEALTH = " + health);
         if (health <= 0)
         {
-            Debug.Log("Destroying enemy.");
+            //Debug.Log("Destroying enemy.");
             Destroy(gameObject);
         }
     }
