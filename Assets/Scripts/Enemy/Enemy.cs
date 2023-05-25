@@ -30,6 +30,10 @@ public class Enemy : MonoBehaviour
             transform.rotation = Quaternion.identity;
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
             GetComponent<Collider2D>().enabled = false;
+            foreach (Transform child in GetComponentInChildren<Transform>())
+            {
+                child.gameObject.SetActive(false);
+            }
             //Debug.Log("Destroying enemy.");
             Destroy(gameObject, 1f);
         }
