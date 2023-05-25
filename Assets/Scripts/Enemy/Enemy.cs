@@ -32,4 +32,9 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void OnDestroy(){
+        Debug.Log("Enemy Killed");
+        FloorManager.Instance.OnEnemyDeath.Invoke();
+    }
 }
