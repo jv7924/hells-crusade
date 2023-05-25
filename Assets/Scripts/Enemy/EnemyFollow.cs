@@ -58,5 +58,6 @@ public class EnemyFollow : Enemy
     {
         animator.SetFloat("Distance To Player", dist);
         animator.SetFloat("Speed", movement.magnitude * speed);
+        animator.SetInteger("Health", health);
     }
 }

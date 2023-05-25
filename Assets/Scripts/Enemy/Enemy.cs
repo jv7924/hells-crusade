@@ -25,11 +25,13 @@ public class Enemy : MonoBehaviour
     public void DamageEnemy()
     {
         health--;
-        //Debug.Log("HEALTH = " + health);
         if (health <= 0)
         {
+            transform.rotation = Quaternion.identity;
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            GetComponent<Collider2D>().enabled = false;
             //Debug.Log("Destroying enemy.");
-            Destroy(gameObject);
+            Destroy(gameObject, 1f);
         }
     }
 }

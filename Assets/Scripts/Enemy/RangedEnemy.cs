@@ -29,6 +29,15 @@ public class RangedEnemy : Enemy
 
     private void FixedUpdate()
     {
+        if (health > 0)
+        {
+            SeekTarget();
+        }
+        Animate();
+    }
+
+    private void SeekTarget()
+    {
         dist = 99999;
         //GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject player in players)
@@ -55,8 +64,6 @@ public class RangedEnemy : Enemy
         {
             Shoot();
         }
-
-        Animate();
     }
 
     private void Shoot()
@@ -81,5 +88,6 @@ public class RangedEnemy : Enemy
     private void Animate()
     {
         animator.SetBool("Attack", (timeToFire <= 0.2f));
+        animator.SetInteger("Health", health);
     }
 }
