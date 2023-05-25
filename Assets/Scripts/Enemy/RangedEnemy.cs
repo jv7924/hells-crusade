@@ -80,7 +80,7 @@ public class RangedEnemy : Enemy
         }
     }
 
-    void moveEnemy(Vector2 direction)
+    private void moveEnemy(Vector2 direction)
     {
         rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
     }

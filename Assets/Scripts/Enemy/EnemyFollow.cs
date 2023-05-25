@@ -14,6 +14,15 @@ public class EnemyFollow : Enemy
 
     private void FixedUpdate()
     {
+        if (health > 0)
+        {
+            SeekTarget();
+        }
+        Animate();
+    }
+
+    private void SeekTarget()
+    {
         /*
         Vector3 direction = player.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -45,11 +54,9 @@ public class EnemyFollow : Enemy
         direction.Normalize();
         movement = direction;
         moveEnemy(movement);
-
-        Animate();
     }
 
-    void moveEnemy(Vector2 direction)
+    private void moveEnemy(Vector2 direction)
     {
         rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
     }
