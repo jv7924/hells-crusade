@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 5195397542701156297}
   - component: {fileID: 5195397542701156298}
   - component: {fileID: 7806458424057190643}
+  - component: {fileID: -3022473568511696278}
   m_Layer: 0
   m_Name: RangedEnemy_Hardest
   m_TagString: Enemy
@@ -310,3 +311,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-3022473568511696278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5195397542701156299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b749f3672aa5465d8ce4721088276d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
