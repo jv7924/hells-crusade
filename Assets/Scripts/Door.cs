@@ -9,6 +9,9 @@ public class Door : MonoBehaviour
     [SerializeField]
     private BoxCollider2D boxCollider;
 
+    // Might want to switch CloseDoor to trigger so that you can set a position as a trigger
+    // I.E. when players touch the trigger, the doors close
+
     private void OnEnable()
     {
         // Subscribe to event here.
@@ -22,11 +25,11 @@ public class Door : MonoBehaviour
 
     void Update()
     {
-        //// For testing
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    OpenDoor();
-        //}
+        // For testing
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            OpenDoor();
+        }
     }
 
     // Event that triggers when all enemies in a room are defeated.
@@ -34,7 +37,7 @@ public class Door : MonoBehaviour
     {
         Debug.Log("Opening Door");
         animator.SetBool("Room Cleared", true);
-        StartCoroutine(DisableCollider());
+        //StartCoroutine(DisableCollider());
     }
     
     private IEnumerator DisableCollider()
