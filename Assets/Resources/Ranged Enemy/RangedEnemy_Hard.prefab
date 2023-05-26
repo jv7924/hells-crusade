@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 5195397542701156298}
   - component: {fileID: 7806458424057190643}
   m_Layer: 0
-  m_Name: RangedEnemy Hardest
+  m_Name: RangedEnemy_Hard
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -282,13 +282,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a80926463b984834ab16d0b7ff2c6a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  health: 5
-  distanceToShoot: 10
-  distanceToStop: 5
+  speed: 3
+  health: 1
+  distanceToShoot: 15
+  distanceToStop: 10
   firingPoint: {fileID: 5195397541696037535}
   proj: {fileID: 4062462592986736700, guid: 37c0daa09454afc4b964f538e1980ef3, type: 3}
-  fireRate: 2
+  fireRate: 3
   enemyForce: 10
 --- !u!95 &7806458424057190643
 Animator:
