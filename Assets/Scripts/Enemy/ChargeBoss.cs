@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChargeBoss : MonoBehaviour
 {
+    [SerializeField] private int health;
     public float chargeSpeed;
     public float chargeTime;
     private float timeToCharge;
@@ -74,13 +75,23 @@ public class ChargeBoss : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "Player")
+        if(col.gameObject.CompareTag("Spear")){
+            health--;
+            if(health == 0){
+                Destroy(gameObject);
+            }
+        }
+    }
+    void OnCollisionEnter2D(Collision2D col){
+        if(col.gameObject.CompareTag( "Player"))
         {
             Debug.Log("Player Hit");
             rb.velocity = Vector3.zero;
             sr.color = Color.white;
             charging = false;
-        } else if(col.gameObject.tag == "Wall"){
+        } 
+        if(col.gameObject.CompareTag("Wall"))
+        {
             Debug.Log("Wall Hit");
             rb.velocity = Vector3.zero;
             sr.color = Color.white;

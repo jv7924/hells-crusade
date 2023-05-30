@@ -23,10 +23,10 @@ public class Door : MonoBehaviour
     void Update()
     {
         //// For testing
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            OpenDoor();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    OpenDoor();
+        //}
     }
 
     // Event that triggers when all enemies in a room are defeated.

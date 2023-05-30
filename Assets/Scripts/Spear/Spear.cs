@@ -43,12 +43,19 @@ public class Spear : MonoBehaviour
             Debug.Log("Enemy Hit");
             enemyHit = true;
             GameManager.Instance.EnemyHit.Invoke(playerNumber);
-            Destroy(col.gameObject);
+            col.gameObject.GetComponent<Enemy>().DamageEnemy();
+            //Destroy(col.gameObject);
             Destroy(gameObject);
             
         }
         else if(col.gameObject.tag == "Wall"){
             Debug.Log("Wall Hit");
+            Destroy(this.gameObject);
+        }
+        else if(col.gameObject.tag == "Boss"){
+            Debug.Log("Boss Hit");
+            enemyHit = true;
+            GameManager.Instance.EnemyHit.Invoke(playerNumber);
             Destroy(this.gameObject);
         }
     }

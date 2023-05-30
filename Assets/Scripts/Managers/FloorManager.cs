@@ -26,18 +26,22 @@ public class FloorManager : MonoBehaviour
     private Camera floorCam;
     [SerializeField]
     private int spawnOffset;
+    [SerializeField]
+    private int floorNumber;
 
     private int currentRoom;
+    private bool debugging;
 
     public static Action OnRoomClear;
     
     public UnityEvent OnEnemyDeath;
-    // Start is called before the first frame update
+
     void Start()
     {
         OnEnemyDeath = new UnityEvent();
         currentRoom = 0;
         setupRoom();
+        debugging = GameManager.Instance.debugMode;
     }
 
     private void FixedUpdate()
@@ -48,17 +52,17 @@ public class FloorManager : MonoBehaviour
     public void advanceRooms()
     {
         GameManager.Instance.RefreshPlayers.Invoke();
-        Debug.Log("players refreshed");
+        if(debugging){Debug.Log("players refreshed");}
         roomControllers[currentRoom].gameObject.SetActive(false);
-        Debug.Log("room deactivated");
+        if(debugging){Debug.Log("room deactivated");}
         currentRoom++;
 
         if(currentRoom < roomControllers.Length){
             setupRoom();
-            Debug.Log("room loaded");
+            if(debugging){Debug.Log("room loaded");}
         }
         else {
-            GameManager.Instance.AdvanceFloors();
+            GameManager.Instance.AdvanceFloors(floorNumber);
         }
 
     }
@@ -66,7 +70,8 @@ public class FloorManager : MonoBehaviour
     private void setupRoom(){
             roomControllers[currentRoom].gameObject.SetActive(true);
             floorCam.transform.position = roomControllers[currentRoom].cameraLocation.position;
-            Debug.Log("camera moved");
+            floorCam.orthographicSize = roomControllers[currentRoom].cameraScale;
+            if(debugging){Debug.Log("camera moved");}
             Vector2 spawnT = roomControllers[currentRoom].playerSpawn.position;
             
             spawnT.y += spawnOffset;
@@ -78,13 +83,13 @@ public class FloorManager : MonoBehaviour
             }
             else{
                 GameManager.Instance.MovePlayer(1, spawnT);
-                Debug.Log("moved player1");
+                if(debugging){Debug.Log("moved player1");}
                 spawnT.y -= 2 * spawnOffset;
                 GameManager.Instance.MovePlayer(2, spawnT);
-                Debug.Log("moved player2");
+                if(debugging){Debug.Log("moved player2");}
         }
 
             roomControllers[currentRoom].populateRoom();
-            Debug.Log("room populated");
+            if(debugging){Debug.Log("room populated");}
     }
 }

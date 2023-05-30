@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         GameManager.Instance.EnemyHit.AddListener(checkRefresh);
         GameManager.Instance.RefreshPlayers.AddListener(Refresh);
     }
@@ -57,7 +56,6 @@ public class PlayerController : MonoBehaviour
         // play down animation
         // restrict movement
         movement.enabled = false;
-        Debug.Log("Hit");
     }
 
     public int GetPlayerNumber()
@@ -66,11 +64,23 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col){
-        if(col.gameObject.tag == "Pickup"){
-            spearThrow.canThrow = true;
-            Destroy(col.gameObject);
+        if(col.gameObject.CompareTag("Pickup")){
+            if (spearThrow.canThrow == false)
+            {
+                spearThrow.canThrow = true;
+                Destroy(col.gameObject);
+            }
         }
-        if(col.gameObject.tag == "Enemy"){
+        if(col.gameObject.CompareTag("Enemy")){
+            takeDamage();
+        }
+        if(col.gameObject.CompareTag("Boss")){
+            takeDamage();
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col){
+        if(col.gameObject.CompareTag( "Bullet") || col.gameObject.CompareTag("Spear")){
             takeDamage();
         }
     }   
