@@ -13,6 +13,6 @@ public class ExitButtonScript : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("FloorOne");
+        SceneManager.LoadScene(2);
     }
 }

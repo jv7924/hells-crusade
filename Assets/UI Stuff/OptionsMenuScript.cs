@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OptionsMenuScript : MonoBehaviour
 {
@@ -56,5 +57,9 @@ public class OptionsMenuScript : MonoBehaviour
         isOpen = false;
         Time.timeScale = 1f;
     }
-    
+
+    public void ToggleFullscreen()
+    {
+        Screen.fullScreen = !Screen.fullScreen;
+    }
 }
