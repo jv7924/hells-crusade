@@ -10,6 +10,10 @@ public class OptionsMenuScript : MonoBehaviour
     public GameObject backButton;
     public GameObject exitButton;
     private bool isOpen;
+
+    public Image ResolutionImage;
+    public Sprite[] resSprites;
+    private int defaultRes;
     
     // Hides options menu ui
     void Start()
@@ -19,6 +23,7 @@ public class OptionsMenuScript : MonoBehaviour
         backButton.SetActive(false);
         exitButton.SetActive(false);
         isOpen = false;
+        defaultRes = 1;
     }
 
     // If esc key is pressed, reveal or hide ui
@@ -62,4 +67,58 @@ public class OptionsMenuScript : MonoBehaviour
     {
         Screen.fullScreen = !Screen.fullScreen;
     }
+
+    
+    public void SwapResolutionLeft()
+    {
+        if(defaultRes > 0)
+        {
+            defaultRes -= 1;
+        }
+
+        else if(defaultRes == 0)
+        {
+            defaultRes = 2;
+        }
+
+        ResolutionImage.sprite = resSprites[defaultRes];
+        ChangeResolution();
+
+    }
+    
+    public void SwapResolutionRight()
+    {
+        if (defaultRes < 2)
+        {
+            defaultRes += 1;
+        }
+
+        else if (defaultRes == 2)
+        {
+            defaultRes = 0;
+        }
+
+        ResolutionImage.sprite = resSprites[defaultRes];
+        ChangeResolution();
+
+    }
+
+    private void ChangeResolution()
+    {
+        if(defaultRes == 0)
+        {
+            Screen.SetResolution(1280, 720, Screen.fullScreen);
+        }
+        
+        else if(defaultRes == 1)
+        {
+            Screen.SetResolution(1920, 1080, Screen.fullScreen);
+        }
+        
+        else if(defaultRes == 2)
+        {
+            Screen.SetResolution(2560, 1440, Screen.fullScreen);
+        }
+    }
+
 }

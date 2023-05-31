@@ -435,10 +435,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ae8cd7ab82c7c4bbba556c1a8b7eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 1812185790}
+  menu: {fileID: 2757364137901321142, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
   overlay: {fileID: 1346563058}
   backButton: {fileID: 1602518284}
   exitButton: {fileID: 1725194439}
+  ResolutionImage: {fileID: 1735378416}
+  resSprites:
+  - {fileID: 21300000, guid: 3dfa50d7f9e7e364c8e3b1cda097040a, type: 3}
+  - {fileID: 21300000, guid: 929283029924aa64e92a167da746b52c, type: 3}
+  - {fileID: 21300000, guid: 49216a0bce36f6d4584f7873cb1611c7, type: 3}
 --- !u!114 &502805425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7847,6 +7852,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
+--- !u!224 &1735378415 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2757364137901321143, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
+  m_PrefabInstance: {fileID: 1735378414}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1735378416 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2757364138685853870, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
+  m_PrefabInstance: {fileID: 1735378414}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1740198319
 GameObject:
   m_ObjectHideFlags: 0
@@ -7932,16 +7953,6 @@ Transform:
   m_Father: {fileID: 1740198321}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1812185790 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6776181539677494571, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
-  m_PrefabInstance: {fileID: 1735378414}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &1812185791 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6776181539677494570, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
-  m_PrefabInstance: {fileID: 1735378414}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1838915768 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9139788603303649375, guid: ef8e2d590afea1742971f7566e4e1688, type: 3}
@@ -8096,7 +8107,7 @@ RectTransform:
   - {fileID: 1346563059}
   - {fileID: 1725194440}
   - {fileID: 1602518285}
-  - {fileID: 1812185791}
+  - {fileID: 1735378415}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
