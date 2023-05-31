@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 6067236443344914369}
   - component: {fileID: -2002213789775610195}
   m_Layer: 0
-  m_Name: Soldier BASE - NEW
+  m_Name: Soldier Inferno
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,7 +171,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -1765267928, guid: 76b40f3517f4ce3498a7d1f07cdccd62, type: 3}
+  m_Sprite: {fileID: 1551553524, guid: 0048f100db65ef14b9a744753a6439d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -307,7 +307,7 @@ Animator:
   m_GameObject: {fileID: 8697349173390123520}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f8529be9d2fb22a468a34c4d0ea2845a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5e7e2ff7010bd1e42abfa1305d430254, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
