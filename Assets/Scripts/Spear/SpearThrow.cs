@@ -44,6 +44,7 @@ public class SpearThrow : MonoBehaviour
     void Update()
     {
         shootButton = input.GetShootButton();
+        animator.SetBool("Throwing", true);
 
         Rotate();
         if(canThrow){
