@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ExitButtonScript : MonoBehaviour
 {
+    [SerializeField] int floorOneIndex;
 
     public void ExitGame()
     {
@@ -13,6 +14,6 @@ public class ExitButtonScript : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(floorOneIndex);
     }
 }
