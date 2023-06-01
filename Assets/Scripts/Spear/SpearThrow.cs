@@ -57,7 +57,7 @@ public class SpearThrow : MonoBehaviour
             {
                 thrown = false;
                 launchForce = minLaunchForce;
-                // Debug.Log(shootButton);
+                Debug.Log(shootButton);
             }
             else if(Input.GetButton(shootButton) && !thrown)
             {
