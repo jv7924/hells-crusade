@@ -32,5 +32,11 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Online/OnlineMultiplayer.unity
     guid: d19622f92a25f6c4a80c619bb2b0eb96
+  - enabled: 1
+    path: Assets/Scenes/BuildScenes/Floors/FloorTwo/F2V1.unity
+    guid: 225f02e30e2dd084dbc246959826a9ef
+  - enabled: 1
+    path: Assets/Scenes/BuildScenes/Floors/FloorThree/F3V1.unity
+    guid: a16ee195cbc124441a4e0e59a2552920
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0881616ab009f6d4180558e74e35782a, type: 2}

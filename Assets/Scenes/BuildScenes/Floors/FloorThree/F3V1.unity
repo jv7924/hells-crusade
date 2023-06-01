@@ -841,7 +841,7 @@ MonoBehaviour:
   - {fileID: 1740198320}
   floorCam: {fileID: 814705597}
   spawnOffset: 1
-  floorNumber: 0
+  floorNumber: 3
   OnEnemyDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -1360,7 +1360,7 @@ MonoBehaviour:
   - {fileID: 4627524080010712934, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
   - {fileID: 4627524080010712934, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
   mainCam: {fileID: 814705597}
-  floorSceneIndexes: 00000000
+  floorSceneIndexes: 05000000
   debugMode: 0
   EnemyHit:
     m_PersistentCalls:

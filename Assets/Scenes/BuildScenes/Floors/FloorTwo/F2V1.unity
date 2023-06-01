@@ -501,7 +501,7 @@ MonoBehaviour:
   - {fileID: 1645895540}
   - {fileID: 122588098}
   - {fileID: 1641091628}
-  cameraScale: 5
+  cameraScale: 7
   playerSpawn: {fileID: 871913790}
   cameraLocation: {fileID: 965151349}
 --- !u!4 &156646892
@@ -1273,7 +1273,7 @@ MonoBehaviour:
   - {fileID: 4627524080010712934, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
   - {fileID: 4627524080010712934, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
   mainCam: {fileID: 814705597}
-  floorSceneIndexes: 00000000
+  floorSceneIndexes: 04000000
   debugMode: 0
   EnemyHit:
     m_PersistentCalls:
@@ -8674,7 +8674,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8698,7 +8698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814705595}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 113.87, y: -0.16, z: -10}
+  m_LocalPosition: {x: 0.7, y: 0.19, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

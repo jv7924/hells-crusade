@@ -1149,7 +1149,7 @@ MonoBehaviour:
   - {fileID: 4627524080010712934, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
   - {fileID: 4627524080010712934, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
   mainCam: {fileID: 814705597}
-  floorSceneIndexes: 00000000
+  floorSceneIndexes: 03000000
   debugMode: 0
   EnemyHit:
     m_PersistentCalls:
@@ -4912,7 +4912,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.1981132, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.41509432, g: 0.1542473, b: 0.03328587, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -4929,7 +4929,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.5
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4953,7 +4953,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814705595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.92, y: 0, z: -10}
+  m_LocalPosition: {x: 0.15, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
