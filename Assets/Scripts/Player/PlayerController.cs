@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
             takeDamage();
         }
         if(col.gameObject.CompareTag("Boss")){
-            takeDamage();
+            //takeDamage();
         }
     }
 

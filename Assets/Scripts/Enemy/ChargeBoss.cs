@@ -14,6 +14,7 @@ public class ChargeBoss : MonoBehaviour
     private Vector2 movement;
     private float dist;
     private bool charging = false;
+    private bool targeted = false;
 
     void Start()
     {
@@ -21,26 +22,22 @@ public class ChargeBoss : MonoBehaviour
         sr = this.GetComponent<SpriteRenderer>();
         timeToCharge = chargeTime;
     }
-    /*
-    void Update()
-    {
-        timer += Time.deltaTime;
-        if (timer > chargeTime)
-        {
-            Charge();
-        }
-    }
-    */
+
     void FixedUpdate()
     {
-       dist = 99999;
+        dist = 99999;
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        foreach (GameObject player in players)
+
+        if (!targeted)
         {
-            if (Vector3.Distance(player.transform.position, this.transform.position) < dist)
+            foreach (GameObject player in players)
             {
-                dist = Vector3.Distance(player.transform.position, this.transform.position);
-                followedPlayer = player;
+                if (Vector3.Distance(player.transform.position, this.transform.position) < dist)
+                {
+                    dist = Vector3.Distance(player.transform.position, this.transform.position);
+                    followedPlayer = player;
+                    targeted = true;
+                }
             }
         }
 
@@ -82,13 +79,15 @@ public class ChargeBoss : MonoBehaviour
             }
         }
     }
+    
     void OnCollisionEnter2D(Collision2D col){
-        if(col.gameObject.CompareTag( "Player"))
+        if(col.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player Hit");
             rb.velocity = Vector3.zero;
             sr.color = Color.white;
             charging = false;
+            targeted = false;
         } 
         if(col.gameObject.CompareTag("Wall"))
         {
@@ -96,6 +95,13 @@ public class ChargeBoss : MonoBehaviour
             rb.velocity = Vector3.zero;
             sr.color = Color.white;
             charging = false;
+            targeted = false;
+        }
+        if(col.gameObject.CompareTag("Spear")){
+            health--;
+            if(health == 0){
+                Destroy(gameObject);
+            }
         }
     }
 }

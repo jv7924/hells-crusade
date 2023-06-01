@@ -8,8 +8,9 @@ TagManager:
   - Pickup
   - Wall
   - Bullet
-  - EnemySpear
   - Boss
+  - Spear
+  - EnemySpear
   layers:
   - Default
   - TransparentFX
