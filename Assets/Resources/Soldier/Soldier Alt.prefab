@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 6067236443344914369}
   - component: {fileID: -2002213789775610195}
   m_Layer: 0
-  m_Name: Soldier BASE - NEW
+  m_Name: Soldier Alt
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 6067236443344914369}
   - component: {fileID: -2002213789775610195}
   m_Layer: 0
-  m_Name: Soldier Hardest
+  m_Name: Soldier Easy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,7 +171,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -1636660144, guid: 0fe0c17910ceb534b905ba54086b5160, type: 3}
+  m_Sprite: {fileID: 1302946995, guid: deb090e9bf9073943a8dd250e7eae1b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -307,7 +307,7 @@ Animator:
   m_GameObject: {fileID: 8697349173390123520}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3e05505ae3f68f7419b3ec59089b9ba0, type: 2}
+  m_Controller: {fileID: 9100000, guid: ae60b96182097c1498a77fcc1ecaccfc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -329,5 +329,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2834b0803fbb8b943a45c8613fa41c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 3
   health: 1
