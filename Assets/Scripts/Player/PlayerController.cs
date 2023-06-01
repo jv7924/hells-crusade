@@ -53,7 +53,8 @@ public class PlayerController : MonoBehaviour
     private void Down()
     {
         GameManager.Instance.downPlayer(PlayerNumber);
-        // play down animation
+        // play down animation - still need
+
         // restrict movement
         movement.enabled = false;
     }
@@ -75,13 +76,18 @@ public class PlayerController : MonoBehaviour
             takeDamage();
         }
         if(col.gameObject.CompareTag("Boss")){
-            //takeDamage();
+            takeDamage();
         }
     }
 
     void OnTriggerEnter2D(Collider2D col){
-        if(col.gameObject.CompareTag( "Bullet") || col.gameObject.CompareTag("Spear")){
+        if(col.gameObject.CompareTag( "Bullet")){
             takeDamage();
+        }
+        else if(col.gameObject.CompareTag("Spear")){
+            if(col.gameObject != spearThrow.GetSpear()){
+                takeDamage();
+            }
         }
     }   
 
