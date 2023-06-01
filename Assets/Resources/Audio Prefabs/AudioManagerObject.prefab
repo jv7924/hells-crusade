@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7445781931711700288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7445781931711700318}
+  - component: {fileID: 7445781931711700319}
+  m_Layer: 0
+  m_Name: AudioManagerObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7445781931711700318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7445781931711700288}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7445781931711700319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7445781931711700288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61314a0ce7ccc6342a3f60765ebe18a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: PlayerFootstep
+    clip: {fileID: 8300000, guid: dce6a3b71a9417247b1eed51221dc3ee, type: 3}
+    volume: 0.133
+    pitch: 0.49
+    loop: 0
+    source: {fileID: 0}
+  - name: SpearThrow
+    clip: {fileID: 8300000, guid: 24edc2fdb8abcdd4e826a77f8201e9ef, type: 3}
+    volume: 0.089
+    pitch: 0.43
+    loop: 0
+    source: {fileID: 0}
+  - name: RechargeSpear
+    clip: {fileID: 8300000, guid: 150fa30995f37c241b8b57648313bca6, type: 3}
+    volume: 0.136
+    pitch: 0.45
+    loop: 0
+    source: {fileID: 0}
+  - name: SpearSuccess
+    clip: {fileID: 8300000, guid: c70b3ea90ef08f0438ef35786ceed8f2, type: 3}
+    volume: 0.082
+    pitch: 0.43
+    loop: 0
+    source: {fileID: 0}
+  - name: SpearCollide
+    clip: {fileID: 8300000, guid: 678f9b02226ac7246b90c0ad001a7493, type: 3}
+    volume: 0.085
+    pitch: 0.36
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyFootstep
+    clip: {fileID: 8300000, guid: 876755c069a6e1342ad3a4dfb14b8a78, type: 3}
+    volume: 0.123
+    pitch: 0.44
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemySplat
+    clip: {fileID: 8300000, guid: ad93c926e433e2e4dbd53c947c65d88a, type: 3}
+    volume: 0.112
+    pitch: 0.5
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemySwordAttack
+    clip: {fileID: 8300000, guid: 3e226e4621b4f274ea54b700a88d7f55, type: 3}
+    volume: 0.114
+    pitch: 0.49
+    loop: 0
+    source: {fileID: 0}
+  - name: BossCharge
+    clip: {fileID: 8300000, guid: 590afdfe3afe89a448204667bd415268, type: 3}
+    volume: 0.098
+    pitch: 0.45
+    loop: 0
+    source: {fileID: 0}
+  - name: BossChargeEnd
+    clip: {fileID: 8300000, guid: 181f4639d78ecf54e88ee7e6fe5d2d06, type: 3}
+    volume: 0.109
+    pitch: 0.37
+    loop: 0
+    source: {fileID: 0}
+  - name: BossDeath
+    clip: {fileID: 8300000, guid: b229954d399ef8740b9d9a966f5e5ea8, type: 3}
+    volume: 0.077
+    pitch: 0.4
+    loop: 0
+    source: {fileID: 0}
