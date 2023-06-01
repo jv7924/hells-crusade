@@ -58,6 +58,7 @@ public class SpearThrow : MonoBehaviour
                 thrown = false;
                 launchForce = minLaunchForce;
                 Debug.Log(shootButton);
+                animator.SetBool("Charging", true);
             }
             else if(Input.GetButton(shootButton) && !thrown)
             {
@@ -76,6 +77,8 @@ public class SpearThrow : MonoBehaviour
     void Throw()
     {
         thrown = true;
+        animator.SetBool("Throwing", true);
+        animator.SetBool("Charging", false);
         
         GameObject spearInstance = Instantiate(spear, throwTransform.position, throwTransform.rotation);
         Rigidbody2D spearRB = spearInstance.GetComponent<Rigidbody2D>();
