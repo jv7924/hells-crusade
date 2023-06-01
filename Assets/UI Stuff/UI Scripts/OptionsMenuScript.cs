@@ -42,6 +42,7 @@ public class OptionsMenuScript : MonoBehaviour
             }
         }
 
+        /* // handle controller input idk which button to use
         else if (Input.GetButton("JoystickButton9"))
         {
             if (isOpen == true)
@@ -54,6 +55,7 @@ public class OptionsMenuScript : MonoBehaviour
                 OpenOptions();
             }
         }
+        */
     }
 
     public void OpenOptions()
