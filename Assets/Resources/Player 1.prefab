@@ -101,7 +101,7 @@ MonoBehaviour:
   mainCam: {fileID: 0}
   playerCon: {fileID: 2057631498}
   playerCenter: {fileID: 4627524080010712932}
-  playerTwoSens: 0
+  playerTwoSens: 25
 --- !u!1 &1512591288
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +314,7 @@ MonoBehaviour:
   PlayerNumber: 1
   movement: {fileID: 4627524080010712939}
   spearThrow: {fileID: 2057631493}
+  playerHealth: 0
 --- !u!114 &1819737069240037
 MonoBehaviour:
   m_ObjectHideFlags: 0

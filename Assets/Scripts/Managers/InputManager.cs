@@ -43,17 +43,9 @@ public class InputManager : MonoBehaviour
 
     private void SetUpAxis()
     {
-        if (GameModeManager.gameMode == GameModeManager.GameMode.ONLINE)
-        {
-            horizontalInput = Input.GetAxisRaw("Horizontal");
-            verticalInput = Input.GetAxisRaw("Vertical");
-        }
-        else if (GameModeManager.gameMode == GameModeManager.GameMode.LOCAL)
-        {
-            // Get the players number so that the controls can be set up easy
-            horizontalInput = Input.GetAxisRaw("Horizontal Local " + playerNum);
-            verticalInput = Input.GetAxisRaw("Vertical Local " + playerNum);
-        }
+        // Get the players number so that the controls can be set up easy
+        horizontalInput = Input.GetAxisRaw("Horizontal Local " + playerNum);
+        verticalInput = Input.GetAxisRaw("Vertical Local " + playerNum);
 
         inputVector = new Vector2(horizontalInput, verticalInput);
     }

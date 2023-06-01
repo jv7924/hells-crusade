@@ -5,7 +5,7 @@ using Photon.Pun;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float playerSpeed = 0;
+    [SerializeField] public float playerSpeed = 0;
     private Rigidbody2D playerRB;
     private Vector2 inputVector;
     private InputManager input;
@@ -39,14 +39,10 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (GameModeManager.gameMode == GameModeManager.GameMode.ONLINE && view.IsMine)
-        {
-            Move();
-        }
-        else if (GameModeManager.gameMode == GameModeManager.GameMode.LOCAL)
-        {
-            Move();
-        }
+        Move();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            Dash();
     }
 
     private void Move() 
@@ -67,5 +63,10 @@ public class PlayerMovement : MonoBehaviour
         {
             sr.flipX = false;
         }
+    }
+
+    private void Dash()
+    {
+        playerRB.AddForce(Vector2.right * 5, ForceMode2D.Impulse);
     }
 }

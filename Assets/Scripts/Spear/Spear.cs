@@ -13,6 +13,9 @@ public class Spear : MonoBehaviour
     
     private Vector3 lastPos;
     private bool enemyHit;
+
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +37,6 @@ public class Spear : MonoBehaviour
         if(col.gameObject.tag == "Player")
         {
             Debug.Log("Freindly Fire");
-            
         }
         else if(col.gameObject.tag == "Enemy")
         {
@@ -48,7 +50,6 @@ public class Spear : MonoBehaviour
         }
         else if(col.gameObject.tag == "Wall"){
             Debug.Log("Wall Hit");
-            
             Destroy(this.gameObject);
         }
         else if(col.gameObject.tag == "Boss"){
@@ -62,7 +63,7 @@ public class Spear : MonoBehaviour
     void OnDestroy(){
         if (!enemyHit)
         {
-            Instantiate(respawn, lastPos, Quaternion.identity);
+            Instantiate(respawn, lastPos, gameObject.transform.rotation);
         }
     }
 

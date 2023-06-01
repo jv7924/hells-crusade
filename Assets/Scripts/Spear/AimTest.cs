@@ -41,18 +41,25 @@ public class AimTest : MonoBehaviour
 
     private void Aim()
     {
-        if (playerNum == 2)
-        {
-            horizontalInput = Input.GetAxisRaw("Aim Horizontal");
-            verticalInput = Input.GetAxisRaw("Aim Vertical");
+        // if (playerNum == 2)
+        // {
+        //     horizontalInput = Input.GetAxisRaw("Aim Horizontal");
+        //     verticalInput = Input.GetAxisRaw("Aim Vertical");
 
-            Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
+        //     Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
 
-            crosshair.transform.position += (Vector3)inputVector * Time.deltaTime * playerTwoSens;
-        }
+        //     crosshair.transform.position += (Vector3)inputVector * Time.deltaTime * playerTwoSens;
+        // }
 
-        else if (playerNum == 1)
-            crosshair.transform.position = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        // else if (playerNum == 1)
+        //     crosshair.transform.position = mainCam.ScreenToWorldPoint(Input.mousePosition);
+
+        horizontalInput = Input.GetAxisRaw("Aim Horizontal " + playerNum);
+        verticalInput = Input.GetAxisRaw("Aim Vertical " + playerNum);
+
+        Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
+
+        crosshair.transform.position += (Vector3)inputVector * Time.deltaTime * playerTwoSens;
     }
 
     public Vector3 MousePos()
