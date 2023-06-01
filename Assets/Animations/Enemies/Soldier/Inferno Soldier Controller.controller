@@ -37,6 +37,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: Distance To Player
     m_EventTreshold: 2
+  - m_ConditionMode: 3
+    m_ConditionEvent: Distance To Player
+    m_EventTreshold: 0.1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1688372968752722046}
   m_Solo: 0
@@ -318,7 +321,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Idle
-  m_Speed: 1
+  m_Speed: 0.75
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -4130370010935427919}
