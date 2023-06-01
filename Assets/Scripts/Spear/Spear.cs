@@ -66,9 +66,4 @@ public class Spear : MonoBehaviour
             Instantiate(respawn, lastPos, gameObject.transform.rotation);
         }
     }
-
-    private Vector3 findOffset(Vector3 colPos)
-    {
-        return transform.position;
-    }
 }

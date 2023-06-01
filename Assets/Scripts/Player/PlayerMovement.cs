@@ -40,9 +40,6 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         Move();
-
-        if (Input.GetKeyDown(KeyCode.Space))
-            Dash();
     }
 
     private void Move() 
@@ -63,10 +60,5 @@ public class PlayerMovement : MonoBehaviour
         {
             sr.flipX = false;
         }
-    }
-
-    private void Dash()
-    {
-        playerRB.AddForce(Vector2.right * 5, ForceMode2D.Impulse);
     }
 }
