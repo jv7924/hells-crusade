@@ -104,4 +104,9 @@ public class ChargeBoss : MonoBehaviour
             }
         }
     }
+
+    void OnDestroy(){
+        Debug.Log("Boss Killed");
+        FloorManager.Instance.OnEnemyDeath.Invoke();
+    }
 }
