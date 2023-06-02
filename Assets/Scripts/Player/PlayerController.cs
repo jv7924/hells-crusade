@@ -88,11 +88,11 @@ public class PlayerController : MonoBehaviour
         if(col.gameObject.CompareTag( "Bullet")){
             takeDamage();
         }
-        else if(col.gameObject.CompareTag("Spear")){
-            if(col.gameObject != spearThrow.GetSpear()){
-                takeDamage();
-            }
-        }
+        //else if(col.gameObject.CompareTag("Spear")){
+        //    if(col.gameObject != spearThrow.GetSpear()){
+        //        takeDamage();
+        //    }
+        //}
     }   
 
     private void checkRefresh(int playerNumber)
