@@ -284,8 +284,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   health: 1
-  distanceToShoot: 10
-  distanceToStop: 10
+  distanceToShoot: 20
+  distanceToStop: 20
   firingPoint: {fileID: 5195397541696037535}
   proj: {fileID: 4062462592986736700, guid: 37c0daa09454afc4b964f538e1980ef3, type: 3}
   fireRate: 2
