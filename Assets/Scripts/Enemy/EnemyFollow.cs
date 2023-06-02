@@ -33,7 +33,7 @@ public class EnemyFollow : Enemy
         */
 
         dist = 99999;
-        //GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject player in players)
         {
             if (Vector3.Distance(player.transform.position, this.transform.position) < dist)
