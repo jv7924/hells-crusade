@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247f3d4b8b7014b2e9a210a24059cdc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAnimator: {fileID: 0}
+  playerAnimator: {fileID: -4673906209031492072}
   PlayerNumber: 2
   movement: {fileID: 4627524080010712939}
   spearThrow: {fileID: 6893686909855979265}

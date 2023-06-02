@@ -47,12 +47,16 @@ public class PlayerController : MonoBehaviour
     public void Refresh(){
         movement.enabled = true;
         spearThrow.canThrow = true;
+        playerAnimator.SetBool("Downed", false);
+        Debug.Log("player revived");
     }
 
 
     private void Down()
     {
         GameManager.Instance.downPlayer(PlayerNumber);
+        Debug.Log("player downed");
+        playerAnimator.SetBool("Downed", true);
         // play down animation - still need
 
         // restrict movement
