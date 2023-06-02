@@ -839,6 +839,7 @@ MonoBehaviour:
   - {fileID: 1853860080}
   - {fileID: 1453115373}
   - {fileID: 1740198320}
+  - {fileID: 1167225385}
   floorCam: {fileID: 814705597}
   spawnOffset: 1
   floorNumber: 3
@@ -33268,7 +33269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1167225385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33896,7 +33897,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1453115373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34649,7 +34650,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1740198320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34916,7 +34917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1853860079
 Transform:
   m_ObjectHideFlags: 0
