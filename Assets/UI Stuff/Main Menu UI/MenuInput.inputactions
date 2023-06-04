@@ -59,7 +59,7 @@
                 {
                     "name": "",
                     "id": "af6f2991-f6c4-4c49-bcf7-1a628c39fe18",
-                    "path": "<DualShockGamepad>/leftStick/right",
+                    "path": "<DualShockGamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "AxisDeadzone",
                     "groups": "",
