@@ -1,23 +1,23 @@
 {
-    "name": "MenuInput",
+    "name": "GameOverInput",
     "maps": [
         {
-            "name": "menu",
-            "id": "45568058-6e51-440d-85c4-f320b9477635",
+            "name": "gameover",
+            "id": "8eb1bcbf-fd8f-419d-912d-6f969fff4a21",
             "actions": [
                 {
-                    "name": "ButtonRight",
+                    "name": "ButtonDown",
                     "type": "Button",
-                    "id": "7bf3e54e-b1fd-4344-8f1e-53e73a41f361",
+                    "id": "29c0d3a3-1e73-4362-a5d4-56ef4fd99c04",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ButtonLeft",
+                    "name": "ButtonUp",
                     "type": "Button",
-                    "id": "a2fc68e2-f79e-4098-9b47-956002f314dc",
+                    "id": "ce7fcd82-3696-44c5-b956-ef43b9bd7c7e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -26,7 +26,7 @@
                 {
                     "name": "Play",
                     "type": "Button",
-                    "id": "a9a45132-ad7e-4628-a1a3-c0dc7ce16eea",
+                    "id": "213fdee6-ff33-4e45-b36c-61d0a793231f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -36,29 +36,29 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "afbeafa0-bd98-4a92-9184-c7102b805634",
-                    "path": "<DualShockGamepad>/leftStick/right",
+                    "id": "ac706580-2054-4b37-93ba-a727bec1d9de",
+                    "path": "<DualShockGamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "AxisDeadzone",
                     "groups": "",
-                    "action": "ButtonRight",
+                    "action": "ButtonDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "af6f2991-f6c4-4c49-bcf7-1a628c39fe18",
-                    "path": "<DualShockGamepad>/leftStick/left",
+                    "id": "8d060935-0bea-4d28-b473-29b12d79da96",
+                    "path": "<DualShockGamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "AxisDeadzone",
                     "groups": "",
-                    "action": "ButtonLeft",
+                    "action": "ButtonUp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "a523ad05-c2f6-4ab8-a8dd-d421b4a8337b",
+                    "id": "6bd5ebda-23bd-430f-ae8b-f0cada9ffc57",
                     "path": "<DualShockGamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",

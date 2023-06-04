@@ -33,7 +33,6 @@ public class GameOverScript : MonoBehaviour
 
     private void OnButtonLeft()
     {
-        // Checks if the pointer needs to move left or right, in this case the poiter moves left one button
         if (SelectedButton > 1)
         {
             SelectedButton -= 1;
@@ -44,7 +43,6 @@ public class GameOverScript : MonoBehaviour
 
     private void OnButtonRight()
     {
-        // Checks if the pointer needs to move left or right, in this case the poiter moves right one button
         if (SelectedButton < NumberOfButtons)
         {
             SelectedButton += 1;
