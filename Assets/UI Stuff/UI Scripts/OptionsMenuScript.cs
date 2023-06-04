@@ -26,7 +26,6 @@ public class OptionsMenuScript : MonoBehaviour
         defaultRes = 1;
     }
 
-    // If esc key is pressed or playstation button is pressed, reveal or hide ui
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
@@ -41,21 +40,6 @@ public class OptionsMenuScript : MonoBehaviour
                 OpenOptions();
             }
         }
-
-        /* // handle controller input idk which button to use
-        else if (Input.GetButton("JoystickButton9"))
-        {
-            if (isOpen == true)
-            {
-                CloseOptions();
-            }
-
-            else
-            {
-                OpenOptions();
-            }
-        }
-        */
     }
 
     public void OpenOptions()
