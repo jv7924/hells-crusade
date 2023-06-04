@@ -92,8 +92,8 @@ public class GameManager : MonoBehaviour
     }
 
     private void endGame(){
-        // will eventually change this to switching to game loss screen
-        SceneManager.LoadScene(0);
+        // Goes to game loss screen
+        SceneManager.LoadScene("GameOver");
     }
 
     private void onRefresh(){
