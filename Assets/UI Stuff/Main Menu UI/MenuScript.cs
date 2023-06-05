@@ -29,6 +29,7 @@ public class MenuScript : MonoBehaviour
         else if (SelectedButton == 2)
         {
             // If Options Button selected, open options menu
+            optionsMenu = GameObject.Find("EventSystem").GetComponent<OptionsMenuScript>();
             optionsMenu.OpenOptions();
         }
         else if (SelectedButton == 3)
