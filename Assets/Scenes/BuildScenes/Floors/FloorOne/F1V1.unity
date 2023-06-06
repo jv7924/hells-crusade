@@ -1010,6 +1010,7 @@ MonoBehaviour:
   overlay: {fileID: 1346563058}
   backButton: {fileID: 1602518284}
   exitButton: {fileID: 1725194439}
+  ogButton: {fileID: 0}
   ResolutionImage: {fileID: 1735378416}
   resSprites:
   - {fileID: 21300000, guid: 3dfa50d7f9e7e364c8e3b1cda097040a, type: 3}
@@ -14461,7 +14462,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3f37a7b880ce96a47baf9b5d0f4fd82a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b61539592a715e46af2041ee0456254, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
