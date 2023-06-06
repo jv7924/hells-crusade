@@ -2,75 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour
 {
     public GameObject Point;
-    public OptionsMenuScript optionsMenu;
-  
-    private int SelectedButton = 1;
-    [SerializeField]
-    private int NumberOfButtons;
+    private EventSystem m_EventSystem;
+
+    public GameObject playButton;
+    public GameObject optionsButton;
+    public GameObject exitButton;
 
     public Transform ButtonPosition1;
     public Transform ButtonPosition2;
     public Transform ButtonPosition3;
 
-    
-    private void OnPlay()
+    // Gets the EventSystem
+    void OnEnable()
     {
-        if (SelectedButton == 1)
-        {
-            // If Play Button selected, load game
-            SceneManager.LoadScene(2);
-        }
-        else if (SelectedButton == 2)
-        {
-            // If Options Button selected, open options menu
-            optionsMenu = GameObject.Find("EventSystem").GetComponent<OptionsMenuScript>();
-            optionsMenu.OpenOptions();
-        }
-        else if (SelectedButton == 3)
-        {
-            // If Exit Button selected, exit game
-            Application.Quit();
-        }
+        m_EventSystem = EventSystem.current;
     }
 
-    private void OnButtonLeft()
+    void Update()
     {
-        if (SelectedButton > 1)
-        {
-            SelectedButton -= 1;
-        }
         MoveThePointer();
-        return;
-    }
-
-    private void OnButtonRight()
-    {
-        if (SelectedButton < NumberOfButtons)
-        {
-            SelectedButton += 1;
-        }
-        MoveThePointer();
-        return;
     }
 
     private void MoveThePointer()
     {
-        if (SelectedButton == 1)
+        if (m_EventSystem.currentSelectedGameObject == playButton)
         {
             Point.transform.position = ButtonPosition1.position;
         }
-        else if (SelectedButton == 2)
+        else if (m_EventSystem.currentSelectedGameObject == optionsButton)
         {
             Point.transform.position = ButtonPosition2.position;
         }
-        else if (SelectedButton == 3)
+        else if (m_EventSystem.currentSelectedGameObject == exitButton)
         {
             Point.transform.position = ButtonPosition3.position;
         }

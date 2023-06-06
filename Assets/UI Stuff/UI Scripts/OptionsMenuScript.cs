@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class OptionsMenuScript : MonoBehaviour
 {
-    EventSystem m_EventSystem;
+    private EventSystem m_EventSystem;
 
     public GameObject menu;
     public GameObject overlay;

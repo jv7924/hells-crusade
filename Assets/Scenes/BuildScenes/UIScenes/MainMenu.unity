@@ -927,8 +927,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Point: {fileID: 990131156}
-  optionsMenu: {fileID: 0}
-  NumberOfButtons: 3
+  playButton: {fileID: 319575541}
+  optionsButton: {fileID: 1881325097}
+  exitButton: {fileID: 344366291}
   ButtonPosition1: {fileID: 1831746780}
   ButtonPosition2: {fileID: 167413403}
   ButtonPosition3: {fileID: 1685774282}
