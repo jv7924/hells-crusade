@@ -1,20 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class OptionsMenuScript : MonoBehaviour
 {
+    EventSystem m_EventSystem;
+
     public GameObject menu;
     public GameObject overlay;
     public GameObject backButton;
     public GameObject exitButton;
+    public GameObject ogButton;
     private bool isOpen;
 
     public Image ResolutionImage;
     public Sprite[] resSprites;
     private int defaultRes;
-    
+
+    // Gets the EventSystem
+    void OnEnable()
+    {
+        m_EventSystem = EventSystem.current;
+    }
+
     // Hides options menu ui
     void Start()
     {
@@ -50,6 +61,8 @@ public class OptionsMenuScript : MonoBehaviour
         backButton.SetActive(true);
         exitButton.SetActive(true);
         isOpen = true;
+
+        m_EventSystem.SetSelectedGameObject(backButton);
     }
 
     public void CloseOptions()
@@ -60,6 +73,11 @@ public class OptionsMenuScript : MonoBehaviour
         exitButton.SetActive(false);
         isOpen = false;
         Time.timeScale = 1f;
+
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MainMenu"))
+        {
+            m_EventSystem.SetSelectedGameObject(ogButton);
+        }
     }
 
     public void ToggleFullscreen()

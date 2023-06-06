@@ -1290,7 +1290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 319575541}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1761292633
@@ -1350,6 +1350,7 @@ MonoBehaviour:
   overlay: {fileID: 1809620113}
   backButton: {fileID: 479513193}
   exitButton: {fileID: 1769529767425193394}
+  ogButton: {fileID: 1881325097}
   ResolutionImage: {fileID: 2757364139797432381}
   resSprites:
   - {fileID: 21300000, guid: 3dfa50d7f9e7e364c8e3b1cda097040a, type: 3}
@@ -2211,7 +2212,7 @@ PrefabInstance:
     - target: {fileID: 2757364139497241772, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
       propertyPath: m_Navigation.m_SelectOnLeft
       value: 
-      objectReference: {fileID: 1769529767425193395}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
 --- !u!114 &2757364139797432381 stripped
