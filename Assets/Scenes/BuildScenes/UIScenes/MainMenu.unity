@@ -1858,6 +1858,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 735885526}
     m_Modifications:
     - target: {fileID: 1769529768104168956, guid: 834047dd65104d94393b165db87b74bc, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769529768104168956, guid: 834047dd65104d94393b165db87b74bc, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 4
       objectReference: {fileID: 0}
@@ -1869,6 +1873,10 @@ PrefabInstance:
       propertyPath: m_Navigation.m_SelectOnRight
       value: 
       objectReference: {fileID: 2119267551}
+    - target: {fileID: 1769529768104168956, guid: 834047dd65104d94393b165db87b74bc, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3f78e90092dfff94a96f5db9d92754af, type: 3}
     - target: {fileID: 1769529768104168956, guid: 834047dd65104d94393b165db87b74bc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -2091,6 +2099,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2757364138231222789, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757364138231222789, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 4
       objectReference: {fileID: 0}
@@ -2102,6 +2114,10 @@ PrefabInstance:
       propertyPath: m_Navigation.m_SelectOnLeft
       value: 
       objectReference: {fileID: 1226760277}
+    - target: {fileID: 2757364138231222789, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e25404fd5ef21b341bd51319c1b2a8f6, type: 3}
     - target: {fileID: 2757364138231222789, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -2135,6 +2151,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 929283029924aa64e92a167da746b52c, type: 3}
     - target: {fileID: 2757364138837178420, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757364138837178420, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 4
       objectReference: {fileID: 0}
@@ -2146,6 +2166,10 @@ PrefabInstance:
       propertyPath: m_Navigation.m_SelectOnRight
       value: 
       objectReference: {fileID: 186858711}
+    - target: {fileID: 2757364138837178420, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9c48a7e2ee3d50e488687cc4c1e767c7, type: 3}
     - target: {fileID: 2757364138837178420, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -2183,6 +2207,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2757364139194601141, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757364139194601141, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 4
       objectReference: {fileID: 0}
@@ -2195,9 +2223,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1226760277}
     - target: {fileID: 2757364139194601141, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 11637f26819f5d94d90ab5d2ad49afcd, type: 3}
+    - target: {fileID: 2757364139194601141, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1761292636}
+    - target: {fileID: 2757364139497241772, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2757364139497241772, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 4
@@ -2214,6 +2250,10 @@ PrefabInstance:
       propertyPath: m_Navigation.m_SelectOnLeft
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2757364139497241772, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ae940a5aff559e044aec49fecf8a9b70, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0033dbf05bddba4899ee45122a7dc89, type: 3}
 --- !u!114 &2757364139797432381 stripped
@@ -2319,6 +2359,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2450222872680425589, guid: 8562b53e81c3d6844b49d4e6b2325df9, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450222872680425589, guid: 8562b53e81c3d6844b49d4e6b2325df9, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 4
       objectReference: {fileID: 0}
@@ -2334,6 +2378,10 @@ PrefabInstance:
       propertyPath: m_Navigation.m_SelectOnRight
       value: 
       objectReference: {fileID: 2119267551}
+    - target: {fileID: 2450222872680425589, guid: 8562b53e81c3d6844b49d4e6b2325df9, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bd879449911de5545a65bb60f433123a, type: 3}
     - target: {fileID: 2450222872680425589, guid: 8562b53e81c3d6844b49d4e6b2325df9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
