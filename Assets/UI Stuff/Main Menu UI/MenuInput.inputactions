@@ -37,7 +37,7 @@
                 {
                     "name": "",
                     "id": "afbeafa0-bd98-4a92-9184-c7102b805634",
-                    "path": "<DualShockGamepad>/leftStick/right",
+                    "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "AxisDeadzone",
                     "groups": "",
@@ -48,7 +48,7 @@
                 {
                     "name": "",
                     "id": "af6f2991-f6c4-4c49-bcf7-1a628c39fe18",
-                    "path": "<DualShockGamepad>/leftStick/left",
+                    "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "AxisDeadzone",
                     "groups": "",
@@ -59,7 +59,7 @@
                 {
                     "name": "",
                     "id": "a523ad05-c2f6-4ab8-a8dd-d421b4a8337b",
-                    "path": "<DualShockGamepad>/buttonEast",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
