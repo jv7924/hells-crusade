@@ -306,6 +306,7 @@ MonoBehaviour:
   cameraScale: 6.5
   playerSpawn: {fileID: 2059554180}
   cameraLocation: {fileID: 1346982266}
+  deathCount: 0
 --- !u!4 &83892996
 Transform:
   m_ObjectHideFlags: 0
@@ -1044,8 +1045,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fm: {fileID: 439913330}
-  FloorNum: {fileID: 998916418}
+  rm: {fileID: 1853860080}
   RoomNum: {fileID: 1375324671}
+  EnemyKilled: {fileID: 2146848077}
+  EnemyTotal: {fileID: 1710859272}
 --- !u!1001 &547845381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14687,7 +14690,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 865f1e7d8c941a24fa9916068a4d68b8, type: 2}
   m_sharedMaterial: {fileID: -7667155838576968201, guid: 865f1e7d8c941a24fa9916068a4d68b8, type: 2}
@@ -15655,6 +15658,7 @@ MonoBehaviour:
   cameraScale: 6.5
   playerSpawn: {fileID: 1156093884}
   cameraLocation: {fileID: 1083104301}
+  deathCount: 0
 --- !u!4 &1453115374
 Transform:
   m_ObjectHideFlags: 0
@@ -16043,8 +16047,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54.062, y: 23.6}
-  m_SizeDelta: {x: 17.6897, y: 26.4583}
+  m_AnchoredPosition: {x: 58.82447, y: 23.6}
+  m_SizeDelta: {x: 28.8387, y: 26.4583}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1710859272
 MonoBehaviour:
@@ -16360,6 +16364,7 @@ MonoBehaviour:
   cameraScale: 6.5
   playerSpawn: {fileID: 1741864711}
   cameraLocation: {fileID: 321760245}
+  deathCount: 0
 --- !u!4 &1740198321
 Transform:
   m_ObjectHideFlags: 0
@@ -16543,6 +16548,7 @@ MonoBehaviour:
   cameraScale: 5
   playerSpawn: {fileID: 1597958716}
   cameraLocation: {fileID: 1465285658}
+  deathCount: 0
 --- !u!1001 &1872381515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17052,8 +17058,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.591, y: 23.6}
-  m_SizeDelta: {x: 21.1817, y: 26.4583}
+  m_AnchoredPosition: {x: 10.7894, y: 23.6}
+  m_SizeDelta: {x: 20.7172, y: 26.4583}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2146848077
 MonoBehaviour:

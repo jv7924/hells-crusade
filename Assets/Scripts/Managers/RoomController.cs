@@ -5,13 +5,13 @@ using UnityEngine.Events;
 
 public class RoomController : MonoBehaviour
 {
-    [SerializeField] private GameObject[] Enemies;
+    [SerializeField] public GameObject[] Enemies;
     [SerializeField] public float cameraScale;
     [SerializeField] public Transform playerSpawn;
     [SerializeField] public Transform cameraLocation;
 
 
-    private int deathCount;
+    public int deathCount;
     private bool debugging;
 
     void Start(){
