@@ -29,7 +29,7 @@ public class FloorManager : MonoBehaviour
     [SerializeField]
     private int floorNumber;
 
-    private int currentRoom;
+    public int currentRoom;
     private bool debugging;
 
     public static Action OnRoomClear;
