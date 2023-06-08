@@ -1044,8 +1044,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08659a9ab9284924b8a77481df3c7adf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomControllers:
+  - {fileID: 1853860080}
+  - {fileID: 1453115373}
+  - {fileID: 83892995}
+  - {fileID: 1740198320}
   fm: {fileID: 439913330}
-  rm: {fileID: 1853860080}
   RoomNum: {fileID: 1375324671}
   EnemyKilled: {fileID: 2146848077}
   EnemyTotal: {fileID: 1710859272}
