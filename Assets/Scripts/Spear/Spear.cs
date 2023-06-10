@@ -40,6 +40,7 @@ public class Spear : MonoBehaviour
         }
         else if(col.gameObject.tag == "Enemy")
         {
+            AudioManager.Instance.Play("SpearSuccess");
             Debug.Log("Enemy Hit");
             enemyHit = true;
             GameManager.Instance.EnemyHit.Invoke(playerNumber);
@@ -49,10 +50,12 @@ public class Spear : MonoBehaviour
             
         }
         else if(col.gameObject.tag == "Wall"){
+            AudioManager.Instance.Play("SpearCollide");
             Debug.Log("Wall Hit");
             Destroy(this.gameObject);
         }
         else if(col.gameObject.tag == "Boss"){
+            AudioManager.Instance.Play("SpearSuccess");
             Debug.Log("Boss Hit");
             enemyHit = true;
             GameManager.Instance.EnemyHit.Invoke(playerNumber);

@@ -68,6 +68,7 @@ public class ChargeBoss : MonoBehaviour
         charging = true;
         sr.color = Color.red;
         rb.velocity = transform.up * chargeSpeed;
+        AudioManager.Instance.Play("BossCharge");
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -91,6 +92,7 @@ public class ChargeBoss : MonoBehaviour
         } 
         if(col.gameObject.CompareTag("Wall"))
         {
+            AudioManager.Instance.Play("BossChargeEnd");
             Debug.Log("Wall Hit");
             rb.velocity = Vector3.zero;
             sr.color = Color.white;
@@ -107,6 +109,7 @@ public class ChargeBoss : MonoBehaviour
 
     void OnDestroy(){
         Debug.Log("Boss Killed");
+        AudioManager.Instance.Play("BossDeath");
         FloorManager.Instance.OnEnemyDeath.Invoke();
     }
 }

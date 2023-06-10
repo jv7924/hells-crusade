@@ -16,7 +16,7 @@ public class EnemyFollow : Enemy
     {
         if (health > 0)
         {
-            SeekTarget();
+            SeekTarget();   
         }
         Animate();
     }

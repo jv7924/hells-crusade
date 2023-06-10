@@ -72,20 +72,24 @@ public class PlayerController : MonoBehaviour
         if(col.gameObject.CompareTag("Pickup")){
             if (spearThrow.canThrow == false)
             {
+                AudioManager.Instance.Play("RechargeSpear");
                 spearThrow.canThrow = true;
                 Destroy(col.gameObject);
             }
         }
         if(col.gameObject.CompareTag("Enemy")){
+            AudioManager.Instance.Play("EnemySplat");
             takeDamage();
         }
         if(col.gameObject.CompareTag("Boss")){
+            AudioManager.Instance.Play("EnemySplat");
             takeDamage();
         }
     }
 
     void OnTriggerEnter2D(Collider2D col){
-        if(col.gameObject.CompareTag( "Bullet")){
+        if(col.gameObject.CompareTag("Bullet")){
+            AudioManager.Instance.Play("EnemySplat");
             takeDamage();
         }
         //else if(col.gameObject.CompareTag("Spear")){

@@ -74,6 +74,8 @@ public class RangedEnemy : Enemy
             Rigidbody2D enemySpearRB = enemySpearInstance.GetComponent<Rigidbody2D>();
             enemySpearRB.AddForce(firingPoint.up * enemyForce, ForceMode2D.Impulse);
             timeToFire = fireRate;
+
+            AudioManager.Instance.Play("SpearThrow");
         } else 
         {
             timeToFire -= Time.deltaTime;

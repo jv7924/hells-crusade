@@ -80,7 +80,8 @@ public class SpearThrow : MonoBehaviour
         thrown = true;
         animator.SetBool("Throwing", true);
         animator.SetBool("Charging", false);
-        
+        AudioManager.Instance.Play("SpearThrow");
+
         GameObject spearInstance = Instantiate(spear, throwTransform.position, throwTransform.rotation);
         Rigidbody2D spearRB = spearInstance.GetComponent<Rigidbody2D>();
         spearRB.AddForce(throwTransform.up * launchForce, ForceMode2D.Impulse);

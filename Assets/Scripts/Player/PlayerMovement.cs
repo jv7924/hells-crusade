@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private SpriteRenderer sr;
 
+    private bool isWalking;
+
     void Awake()
     {
         playerRB = GetComponent<Rigidbody2D>();

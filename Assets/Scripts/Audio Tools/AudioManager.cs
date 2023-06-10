@@ -33,6 +33,8 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
 
         }
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void Play(string name)
@@ -44,7 +46,7 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Play("Theme");
     }
 
     // Update is called once per frame
