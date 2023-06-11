@@ -1008,6 +1008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a8b4a7cd4eaa034d8d5f18b4527c3c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angel: {fileID: 2030081702}
   dialogBox: {fileID: 567332962}
   dialogBoxes:
   - {fileID: 21300000, guid: 265744d9f93a772419574f0b72d86c2d, type: 3}
@@ -1022,6 +1023,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6bb7e9eb246dedc4daf47d63139b465a, type: 3}
   - {fileID: 21300000, guid: 3671571d4c107874780cfea6a823d74f, type: 3}
   fadingCanvas: {fileID: 713739194}
+  animator: {fileID: 0}
 --- !u!1001 &547845381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16502,7 +16504,6 @@ GameObject:
   - component: {fileID: 2030081703}
   - component: {fileID: 2030081705}
   - component: {fileID: 2030081704}
-  - component: {fileID: 2030081706}
   m_Layer: 4
   m_Name: angel
   m_TagString: Untagged
@@ -16568,26 +16569,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2030081702}
   m_CullTransparentMesh: 1
---- !u!95 &2030081706
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2030081702}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a925a66e44328d3499764117b04e3c13, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &2059554179
 GameObject:
   m_ObjectHideFlags: 0

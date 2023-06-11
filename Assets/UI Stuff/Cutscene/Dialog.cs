@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
 
 public class Dialog : MonoBehaviour
 {
+    public GameObject angel;
     public Image dialogBox;
     public Sprite[] dialogBoxes;
 
     public CanvasGroup fadingCanvas;
+    public Animator animator;
 
     private int spriteNum;
     private bool isFaded = true;
@@ -34,15 +37,20 @@ public class Dialog : MonoBehaviour
 
     public void ChangeBox()
     {
-        Sprite nSprite = dialogBoxes[spriteNum];
-        Debug.Log(dialogBoxes[spriteNum]);
-        dialogBox.sprite = nSprite;
-        spriteNum = spriteNum + 1;
+        if (spriteNum >= dialogBoxes.Length)
+        {
+            Fade();
+        }
+        else
+        {
+            //Sprite nSprite = dialogBoxes[spriteNum];
+            dialogBox.sprite = dialogBoxes[spriteNum];
+            spriteNum = spriteNum + 1;
+        }
     }
 
     public void Fader()
     {
-        isFaded = !isFaded;
 
         if(isFaded)
         {
@@ -52,5 +60,17 @@ public class Dialog : MonoBehaviour
         {
             fadingCanvas.DOFade(0, 2);
         }
+    }
+
+    private void Fade()
+    {
+        fadingCanvas.DOFade(0, 2);
+        Invoke("Transition", 2);
+    }
+
+    public void Transition()
+    {
+        angel.SetActive(false);
+        SceneManager.LoadScene("F1V1");
     }
 }
