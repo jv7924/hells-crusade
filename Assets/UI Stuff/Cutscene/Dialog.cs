@@ -8,14 +8,17 @@ using DG.Tweening;
 public class Dialog : MonoBehaviour
 {
     public GameObject angel;
+    public Sprite noWeapon;
     public Image dialogBox;
     public Sprite[] dialogBoxes;
 
     public CanvasGroup fadingCanvas;
-    public Animator animator;
+    //public Animator animator;
 
     private int spriteNum;
     private bool isFaded = true;
+
+    //public AngelDisAnimation a;
 
 
     // Start is called before the first frame update
@@ -43,34 +46,27 @@ public class Dialog : MonoBehaviour
         }
         else
         {
-            //Sprite nSprite = dialogBoxes[spriteNum];
+            if(spriteNum == 7)
+            {
+                angel.GetComponent<Image>().sprite = noWeapon;
+            }
+
             dialogBox.sprite = dialogBoxes[spriteNum];
             spriteNum = spriteNum + 1;
         }
     }
 
-    public void Fader()
+    
+    public void Fade()
     {
-
-        if(isFaded)
-        {
-            fadingCanvas.DOFade(1, 2);
-        }
-        else
-        {
-            fadingCanvas.DOFade(0, 2);
-        }
+        fadingCanvas.DOFade(0, 1);
+        Invoke("Transition", 1);
     }
 
-    private void Fade()
-    {
-        fadingCanvas.DOFade(0, 2);
-        Invoke("Transition", 2);
-    }
 
-    public void Transition()
+    private void Transition()
     {
-        angel.SetActive(false);
         SceneManager.LoadScene("F1V1");
     }
+  
 }
