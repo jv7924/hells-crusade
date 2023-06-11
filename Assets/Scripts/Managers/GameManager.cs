@@ -98,6 +98,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(nextFloor);
     }
 
+    // UI Function
     private void endGame(){
         // Turns on game over canvas and pauses enemies
         Invoke("pauseScene", 1.2f);
@@ -105,6 +106,7 @@ public class GameManager : MonoBehaviour
         hud.SetActive(false);
     }
 
+    //UI Function
     private void pauseScene()
     {
         Time.timeScale = 0f;

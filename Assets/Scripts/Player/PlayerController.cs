@@ -40,6 +40,9 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        // NOTE: Commented these out bc I wanted the player objects
+        // + their location to stay in game over transition
+
         // playerAnimator death animation
         // gameObject.SetActive(false);
     }
