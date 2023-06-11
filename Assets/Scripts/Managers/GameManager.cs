@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
 
     private void endGame(){
         // Turns on game over canvas and pauses enemies
-        Invoke("pauseScene", 0.8f);
+        Invoke("pauseScene", 1.2f);
         gameOver.SetActive(true);
         hud.SetActive(false);
     }

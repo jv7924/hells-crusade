@@ -978,7 +978,6 @@ MonoBehaviour:
   overlay: {fileID: 1346563058}
   backButton: {fileID: 1602518284}
   exitButton: {fileID: 1725194439}
-  ogButton: {fileID: 0}
   ResolutionImage: {fileID: 1735378416}
   resSprites:
   - {fileID: 21300000, guid: 3dfa50d7f9e7e364c8e3b1cda097040a, type: 3}
@@ -997,6 +996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorOneIndex: 0
+  restartFloorIndex: 0
 --- !u!114 &502805426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1044,7 +1044,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88511bd3177072c42b7e24503b06525c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angel: {fileID: 2030081704}
+  angel: {fileID: 2030081702}
+  angelSprite: {fileID: 21300000, guid: 9dc6215ee8902c8409f225751c7434dc, type: 3}
   sprites:
   - {fileID: 1210379848, guid: 7527f423d612424459ccdfe2420f9f2c, type: 3}
   - {fileID: 434160872, guid: 7527f423d612424459ccdfe2420f9f2c, type: 3}
@@ -1052,7 +1053,9 @@ MonoBehaviour:
   - {fileID: -1860623671, guid: 7527f423d612424459ccdfe2420f9f2c, type: 3}
   - {fileID: 94955802, guid: 7527f423d612424459ccdfe2420f9f2c, type: 3}
   - {fileID: -965302864, guid: 7527f423d612424459ccdfe2420f9f2c, type: 3}
-  speed: 0.7
+  deathOverlay: {fileID: 0}
+  deathButtons: {fileID: 0}
+  fadingCanvas: {fileID: 0}
 --- !u!1001 &547845381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1491,6 +1494,8 @@ MonoBehaviour:
   - {fileID: 4627524080010712934, guid: 339aa1943fb98934888f8d15e7c90bbd, type: 3}
   mainCam: {fileID: 814705597}
   floorSceneIndexes: 03000000
+  gameOver: {fileID: 0}
+  hud: {fileID: 0}
   debugMode: 0
   EnemyHit:
     m_PersistentCalls:

@@ -66,6 +66,7 @@ public class Dialog : MonoBehaviour
 
     private void Transition()
     {
+        isFaded = true;
         SceneManager.LoadScene("F1V1");
     }
   
