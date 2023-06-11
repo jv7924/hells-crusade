@@ -5,24 +5,35 @@ using UnityEngine.UI;
 
 public class AngelDisAnimation : MonoBehaviour
 {
-    public Image angel;
+    public GameObject angel;
+    public Sprite angelSprite;
     public Sprite[] sprites;
-    public float speed;
+    public GameObject deathOverlay;
 
     private int spriteIndex;
-    Coroutine coroAnim;
-    //private bool isDone;
+    private bool appeared = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        deathOverlay.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(deathOverlay.activeInHierarchy && appeared == false)
+        {
+            appeared = true;
+            Invoke("SmokeIn", 0.4f);
+        }
         
+    }
+
+    private void SmokeIn()
+    {
+        angel.SetActive(true);
+        StartCoroutine(doOtherAnimation());
     }
 
     public void smoke()
@@ -35,8 +46,19 @@ public class AngelDisAnimation : MonoBehaviour
     {
         for (int i = 0; i < sprites.Length; i++)
         {
-            yield return new WaitForSeconds(0.03F);
-            angel.sprite = sprites[i];
+            yield return new WaitForSeconds(0.3F);
+            angel.GetComponent<Image>().sprite = sprites[i];
         }
+    }
+
+    IEnumerator doOtherAnimation()
+    {
+        for (int i = 0; i < sprites.Length; i++)
+        {
+            yield return new WaitForSeconds(0.05F);
+            angel.GetComponent<Image>().sprite = sprites[i];
+        }
+
+        angel.GetComponent<Image>().sprite = angelSprite;
     }
 }

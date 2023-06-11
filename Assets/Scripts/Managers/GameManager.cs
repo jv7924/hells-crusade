@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +31,12 @@ public class GameManager : MonoBehaviour
     
     [SerializeField]
     int[] floorSceneIndexes;
+
+    [SerializeField]
+    private GameObject gameOver;
+
+    [SerializeField]
+    private GameObject hud;
 
     [SerializeField]
     public bool debugMode;
@@ -92,8 +99,15 @@ public class GameManager : MonoBehaviour
     }
 
     private void endGame(){
-        // Goes to game loss screen
-        SceneManager.LoadScene("GameOver");
+        // Turns on game over canvas and pauses enemies
+        Invoke("pauseScene", 0.8f);
+        gameOver.SetActive(true);
+        hud.SetActive(false);
+    }
+
+    private void pauseScene()
+    {
+        Time.timeScale = 0f;
     }
 
     private void onRefresh(){

@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         // playerAnimator death animation
-        gameObject.SetActive(false);
+        // gameObject.SetActive(false);
     }
 
     public void Refresh(){
