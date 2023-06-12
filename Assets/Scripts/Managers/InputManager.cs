@@ -27,28 +27,28 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        SetUpAxis();
+        // SetUpAxis();
         SetUpShooting();
     }
 
-    public Vector2 GetInputVector()
-    {
-        return inputVector;
-    }
+    // public Vector2 GetInputVector()
+    // {
+    //     return inputVector;
+    // }
 
     public string GetShootButton()
     {
         return shootButton;
     }
 
-    private void SetUpAxis()
-    {
-        // Get the players number so that the controls can be set up easy
-        horizontalInput = Input.GetAxisRaw("Horizontal Local " + playerNum);
-        verticalInput = Input.GetAxisRaw("Vertical Local " + playerNum);
+    // private void SetUpAxis()
+    // {
+    //     // Get the players number so that the controls can be set up easy
+    //     horizontalInput = Input.GetAxisRaw("Horizontal Local " + playerNum);
+    //     verticalInput = Input.GetAxisRaw("Vertical Local " + playerNum);
 
-        inputVector = new Vector2(horizontalInput, verticalInput);
-    }
+    //     inputVector = new Vector2(horizontalInput, verticalInput);
+    // }
 
     private void SetUpShooting()
     {
