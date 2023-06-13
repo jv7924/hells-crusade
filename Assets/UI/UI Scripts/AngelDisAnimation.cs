@@ -72,7 +72,7 @@ public class AngelDisAnimation : MonoBehaviour
     {
         for (int i = 0; i < sprites.Length; i++)
         {
-            yield return new WaitForSeconds(0.3F);
+            yield return new WaitForSeconds(0.1F);
             angel.GetComponent<Image>().sprite = sprites[i];
         }
     }

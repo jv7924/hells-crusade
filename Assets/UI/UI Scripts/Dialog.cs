@@ -13,6 +13,7 @@ public class Dialog : MonoBehaviour
     public Sprite[] dialogBoxes;
 
     public CanvasGroup fadingCanvas;
+    public bool isStart = true;
     //public Animator animator;
 
     private int spriteNum;
@@ -56,6 +57,19 @@ public class Dialog : MonoBehaviour
         }
     }
 
+    public void ChangeBox2()
+    {
+        if (spriteNum >= dialogBoxes.Length)
+        {
+            Fade2();
+        }
+        else
+        {
+            dialogBox.sprite = dialogBoxes[spriteNum];
+            spriteNum = spriteNum + 1;
+        }
+    }
+
     
     public void Fade()
     {
@@ -68,6 +82,13 @@ public class Dialog : MonoBehaviour
     {
         isFaded = true;
         SceneManager.LoadScene("F1V1");
+    }
+
+    public void Fade2()
+    {
+        fadingCanvas.DOFade(0, 1);
+        angel.GetComponent<Image>().sprite = noWeapon;
+        angel.GetComponent<AngelOut>().SmokeAgain();
     }
   
 }
