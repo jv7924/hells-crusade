@@ -292,12 +292,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spear: {fileID: 7772507828351131551, guid: 5f03cdf2ac42fbe46865c718f9ba5cbd, type: 3}
   throwTransform: {fileID: 1512591289}
-  minLaunchForce: 15
-  maxLaunchForce: 30
-  maxChargeTime: 0.75
   throwUI: {fileID: 0}
-  throwUISprite: {fileID: 21300000, guid: 27345730314e6624d8b23fcda5d3d724, type: 3}
+  throwUISprite: {fileID: 0}
   canThrow: 1
+  maxChargeTime: 0.75
 --- !u!114 &2057631498
 MonoBehaviour:
   m_ObjectHideFlags: 0

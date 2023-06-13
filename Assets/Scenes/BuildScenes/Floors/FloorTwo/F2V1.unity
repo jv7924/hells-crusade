@@ -1251,7 +1251,7 @@ MonoBehaviour:
   - {fileID: 4627524080010712934, guid: 80897ee2a70a1bb4a9791df4b2a8c61f, type: 3}
   - {fileID: 4627524080010712934, guid: db643ae8ae2c3224ab51d1809a82ff42, type: 3}
   mainCam: {fileID: 814705597}
-  floorSceneIndexes: 04000000
+  floorSceneIndexes: 05000000
   gameOver: {fileID: 1967716889}
   hud: {fileID: 1196603931}
   debugMode: 0

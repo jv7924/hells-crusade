@@ -63,4 +63,9 @@ public class PlayerMovement : MonoBehaviour
             sr.flipX = false;
         }
     }
+
+    public void freeze()
+    {
+        playerRB.velocity = Vector2.zero;
+    }
 }

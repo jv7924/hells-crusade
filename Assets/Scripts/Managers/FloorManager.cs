@@ -62,7 +62,7 @@ public class FloorManager : MonoBehaviour
             if(debugging){Debug.Log("room loaded");}
         }
         else {
-            GameManager.Instance.AdvanceFloors(floorNumber);
+            GameManager.Instance.AdvanceFloors();
         }
 
     }

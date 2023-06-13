@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Spear : MonoBehaviour
 {
-    [SerializeField]
-    private float maxLifeTime;
+    
     [SerializeField]
     private GameObject respawn;
     [SerializeField]
@@ -14,14 +13,11 @@ public class Spear : MonoBehaviour
     private Vector3 lastPos;
     private bool enemyHit;
 
-    
-    
+    private float maxLifeTime = 25f;
+
     // Start is called before the first frame update
     void Start()
     {
-        // need better formula for max lifetime
-        Vector2 velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
-        float lifetime = velocity.magnitude/ maxLifeTime;
         enemyHit = false;
         Destroy(gameObject, maxLifeTime);
     }

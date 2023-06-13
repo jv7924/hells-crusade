@@ -10,21 +10,17 @@ public class SpearThrow : MonoBehaviour
     [SerializeField]
     private Transform throwTransform;
     [SerializeField]
-    private float minLaunchForce = 15f;
-    [SerializeField]
-    private float maxLaunchForce = 30f;
-    [SerializeField]
-    public float maxChargeTime = .75f;
-    [SerializeField]
-    private GameObject throwUI;
-    [SerializeField]
-    private Sprite throwUISprite;
+    private Slider throwUI;
+
 
     private float chargeSpeed;
     private float launchForce;
     private string shootButton;
     private bool thrown = false;
     public bool canThrow;
+    private float minLaunchForce = 5f;
+    private float maxLaunchForce = 25f;
+    public float maxChargeTime = .75f;
 
     private InputManager input;
     private AimTest aim;
@@ -38,6 +34,8 @@ public class SpearThrow : MonoBehaviour
         input = GetComponent<InputManager>();
         aim = GetComponentInChildren<AimTest>();
         animator = GetComponent<Animator>();
+
+        throwUI.maxValue = maxLaunchForce;
     }
 
     // Update is called once per frame
@@ -60,11 +58,13 @@ public class SpearThrow : MonoBehaviour
                 launchForce = minLaunchForce;
                 Debug.Log(shootButton);
                 animator.SetBool("Charging", true);
+                throwUI.gameObject.SetActive(true);
             }
             else if(Input.GetButton(shootButton) && !thrown)
             {
                 launchForce += Time.deltaTime * chargeSpeed;
                 // slider update
+                throwUI.value = launchForce;
             }
             else if (Input.GetButtonUp(shootButton) && !thrown)
             {
@@ -88,14 +88,7 @@ public class SpearThrow : MonoBehaviour
         
         launchForce = minLaunchForce;
 
-        // changes spear UI image from yellow (has spear) to white (doesn't have spear)
-        if(throwUI != null)
-        {
-            Image throwImage = throwUI.GetComponent<Image>();
-            throwImage.sprite = throwUISprite;
-        }
-            
-        
+        resetUI();
         canThrow = false;
     }
 
@@ -106,8 +99,10 @@ public class SpearThrow : MonoBehaviour
         throwTransform.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
-    public GameObject GetSpear()
+    private void resetUI()
     {
-        return spear;
+        throwUI.value = minLaunchForce;
+        throwUI.gameObject.SetActive(false);
     }
+
 }

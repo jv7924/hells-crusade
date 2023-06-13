@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
 
     private void Start(){
         RefreshPlayers.AddListener(onRefresh);
+        EnemyHit.AddListener(refreshPlayer);
 
     }
 
@@ -93,9 +94,9 @@ public class GameManager : MonoBehaviour
     }
 
     // game state Management Functions
-    public void AdvanceFloors(int prevFloor){
-        int nextFloor = (int)Random.Range(0, floorSceneIndexes.Length - 1);
-        SceneManager.LoadScene(nextFloor);
+    public void AdvanceFloors(){
+        int nextFloor = (int)Random.Range(0, floorSceneIndexes.Length);
+        SceneManager.LoadScene(floorSceneIndexes[nextFloor]);
     }
 
     // UI Function
@@ -106,7 +107,7 @@ public class GameManager : MonoBehaviour
         hud.SetActive(false);
     }
 
-    //UI Function
+    // UI Function
     private void pauseScene()
     {
         Time.timeScale = 0f;
@@ -115,5 +116,9 @@ public class GameManager : MonoBehaviour
     private void onRefresh(){
         playerStatuses[0] = PlayerStatus.ALIVE;
         playerStatuses[1] = PlayerStatus.ALIVE;
+    }
+
+    private void refreshPlayer(int playerNumber) {
+        playerStatuses[playerNumber] = PlayerStatus.ALIVE;
     }
 }
