@@ -1032,6 +1032,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0fcec30279edad1499873fdb8a09f995, type: 3}
   - {fileID: 21300000, guid: f2f5bb7900c8e4749b6fee21a61eaaec, type: 3}
   fadingCanvas: {fileID: 713739194}
+  isStart: 1
 --- !u!114 &502805427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1056,6 +1057,7 @@ MonoBehaviour:
   deathOverlay: {fileID: 0}
   deathButtons: {fileID: 0}
   fadingCanvas: {fileID: 0}
+  floorIndex: 1
 --- !u!1001 &547845381
 PrefabInstance:
   m_ObjectHideFlags: 0

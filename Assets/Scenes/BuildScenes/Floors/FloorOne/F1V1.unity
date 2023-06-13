@@ -1185,6 +1185,7 @@ MonoBehaviour:
   deathOverlay: {fileID: 1911831081}
   deathButtons: {fileID: 697458755}
   fadingCanvas: {fileID: 697458760}
+  floorIndex: 1
 --- !u!1 &547329910
 GameObject:
   m_ObjectHideFlags: 0
@@ -16329,6 +16330,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angel: {fileID: 1907443335}
   a: {fileID: 502805427}
+  fadingCanvas: {fileID: 0}
+  smoked: 0
 --- !u!1 &1911831081
 GameObject:
   m_ObjectHideFlags: 0

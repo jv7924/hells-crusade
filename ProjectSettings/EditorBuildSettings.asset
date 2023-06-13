@@ -41,5 +41,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BuildScenes/Floors/FloorThree/F3V1.unity
     guid: a16ee195cbc124441a4e0e59a2552920
+  - enabled: 1
+    path: Assets/Scenes/BuildScenes/UIScenes/GameWon.unity
+    guid: e2d5c621e24f0d6429b9cb2e645e0435
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0881616ab009f6d4180558e74e35782a, type: 2}

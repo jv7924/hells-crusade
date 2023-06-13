@@ -12,12 +12,13 @@ public class AngelDisAnimation : MonoBehaviour
     public GameObject deathOverlay;
     public GameObject deathButtons;
     public CanvasGroup fadingCanvas;
+    public int floorIndex;
 
     private GameObject player1;
     private GameObject player2;
 
     private int spriteIndex;
-    private bool appeared = false;
+    bool appeared = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,11 @@ public class AngelDisAnimation : MonoBehaviour
         {
             deathOverlay.SetActive(false);
             deathButtons.SetActive(false);
+        }
+        
+        if(floorIndex != 1)
+        {
+            angel.SetActive(false);
         }
     }
 
