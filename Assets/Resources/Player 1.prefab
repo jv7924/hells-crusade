@@ -293,7 +293,6 @@ MonoBehaviour:
   spear: {fileID: 7772507828351131551, guid: 5f03cdf2ac42fbe46865c718f9ba5cbd, type: 3}
   throwTransform: {fileID: 1512591289}
   throwUI: {fileID: 0}
-  throwUISprite: {fileID: 0}
   canThrow: 1
   maxChargeTime: 0.75
 --- !u!114 &2057631498
