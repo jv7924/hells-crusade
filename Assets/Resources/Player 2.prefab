@@ -111,7 +111,7 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 4fbb677a-e5e8-4b62-ac4a-c45d71857d84
+      m_Id: a76ce14a-454b-4e74-b247-ec95cf4cf9e3
       m_Path: <Gamepad>/rightStick
       m_Interactions: 
       m_Processors: 
