@@ -119,6 +119,6 @@ public class GameManager : MonoBehaviour
     }
 
     private void refreshPlayer(int playerNumber) {
-        playerStatuses[playerNumber] = PlayerStatus.ALIVE;
+        playerStatuses[playerNumber - 1] = PlayerStatus.ALIVE;
     }
 }

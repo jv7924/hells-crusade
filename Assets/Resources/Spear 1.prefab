@@ -101,7 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2aeaaf6d4e47402083e212b910420dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLifeTime: 5
   respawn: {fileID: 4476092657956036006, guid: 03af9a51f626a4dac991eed7e216e773, type: 3}
   playerNumber: 1
 --- !u!70 &1583657568488857709

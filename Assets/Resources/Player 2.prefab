@@ -306,12 +306,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spear: {fileID: 7772507828351131551, guid: c6c6523d578153e40aa525c2bc22e65d, type: 3}
   throwTransform: {fileID: 3505797638717641731}
-  minLaunchForce: 15
-  maxLaunchForce: 30
-  maxChargeTime: 0.75
   throwUI: {fileID: 0}
-  throwUISprite: {fileID: 0}
   canThrow: 1
+  maxChargeTime: 0.75
 --- !u!95 &-4673906209031492072
 Animator:
   serializedVersion: 5

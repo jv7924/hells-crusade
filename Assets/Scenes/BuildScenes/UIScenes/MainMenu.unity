@@ -878,7 +878,6 @@ GameObject:
   - component: {fileID: 735885525}
   - component: {fileID: 735885524}
   - component: {fileID: 735885523}
-  - component: {fileID: 735885527}
   - component: {fileID: 735885528}
   m_Layer: 5
   m_Name: Canvas
@@ -980,25 +979,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &735885527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735885522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 080a34ccaa0601a459d8e1c8a199b1f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Point: {fileID: 990131156}
-  playButton: {fileID: 319575541}
-  optionsButton: {fileID: 1881325097}
-  exitButton: {fileID: 344366291}
-  ButtonPosition1: {fileID: 1831746780}
-  ButtonPosition2: {fileID: 167413403}
-  ButtonPosition3: {fileID: 1685774282}
 --- !u!114 &735885528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1707,6 +1687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorOneIndex: 1
+  restartFloorIndex: 0
 --- !u!114 &1761292636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1723,7 +1704,6 @@ MonoBehaviour:
   overlay: {fileID: 1809620113}
   backButton: {fileID: 479513193}
   exitButton: {fileID: 1769529767425193394}
-  ogButton: {fileID: 1881325097}
   ResolutionImage: {fileID: 2757364139797432381}
   resSprites:
   - {fileID: 21300000, guid: 3dfa50d7f9e7e364c8e3b1cda097040a, type: 3}
