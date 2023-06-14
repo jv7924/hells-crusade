@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AimTest : MonoBehaviour
 {
-    [SerializeField]
     public GameObject crosshair;
     [SerializeField]
     private Camera mainCam;
@@ -14,10 +14,26 @@ public class AimTest : MonoBehaviour
     private Transform playerCenter;
     [SerializeField]
     private float playerTwoSens = 0;
+    public InputAction playerAim;
     private int playerNum;
     private float horizontalInput;
     private float verticalInput;
 
+    /// <summary>
+    /// This function is called when the object becomes enabled and active.
+    /// </summary>
+    private void OnEnable()
+    {
+        playerAim.Enable();
+    }
+
+    /// <summary>
+    /// This function is called when the behaviour becomes disabled or inactive.
+    /// </summary>
+    private void OnDisable()
+    {
+        playerAim.Disable();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -43,16 +59,18 @@ public class AimTest : MonoBehaviour
     {
         if (playerNum == 2)
         {
-            horizontalInput = Input.GetAxisRaw("Aim Horizontal");
-            verticalInput = Input.GetAxisRaw("Aim Vertical");
+            // horizontalInput = Input.GetAxisRaw("Aim Horizontal");
+            // verticalInput = Input.GetAxisRaw("Aim Vertical");
 
-            Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
+            Vector2 inputVector = playerAim.ReadValue<Vector2>();
 
             crosshair.transform.position += (Vector3)inputVector * Time.deltaTime * playerTwoSens;
+            // crosshair.transform.Translate((Vector3)inputVector * Time.deltaTime * playerTwoSens);
         }
 
         else if (playerNum == 1)
             crosshair.transform.position = mainCam.ScreenToWorldPoint(Input.mousePosition);
+            
 
         // horizontalInput = Input.GetAxisRaw("Aim Horizontal " + playerNum);
         // verticalInput = Input.GetAxisRaw("Aim Vertical " + playerNum);

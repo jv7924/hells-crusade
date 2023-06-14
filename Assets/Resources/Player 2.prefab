@@ -102,6 +102,23 @@ MonoBehaviour:
   playerCon: {fileID: 1974381082}
   playerCenter: {fileID: 4627524080010712932}
   playerTwoSens: 25
+  playerAim:
+    m_Name: Player Aim
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 9b7f2f90-7227-4a3b-a2ae-defa841eb7ee
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: a76ce14a-454b-4e74-b247-ec95cf4cf9e3
+      m_Path: <Gamepad>/rightStick
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Aim
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1 &4627524080010712934
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +263,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 5
+  playerControls:
+    m_Name: Player Controls
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 590b739a-adcf-4486-b452-56d08f752f0e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 2d601ef3-2b6a-4300-8511-ed73464293a8
+      m_Path: <Gamepad>/leftStick
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 0
+    m_Flags: 0
 --- !u!114 &-2777556448496445629
 MonoBehaviour:
   m_ObjectHideFlags: 0
