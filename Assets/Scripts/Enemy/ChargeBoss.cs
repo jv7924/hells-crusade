@@ -15,6 +15,8 @@ public class ChargeBoss : MonoBehaviour
     private float dist;
     private bool charging = false;
     private bool targeted = false;
+    private bool p1 = true;
+    private bool p2 = true;
 
     void Start()
     {
@@ -30,14 +32,23 @@ public class ChargeBoss : MonoBehaviour
 
         if (!targeted)
         {
-            foreach (GameObject player in players)
+            if (p1 && p2)
             {
-                if (Vector3.Distance(player.transform.position, this.transform.position) < dist)
+                foreach (GameObject player in players)
                 {
-                    dist = Vector3.Distance(player.transform.position, this.transform.position);
-                    followedPlayer = player;
-                    targeted = true;
+                    if (Vector3.Distance(player.transform.position, this.transform.position) < dist)
+                    {
+                        dist = Vector3.Distance(player.transform.position, this.transform.position);
+                        followedPlayer = player;
+                        targeted = true;
+                    }
                 }
+            } else if (!p1)
+            {
+                followedPlayer = players[1];
+            } else if (!p2)
+            {
+                followedPlayer = players[0];
             }
         }
 
@@ -84,6 +95,13 @@ public class ChargeBoss : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col){
         if(col.gameObject.CompareTag("Player"))
         {
+            if (col.gameObject.name == "Player 1")
+            {
+                p1 = false;
+            } else 
+            {
+                p2 = false;
+            }
             Debug.Log("Player Hit");
             rb.velocity = Vector3.zero;
             sr.color = Color.white;
