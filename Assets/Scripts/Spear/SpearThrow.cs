@@ -30,12 +30,12 @@ public class SpearThrow : MonoBehaviour
     void Start()
     {
         chargeSpeed = (maxLaunchForce - minLaunchForce) / maxChargeTime;
-        // throwButton = "Fire" + playerNumber;
+       
         input = GetComponent<InputManager>();
         aim = GetComponentInChildren<AimTest>();
         animator = GetComponent<Animator>();
 
-        //throwUI.maxValue = maxLaunchForce;
+        throwUI.maxValue = maxLaunchForce;
     }
 
     // Update is called once per frame
@@ -46,7 +46,7 @@ public class SpearThrow : MonoBehaviour
 
         Rotate();
         if(canThrow){
-            // needs UI update to be added still
+            
             if(launchForce >= maxLaunchForce && !thrown)
             {
                 launchForce = maxLaunchForce;
@@ -58,13 +58,13 @@ public class SpearThrow : MonoBehaviour
                 launchForce = minLaunchForce;
                 Debug.Log(shootButton);
                 animator.SetBool("Charging", true);
-                //throwUI.gameObject.SetActive(true);
+                throwUI.gameObject.SetActive(true);
             }
             else if(Input.GetButton(shootButton) && !thrown)
             {
                 launchForce += Time.deltaTime * chargeSpeed;
                 // slider update
-                //throwUI.value = launchForce;
+                throwUI.value = launchForce;
             }
             else if (Input.GetButtonUp(shootButton) && !thrown)
             {
@@ -101,8 +101,8 @@ public class SpearThrow : MonoBehaviour
 
     private void resetUI()
     {
-        //throwUI.value = minLaunchForce;
-        //throwUI.gameObject.SetActive(false);
+        throwUI.value = minLaunchForce;
+        throwUI.gameObject.SetActive(false);
     }
 
 }
