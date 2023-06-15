@@ -74,8 +74,9 @@ GameObject:
   - component: {fileID: 5195397542701156291}
   - component: {fileID: 5195397542701156300}
   - component: {fileID: 5195397542701156297}
-  - component: {fileID: 5195397542701156298}
   - component: {fileID: 7806458424057190643}
+  - component: {fileID: 5186304206751557003}
+  - component: {fileID: 6345371074447676722}
   m_Layer: 0
   m_Name: RangedEnemy_Hardest
   m_TagString: Enemy
@@ -165,7 +166,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -199,26 +200,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0305433, y: 0.7754289}
   m_EdgeRadius: 0
---- !u!114 &5195397542701156298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5195397542701156299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a80926463b984834ab16d0b7ff2c6a70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  health: 1
-  distanceToShoot: 15
-  distanceToStop: 10
-  firingPoint: {fileID: 5195397541696037535}
-  proj: {fileID: 4062462592986736700, guid: 37c0daa09454afc4b964f538e1980ef3, type: 3}
-  fireRate: 3
-  enemyForce: 15
 --- !u!95 &7806458424057190643
 Animator:
   serializedVersion: 5
@@ -239,3 +220,52 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &5186304206751557003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5195397542701156299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af055f0bdd854f4d82df8925d5d3429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 400
+  health: 1
+  distanceToShoot: 15
+  distanceToStop: 10
+  firingPoint: {fileID: 5195397541696037535}
+  proj: {fileID: 4062462592986736700, guid: 37c0daa09454afc4b964f538e1980ef3, type: 3}
+  fireRate: 3
+  enemyForce: 15
+  nextWaypointDistance: 3
+--- !u!114 &6345371074447676722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5195397542701156299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1

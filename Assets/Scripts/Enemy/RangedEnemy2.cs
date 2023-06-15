@@ -3,8 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class EnemyFollow2 : Enemy
+public class RangedEnemy2 : Enemy
 {
+    public float distanceToShoot = 5f;
+    public float distanceToStop = 3f;
+    public Transform firingPoint;
+    public GameObject proj;
+    public float fireRate;
+    public float enemyForce;
+    private float timeToFire;
+
     public float nextWaypointDistance = 3f;
     private GameObject target;
     private SpriteRenderer sr;
@@ -44,16 +52,17 @@ public class EnemyFollow2 : Enemy
             Vector3 direction2 = target.transform.position - this.transform.position;
             Vector2 force = direction * speed * Time.deltaTime;
             direction2.Normalize();
-            movement = direction;
+            float angle = Mathf.Atan2(direction2.y, direction2.x) * Mathf.Rad2Deg;
+            rb.rotation = angle - 90;
 
-            rb.AddForce(force);
+            if (Vector2.Distance(target.transform.position, this.transform.position) >= distanceToStop)
+            {
+                rb.AddForce(force);
+            }
 
-            if (force.x >= 0.01f)
+            if (Vector2.Distance(target.transform.position, this.transform.position) <= distanceToShoot)
             {
-                transform.localScale = new Vector3(1f, 1f, 1f);
-            } else if (force.x <= -0.01f)
-            {
-                transform.localScale = new Vector3(-1f, 1f, 1f);
+                Shoot();
             }
 
             float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
@@ -64,6 +73,22 @@ public class EnemyFollow2 : Enemy
             }
         }
         Animate();
+    }
+
+    private void Shoot()
+    {
+        if (timeToFire <= 0f)
+        {
+            GameObject enemySpearInstance = Instantiate(proj, firingPoint.position, firingPoint.rotation);
+            Rigidbody2D enemySpearRB = enemySpearInstance.GetComponent<Rigidbody2D>();
+            enemySpearRB.AddForce(firingPoint.up * enemyForce, ForceMode2D.Impulse);
+            timeToFire = fireRate;
+
+            AudioManager.Instance.Play("SpearThrow");
+        } else 
+        {
+            timeToFire -= Time.deltaTime;
+        }
     }
 
     void UpdatePath()
@@ -95,8 +120,7 @@ public class EnemyFollow2 : Enemy
 
     private void Animate()
     {
-        animator.SetFloat("Distance To Player", dist);
-        animator.SetFloat("Speed", movement.magnitude * speed);
+        animator.SetBool("Attack", (timeToFire <= 0.2f));
         animator.SetInteger("Health", health);
     }
 }

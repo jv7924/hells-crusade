@@ -23,15 +23,6 @@ public class EnemyFollow : Enemy
 
     private void SeekTarget()
     {
-        /*
-        Vector3 direction = player.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
-        direction.Normalize();
-        movement = direction;
-        moveEnemy(movement);
-        */
-
         dist = 99999;
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject player in players)

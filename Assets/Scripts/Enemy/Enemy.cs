@@ -35,7 +35,6 @@ public class Enemy : MonoBehaviour
             {
                 child.gameObject.SetActive(false);
             }
-            //Debug.Log("Destroying enemy.");
             Destroy(gameObject, 1f);
         }
     }

@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class RangedEnemy : Enemy
 {
-    //public float speed;
-    //private GameObject followedPlayer;
-    //private Rigidbody2D rb;
-    //private Vector2 movement;
-    //private float dist;
-    //private Animator animator;
-
     public float distanceToShoot = 5f;
     public float distanceToStop = 3f;
     public Transform firingPoint;
@@ -22,8 +15,6 @@ public class RangedEnemy : Enemy
     new void Start()
     {
         base.Start();
-        //rb = this.GetComponent<Rigidbody2D>();
-        //animator = GetComponent<Animator>();
         timeToFire = 0f;
     }
 
