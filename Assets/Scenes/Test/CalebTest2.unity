@@ -4187,7 +4187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACAn+vjpGt4XQIAABQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVEtzmzAQ/isenZsOJo6T9NZix+nBsSdOJxcusliMxkJi9PAr4//elQBD6Qnp2293v32IL8KlqYBZpReaZ0uVAfkxIv5Mvo064yuc6E7JDb9Ay/nkmS08iQbOO7VcIT72bkaVYDVnP+VOeHKEoJM8V7qcZztIlLEG4ZwKA2jSynpvidDXiJzwc/fsXc54ih/96YKn52h0xSMDaUF31Lhltrya5iQTtKwg85o79v20jVvTJFbTMKLvDz68EoKbRgyx5yoUm9DKOCwFCRmnWFxQEOO1AL4rbHO5Oa/y3IBtRGl6nnGNPaqjkl+qblxJzb5WdqDC+TzTSRBVx1z+Z74bB3OuVfnaph1HPoUtONu/0zOjxvYa24dnne5x6M+Rij3dCvgsQL6phVZOZmi02nlXZyCedddbZUkBbN/htdQB6Kqu4cPp+BquofhTIni5DY2f1MBGqNDuMHzQOJrfKDishmlCIOpV/DHwQXf9HWoML1wbi6amSunlbZXTnkrmoWe+GmcTpSUEuBFdgaTCntcYxg4nOLD10g4sL9S/liZ5Y2sfwcAlwB0/igamtTrehmUKdVyCKVbOCi6hE+0Nb9inRElZL1i/J63bxumcsp7bzvHs39Ui7IHG0X0exU/x42R7v72bTlkOlMXAoudpxJ5I2D0usU4q1rXQpj04NdkFl7hn7U9ktNC0CsueaXpc8Eupei3nMlcbpgHkqo5wEw4ak+CzzOYZxwZtwFouw7zJV0qEYnvI0lugNFQ6P1lN0y5KSip+UNYjKUnCXyMlHr7t8lrDgcPRJ2+DXcn1L1BLAwQUAAAICAAAgJ/ro2ZsuW0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0UrJpopGBcZqBkYWRuUmScZKumVlyWmpislFqsoGlmUGyhVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAgJ/r46RreF0CAAAUBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAgJ/ro2ZsuW0AAAB4AAAACQAkAAAAAAAAAAAAAACqAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAGIDAAAAAA==
+    dataString: UEsDBBQAAAgIAACAn+ty8ouOYgIAABYFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVEtz2jAQ/iuMziVjHEKS3lqHkB5ImNBOLr4IeY01yJJHDx7J8N+7kmXs0hPLt9/ufvuQvwiXpgFmlV5oXixVAeT7iHibfBv1zhc40q2Sa/4JHeeDF7byJBo479RyhfjEhxlVg9Wc/ZBb4ckJgk7yUul6XmwhU8YahEsqDKBLK+ujJUJfI3LEn/GjDzmhld576xOtx2R0RpOBtKB7atoxk5u7yGyJTjJB6wYKr7rn36eRP21pEvuJDK+dKSG4iWKIPTWh2Yw2xmErSCg4xeaCgsnNLQIV8G1lvZJh+FtZGrCxd01PT1zjlNq85KdqR1dTs2uV7alwvtJsGkS1OZf/uceT4C61ql+6spPEl7AVZ7t3emLU2MFoh/DTQHmYz4GKHd0I+KhAvqqFVk4W6LTa+VBnIH3q/146yypgux5vpV6BrukHftlP3I7v4RyaP2aC15uwumkLrIUKAw/rB42r+YWCw3GYmAJRr+KPgd90O7yi6Hjm2lh0xS6ll7dRTnsqmYeZ+W6czZSWEOAougFJhT2tMI293uCVb1D2yvNM/XuJxaOvewZXIQHu+Uly5Vqpw2VZplKHJZjqzVnBJfSiveMV55QpKdsDG86kC1s7XVI2CNs6Xvx7WoTd0TS5LZP0Ib2fbm4349mMlUBZCix5nCXsgYTb4xL7pGLVCo3jwa3JPrnEO+s+I6OFpk049kLTw4J/1mowci5LtWYaQL61GS7CQWMRfJbFvOA4oDVYy2XYN/nKiVBsB0V+SZSHTudHq2neZ8lJw/fKeiQnWfhu5MTDl1teadhzOPjiXbIzOf8FUEsDBBQAAAgIAACAn+ujZmy5bQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrRSsmmikYFxmoGRhZG5SZJxkq6ZWXJaamKyUWqygaWZQbKFUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAACAn+ty8ouOYgIAABYFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACAn+ujZmy5bQAAAHgAAAAJACQAAAAAAAAAAAAAAK8CAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAZwMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -4319,6 +4319,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576194006}
   m_CullTransparentMesh: 1
+--- !u!1 &620496524 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8697349173390123520, guid: 7d537d9312391804e8e78b331857a327, type: 3}
+  m_PrefabInstance: {fileID: 1699188132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &620496533
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620496524}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.1868214}
+  m_Size: {x: 0.7221244, y: 1.7604853}
+  m_Direction: 0
 --- !u!1 &773850754
 GameObject:
   m_ObjectHideFlags: 0
@@ -6545,6 +6566,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4058734333758657796, guid: 7d537d9312391804e8e78b331857a327, type: 3}
+      propertyPath: speed
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 4074478226535038469, guid: 7d537d9312391804e8e78b331857a327, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568481237276653309, guid: 7d537d9312391804e8e78b331857a327, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8697349173390123520, guid: 7d537d9312391804e8e78b331857a327, type: 3}
       propertyPath: m_Name
       value: Soldier Easy
@@ -6602,6 +6635,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5195397541234147994, guid: 072485e971c42824db0091fd7a8421df, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5195397542701156290, guid: 072485e971c42824db0091fd7a8421df, type: 3}
       propertyPath: m_RootOrder
       value: 2
