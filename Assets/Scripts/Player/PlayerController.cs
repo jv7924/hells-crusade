@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     SpearThrow spearThrow;
 
     [SerializeField]
-    private float playerHealth;
+    public float PlayerHealth { get; private set; } = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Refresh(){
+        PlayerHealth = 1;
         movement.enabled = true;
         spearThrow.canThrow = true;
         playerAnimator.SetBool("Downed", false);
@@ -58,6 +59,7 @@ public class PlayerController : MonoBehaviour
     private void Down()
     {
         GameManager.Instance.downPlayer(PlayerNumber);
+        PlayerHealth = 0;
         Debug.Log("player downed");
         playerAnimator.SetBool("Downed", true);
         // play down animation - still need
