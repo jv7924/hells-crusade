@@ -20,6 +20,7 @@ public class SpearThrow : MonoBehaviour
     public bool canThrow;
     private float minLaunchForce = 5f;
     private float maxLaunchForce = 25f;
+    private float minChargeTime;
     public float maxChargeTime = .75f;
 
     private InputManager input;
@@ -29,13 +30,15 @@ public class SpearThrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        chargeSpeed = (maxLaunchForce - minLaunchForce) / maxChargeTime;
+        chargeSpeed = (maxLaunchForce) / maxChargeTime;
+        minChargeTime = chargeSpeed * minLaunchForce;
        
         input = GetComponent<InputManager>();
         aim = GetComponentInChildren<AimTest>();
         animator = GetComponent<Animator>();
 
         throwUI.maxValue = maxLaunchForce;
+        
     }
 
     // Update is called once per frame
@@ -55,7 +58,7 @@ public class SpearThrow : MonoBehaviour
             else if(Input.GetButtonDown(shootButton))
             {
                 thrown = false;
-                launchForce = minLaunchForce;
+                launchForce = 0.0f;
                 Debug.Log(shootButton);
                 animator.SetBool("Charging", true);
                 throwUI.gameObject.SetActive(true);
@@ -63,12 +66,23 @@ public class SpearThrow : MonoBehaviour
             else if(Input.GetButton(shootButton) && !thrown)
             {
                 launchForce += Time.deltaTime * chargeSpeed;
+                
                 // slider update
                 throwUI.value = launchForce;
             }
             else if (Input.GetButtonUp(shootButton) && !thrown)
             {
-                Throw();
+                if(launchForce > minLaunchForce)
+                {
+                    Throw();
+                }
+                else
+                {
+                    resetUI();
+                    launchForce = minLaunchForce;
+                    animator.SetBool("Charging", false);
+                    // shouldnt play the throw animation here, not sure why it does
+                }
             }
         }
 
