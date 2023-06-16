@@ -65,6 +65,9 @@ public class PlayerController : MonoBehaviour
         // restrict movement
         movement.enabled = false;
         movement.freeze();
+
+        // restrict throwing
+        spearThrow.canThrow = false;
     }
 
     public int GetPlayerNumber()
