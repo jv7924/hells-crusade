@@ -7,7 +7,9 @@ using UnityEngine.Events;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    Animator playerAnimator;
+    private Animator playerAnimator;
+
+    private Collider2D col;
 
     [SerializeField]
     int PlayerNumber;
@@ -25,6 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.Instance.EnemyHit.AddListener(checkRefresh);
         GameManager.Instance.RefreshPlayers.AddListener(Refresh);
+        col = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -49,6 +52,7 @@ public class PlayerController : MonoBehaviour
 
     public void Refresh(){
         PlayerHealth = 1;
+        col.enabled = true;
         movement.enabled = true;
         spearThrow.canThrow = true;
         playerAnimator.SetBool("Downed", false);
@@ -60,6 +64,7 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.Instance.downPlayer(PlayerNumber);
         PlayerHealth = 0;
+        col.enabled = false;
         Debug.Log("player downed");
         playerAnimator.SetBool("Downed", true);
         // play down animation - still need

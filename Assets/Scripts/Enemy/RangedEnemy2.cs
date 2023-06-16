@@ -95,14 +95,18 @@ public class RangedEnemy2 : Enemy
     {
         if (seeker.IsDone())
         {
+            target = null;
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
             dist = 99999;
             foreach (GameObject player in players)
             {
-                if (Vector3.Distance(player.transform.position, this.transform.position) < dist)
+                if (player.GetComponent<PlayerController>().PlayerHealth > 0)
                 {
-                    dist = Vector3.Distance(player.transform.position, this.transform.position);
-                    target = player;
+                    if (Vector3.Distance(player.transform.position, this.transform.position) < dist)
+                    {
+                        dist = Vector3.Distance(player.transform.position, this.transform.position);
+                        target = player;
+                    }
                 }
             }
             seeker.StartPath(rb.position, target.transform.position, OnPathComplete);
