@@ -39,6 +39,9 @@ public class GameManager : MonoBehaviour
     private GameObject hud;
 
     [SerializeField]
+    private GameObject transitionCanvas;
+
+    [SerializeField]
     public bool debugMode;
 
     // things to keep track of
@@ -96,7 +99,16 @@ public class GameManager : MonoBehaviour
     // game state Management Functions
     public void AdvanceFloors(){
         int nextFloor = (int)Random.Range(0, floorSceneIndexes.Length);
-        SceneManager.LoadScene(floorSceneIndexes[nextFloor]);
+
+        //UI : If beat floor 3, transition to game won. Else, advance floors
+        if(floorSceneIndexes[0] == 6)
+        {
+            transitionCanvas.GetComponent<TransitionCanvasScript>().BeginTransition();
+        }
+        else
+        {
+            SceneManager.LoadScene(floorSceneIndexes[nextFloor]);
+        }
     }
 
     // UI Function

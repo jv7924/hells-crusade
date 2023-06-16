@@ -1029,12 +1029,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2f68b2050ea75044d9f96d3f878c4190, type: 3}
   - {fileID: 21300000, guid: e5d3a2f5d3f6f25419ee3fd39ad6473f, type: 3}
   - {fileID: 21300000, guid: 88d43f4232c823a4aa0505d586767809, type: 3}
-  - {fileID: 21300000, guid: 03758bddd7dd4834bbb1d262039dc92a, type: 3}
-  - {fileID: 21300000, guid: ab859c8d9842fff4aa3d9b8815c1f3f7, type: 3}
   - {fileID: 21300000, guid: 2a6b895c7e6b043438761447a82d9fe6, type: 3}
   - {fileID: 21300000, guid: 0fcec30279edad1499873fdb8a09f995, type: 3}
   - {fileID: 21300000, guid: f2f5bb7900c8e4749b6fee21a61eaaec, type: 3}
   fadingCanvas: {fileID: 713739194}
+  fadingCanvas2: {fileID: 0}
+  fadingCanvas3: {fileID: 0}
   isStart: 1
 --- !u!114 &502805427
 MonoBehaviour:
@@ -1501,6 +1501,7 @@ MonoBehaviour:
   floorSceneIndexes: 03000000
   gameOver: {fileID: 0}
   hud: {fileID: 0}
+  transitionCanvas: {fileID: 0}
   debugMode: 0
   EnemyHit:
     m_PersistentCalls:

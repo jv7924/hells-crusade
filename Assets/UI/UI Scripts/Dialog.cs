@@ -13,6 +13,8 @@ public class Dialog : MonoBehaviour
     public Sprite[] dialogBoxes;
 
     public CanvasGroup fadingCanvas;
+    public CanvasGroup fadingCanvas2;
+    public CanvasGroup fadingCanvas3;
     public bool isStart = true;
     //public Animator animator;
 
@@ -26,6 +28,7 @@ public class Dialog : MonoBehaviour
     void Start()
     {
         spriteNum = 0;
+      
     }
 
     // Update is called once per frame
@@ -33,7 +36,16 @@ public class Dialog : MonoBehaviour
     {
         if(isFaded)
         {
-            fadingCanvas.DOFade(1, 2);
+            if(fadingCanvas2 != null && fadingCanvas3 != null)
+            {
+                fadingCanvas3.DOFade(1, 1.1f);
+                fadingCanvas2.DOFade(0, 1);
+                Invoke("FadeCan", 1.2f);
+            }
+            else
+            {
+                fadingCanvas.DOFade(1, 2);
+            }
         }
 
         isFaded = false;
@@ -70,6 +82,10 @@ public class Dialog : MonoBehaviour
         }
     }
 
+    private void FadeCan()
+    {
+        fadingCanvas.DOFade(1, 2);
+    }
     
     public void Fade()
     {

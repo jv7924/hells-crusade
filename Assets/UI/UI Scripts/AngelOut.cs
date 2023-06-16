@@ -9,12 +9,16 @@ public class AngelOut : MonoBehaviour
     public GameObject angel;
     public AngelDisAnimation a;
     public CanvasGroup fadingCanvas;
+    public GameObject gCan;
 
     public bool smoked = false;
     // Start is called before the first frame update
     void Start()
     {
-        //a.smoke();
+        if (gCan != null)
+        {
+            gCan.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -43,6 +47,10 @@ public class AngelOut : MonoBehaviour
 
     private void Fade()
     {
+        if (gCan != null)
+        {
+            gCan.SetActive(true);
+        }
         fadingCanvas.DOFade(1, 2f);
     }
 }
