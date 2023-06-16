@@ -645,7 +645,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321760244}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.1, y: -4, z: -20}
+  m_LocalPosition: {x: 16.81, y: -4, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1423,6 +1423,63 @@ MonoBehaviour:
   OnEnemyDeath:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1001 &474028891
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7445781931711700288, guid: b1e84e20564017749a7d4734bacdf792, type: 3}
+      propertyPath: m_Name
+      value: AudioManagerObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445781931711700318, guid: b1e84e20564017749a7d4734bacdf792, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445781931711700318, guid: b1e84e20564017749a7d4734bacdf792, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445781931711700318, guid: b1e84e20564017749a7d4734bacdf792, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445781931711700318, guid: b1e84e20564017749a7d4734bacdf792, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445781931711700318, guid: b1e84e20564017749a7d4734bacdf792, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445781931711700318, guid: b1e84e20564017749a7d4734bacdf792, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445781931711700318, guid: b1e84e20564017749a7d4734bacdf792, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445781931711700318, guid: b1e84e20564017749a7d4734bacdf792, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445781931711700318, guid: b1e84e20564017749a7d4734bacdf792, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445781931711700318, guid: b1e84e20564017749a7d4734bacdf792, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445781931711700318, guid: b1e84e20564017749a7d4734bacdf792, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b1e84e20564017749a7d4734bacdf792, type: 3}
 --- !u!1001 &484130433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33889,7 +33946,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083104300}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.73, y: -4, z: -20}
+  m_LocalPosition: {x: 21.01, y: -4, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34030,7 +34087,7 @@ MonoBehaviour:
   Enemies:
   - {fileID: 390107295}
   - {fileID: 1251802775}
-  cameraScale: 9
+  cameraScale: 10.5
   playerSpawn: {fileID: 1983586787}
   cameraLocation: {fileID: 1455804005}
   deathCount: 0
@@ -34978,7 +35035,7 @@ MonoBehaviour:
   - {fileID: 1380495926}
   - {fileID: 1806452965}
   - {fileID: 1553941623}
-  cameraScale: 8
+  cameraScale: 9.5
   playerSpawn: {fileID: 1156093884}
   cameraLocation: {fileID: 1083104301}
   deathCount: 0
@@ -35707,7 +35764,7 @@ MonoBehaviour:
   - {fileID: 1288730851}
   - {fileID: 988704318}
   - {fileID: 748395015}
-  cameraScale: 12
+  cameraScale: 14
   playerSpawn: {fileID: 1741864711}
   cameraLocation: {fileID: 321760245}
   deathCount: 0
