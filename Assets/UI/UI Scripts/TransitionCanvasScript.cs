@@ -34,8 +34,8 @@ public class TransitionCanvasScript : MonoBehaviour
         player1 = GameObject.Find("Player 1(Clone)");
         player2 = GameObject.Find("Player 2(Clone)");
 
-        player1.GetComponent<SpearThrow>().canThrow = false;
-        player2.GetComponent<SpearThrow>().canThrow = false;
+        //player1.GetComponent<SpearThrow>().canThrow = false;
+        //player2.GetComponent<SpearThrow>().canThrow = false;
     }
 
     public void BeginTransition()
