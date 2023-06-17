@@ -45,17 +45,17 @@ public class SpearThrow : MonoBehaviour
     void Update()
     {
         shootButton = input.GetShootButton();
-        animator.SetBool("Throwing", true);
+        animator.SetBool("Throwing", false);
 
         Rotate();
         if(canThrow){
             
-            if(launchForce >= maxLaunchForce && !thrown)
+            if(launchForce >= maxLaunchForce && !thrown)    // Throw on full charge
             {
                 launchForce = maxLaunchForce;
                 Throw();
             }
-            else if(Input.GetButtonDown(shootButton))
+            else if(Input.GetButtonDown(shootButton))   // Player started charging (button down for first time)
             {
                 thrown = false;
                 launchForce = 0.0f;
@@ -63,14 +63,14 @@ public class SpearThrow : MonoBehaviour
                 animator.SetBool("Charging", true);
                 throwUI.gameObject.SetActive(true);
             }
-            else if(Input.GetButton(shootButton) && !thrown)
+            else if(Input.GetButton(shootButton) && !thrown)    // Still charging and not thrown (button has been down)
             {
                 launchForce += Time.deltaTime * chargeSpeed;
                 
                 // slider update
                 throwUI.value = launchForce;
             }
-            else if (Input.GetButtonUp(shootButton) && !thrown)
+            else if (Input.GetButtonUp(shootButton) && !thrown)     // Charge released to throw
             {
                 if(launchForce > minLaunchForce)
                 {
@@ -81,7 +81,7 @@ public class SpearThrow : MonoBehaviour
                     resetUI();
                     launchForce = minLaunchForce;
                     animator.SetBool("Charging", false);
-                    // shouldnt play the throw animation here, not sure why it does
+                    animator.Play("Base Layer.Idle_Weapon");
                 }
             }
         }
