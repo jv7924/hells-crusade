@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour
         col.enabled = false;
         Debug.Log("player downed");
         playerAnimator.SetBool("Downed", true);
+        playerAnimator.Play("Base Layer.Downed");
         // play down animation - still need
 
         // restrict movement
