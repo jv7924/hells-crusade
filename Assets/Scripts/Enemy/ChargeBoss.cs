@@ -29,12 +29,12 @@ public class ChargeBoss : MonoBehaviour
     {
         dist = 99999;
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-
         if (!targeted)
         {
-            if (p1 && p2)
+            followedPlayer = null;
+            foreach (GameObject player in players)
             {
-                foreach (GameObject player in players)
+                if (player.GetComponent<PlayerController>().PlayerHealth > 0)
                 {
                     if (Vector3.Distance(player.transform.position, this.transform.position) < dist)
                     {
@@ -43,16 +43,18 @@ public class ChargeBoss : MonoBehaviour
                         targeted = true;
                     }
                 }
-            } else if (!p1)
-            {
-                followedPlayer = players[1];
-            } else if (!p2)
-            {
-                followedPlayer = players[0];
             }
+            //} 
+            //else if (!p1)
+            //{
+            //    followedPlayer = players[1];
+            //} else if (!p2)
+            //{
+            //    followedPlayer = players[0];
+            //}
         }
 
-        if (charging == false)
+        if (charging == false && followedPlayer != null)
         {
             Vector3 direction = followedPlayer.transform.position - this.transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;

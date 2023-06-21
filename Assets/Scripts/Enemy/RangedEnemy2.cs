@@ -32,7 +32,7 @@ public class RangedEnemy2 : Enemy
 
     void FixedUpdate()
     {
-        if (health > 0)
+        if (health > 0 && target != null)
         {
             if (path == null)
             {
@@ -109,7 +109,10 @@ public class RangedEnemy2 : Enemy
                     }
                 }
             }
-            seeker.StartPath(rb.position, target.transform.position, OnPathComplete);
+            if (target != null)
+            {
+                seeker.StartPath(rb.position, target.transform.position, OnPathComplete);
+            }
         }
     }
 
